@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bandName: MyString
+  headline: MyString
+  message: MyString
+  logo: MyString
+
+two:
+  bandName: MyString
+  headline: MyString
+  message: MyString
+  logo: MyString
