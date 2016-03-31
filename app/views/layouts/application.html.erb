@@ -20,7 +20,7 @@
             <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
             <li><%= link_to t(:band_name), welcomes_path, class: "navbar-brand" %></li>
             <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:music), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
+            <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
           </ul>
         </div>
       </div>
@@ -65,10 +65,11 @@
         <h4 class="modal-title">Music</h4>
       </div>
       <div class="modal-body">
-        <div class='label'>Compensated (live)</div><br>
-        <%= audio_tag("09-Compensated.wav", controls: true, label: true) %><br>
         <div class='label'>Trampled Under Foot (live)</div><br>
-        <%= audio_tag("11-TrampledUnderFoot.wav", controls: true, label: true) %>
+        <%= audio_tag("11-TrampledUnderFoot.wav", autoplay: true, controls: true) %><br>
+        <div class='label'>Compensated (live)</div><br>
+        <%= audio_tag("09-Compensated.wav", controls: true) %><br>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
