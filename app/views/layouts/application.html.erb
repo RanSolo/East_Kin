@@ -19,8 +19,8 @@
           <ul class="nav navbar-nav">
             <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
             <li><%= link_to t(:band_name), welcomes_path, class: "navbar-brand" %></li>
-            <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
+            <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
           </ul>
         </div>
       </div>
@@ -72,7 +72,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Hide</button>
       </div>
     </div>
 
