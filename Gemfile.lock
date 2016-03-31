@@ -37,6 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    animate-scss (0.0.5)
+      sass
     arel (6.0.3)
     ast (2.2.0)
     autoprefixer-rails (6.3.3.1)
@@ -286,6 +288,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-scss
   bootstrap-sass (~> 3.3.6)
   brakeman
   bullet

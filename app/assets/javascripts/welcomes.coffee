@@ -25,7 +25,7 @@ getDist = (x1, y1, x2, y2) ->
 
 window.setTimeout (->
   $('.first .outerLetter.current').addClass 'gone'
-  # $('.letter-container').slideUp 'slow'
+  $('.letter-container').slideUp 'slow'
   return
 ), 10000
 window.setTimeout (->

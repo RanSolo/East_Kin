@@ -28,6 +28,7 @@
 
   window.setTimeout((function() {
     $('.first .outerLetter.current').addClass('gone');
+    $('.letter-container').slideUp('slow');
   }), 10000);
 
   window.setTimeout((function() {
