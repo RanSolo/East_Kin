@@ -1,0 +1,45 @@
+<%- model_class = Venue -%>
+<div class="shared/page-header text-center transparent-light">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table hidden">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:link) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @venues.each do |venue| %>
+      <tr>
+        <td><%= venue.id %></td>
+        <td><%= venue.name %></td>
+        <td><%= venue.link %></td>
+        <td><%=l venue.created_at, format: :short %></td>
+        <td>
+          <%= link_to venue_path(venue), :class => 'btn btn-xs btn-warning', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+          <%- end -%>
+          <%= link_to edit_venue_path(venue), :class => 'btn btn-xs btn-primary', :"data-no-turbolink" => 'true', :title => "#{ t('.edit', :default => t('helpers.links.edit')) }" do %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to venue_path(venue), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class='transparent-dark'>
+  <h2>
+    <% @venues.each do |venue| %>
+      <%= link_to venue_path(venue), :class => 'btn btn-lg text-center text-warning venue-name', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+        <h2><%= venue.name %></h2>
+       <%end%>
+    <% end %>
+  </h2>
+</div>

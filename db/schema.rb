@@ -13,6 +13,31 @@
 
 ActiveRecord::Schema.define(version: 20160316183935) do
 
+  create_table "events", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "description"
+    t.string   "title"
+    t.string   "link"
+    t.string   ""
+    t.string   "link2"
+    t.string   "link3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "link"
+    t.string   "link2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "about"
+    t.string   "location"
+    t.integer  "phone"
+  end
+
   create_table "welcomes", force: :cascade do |t|
     t.string   "bandName"
     t.string   "headline"
