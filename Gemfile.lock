@@ -49,7 +49,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap3-datetimepicker-rails (4.15.35)
+    bootstrap3-datetimepicker-rails (4.17.37)
       momentjs-rails (>= 2.8.1)
     brakeman (3.2.1)
       erubis (~> 2.6)
@@ -300,7 +300,7 @@ PLATFORMS
 DEPENDENCIES
   animate-scss
   bootstrap-sass (~> 3.3.6)
-  bootstrap3-datetimepicker-rails (~> 4.15.35)
+  bootstrap3-datetimepicker-rails (~> 4.17.37)
   brakeman
   bullet
   byebug
@@ -327,6 +327,7 @@ DEPENDENCIES
   rails_12factor
   rubocop
   rubocop-checkstyle_formatter
+  sass (~> 3.3)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simplecov
