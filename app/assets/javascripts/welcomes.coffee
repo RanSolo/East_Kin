@@ -31,16 +31,17 @@ getDist = (x1, y1, x2, y2) ->
 ### ---- SETTINGS ---- ###
 
 PARTICLE_NUMBERS = 500
-GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 15)) + 0)
+GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 6)) + 0)
 
-PARTICULE_SPEED = 0.9
-VELOCITY = .90
+PARTICULE_SPEED = 0.8
+VELOCITY = 1
 COLORS = [
   '#F2F3AE'
   '#ECFF8B'
   '#FFFCF9'
   '#E0F2E9'
   '#FCD9EE'
+  'purple'
 ]
 
 ### ---- Particle ---- ###
@@ -111,7 +112,7 @@ Particle = do ->
 
 GravityPoint = do ->
   `var GravityPoint`
-  n = Math.abs(Math.floor(Math.random() * (0 - 30)) + 0)
+  n = Math.abs(Math.floor(Math.random() * (0 - 10)) + 0)
   GravityPoint = (x, y) ->
     _classCallCheck this, GravityPoint
     @x = x
@@ -125,16 +126,16 @@ GravityPoint = do ->
       @gravity = 200
 
     if n > 13  && n < 19
-      @gravity = 500
+      @gravity = 400
 
     if n > 18 && n < 24
-      @gravity = 800
+      @gravity = 600
 
     if n > 23 && n < 27
-      @gravity = 1200
+      @gravity = 800
 
     if n > 26  && n < 29
-      @gravity = 3000
+      @gravity = 100
 
     if n > 28 && n < 32
       @gravity = 0
@@ -143,8 +144,8 @@ GravityPoint = do ->
   GravityPoint::render = ->
     context.beginPath()
     context.strokeStyle = '#4F5AF2'
-    context.lineWidth = 2
-    context.arc @x, @y, @gravity, 0, Math.PI * 2
+    context.lineWidth =
+    context.arc @x, @y, @gravity, 0, Math.PI * 1
     context.stroke()
     return
 
@@ -186,7 +187,7 @@ while i < GRAVITY_POINT_NUMBERS
   i++
 fruitLoop()
 
-blowUpUniverse = ->
+blowUpUniverse = ()->
 
   @gravity = 1000
 
@@ -194,12 +195,11 @@ blowUpUniverse = ->
     Math.sqrt Math.sqr(y2 - y1) + Math.sqr(x2 - x1)
 
   ### ---- SETTINGS ---- ###
-
-  PARTICLE_NUMBERS = 500
+  PARTICLE_NUMBERS = 1000
   GRAVITY_POINT_NUMBERS = 1
 
-  PARTICULE_SPEED = .4
-  VELOCITY = .90
+  PARTICULE_SPEED = .3
+  VELOCITY = 1
   COLORS = [
     '#F2F3AE'
     '#ECFF8B'
@@ -233,11 +233,11 @@ blowUpUniverse = ->
       _classCallCheck this, Particle
       @x = x
       @y = y
-      @vel = Math.randomF(-4, 4)
+      @vel = 3
       @vel =
         x: @vel
         y: @vel
-        max: Math.randomF(2, 10)
+        max: 2
       @train = []
       @color = COLORS[Math.floor(Math.random() * COLORS.length)]
       return
@@ -245,7 +245,7 @@ blowUpUniverse = ->
     Particle::render = ->
       context.beginPath()
       context.strokeStyle = @color
-      context.lineWidth = 1
+      context.lineWidth = .1
       context.moveTo @train[0].x, @train[0].y
       i = @train.length - 1
       i
@@ -269,7 +269,7 @@ blowUpUniverse = ->
       @train.push
         x: @x
         y: @y
-      if @train.length > 10
+      if @train.length > 100
         @train.splice 0, 1
       return
 
@@ -344,6 +344,7 @@ blowUpUniverse = ->
     gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
     i++
   fruitLoop()
+
 
 
 restartUniverse = ->
