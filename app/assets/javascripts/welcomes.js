@@ -1,9 +1,12 @@
 (function() {
-  var COLORS, GRAVITY_POINT_NUMBERS, GravityPoint, PARTICLE_NUMBERS, PARTICULE_SPEED, Particle, VELOCITY, canvas, context, fruitLoop, gPoints, getDist, i, particles, restartUniverse, windowHeight, windowWidth, _classCallCheck;
+  var COLORS, GRAVITY_POINT_NUMBERS, GravityPoint, PARTICLE_NUMBERS, PARTICULE_SPEED, Particle, VELOCITY, blowUpUniverse, canvas, context, fruitLoop, gPoints, getDist, i, particles, restartUniverse, windowHeight, windowWidth, _classCallCheck;
 
   $(function() {
-    return $('#restart-universe').click(function() {
+    $('#restart-universe').click(function() {
       return restartUniverse();
+    });
+    return $('#blow-up-universe').click(function() {
+      return blowUpUniverse();
     });
   });
 

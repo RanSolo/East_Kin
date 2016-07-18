@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('#restart-universe').click -> restartUniverse()
-
+  $('#blow-up-universe').click -> blowUpUniverse()
 _classCallCheck = (instance, Constructor) ->
   if !(instance instanceof Constructor)
     throw new TypeError('Cannot call a class as a function')
@@ -186,21 +186,169 @@ while i < GRAVITY_POINT_NUMBERS
   i++
 fruitLoop()
 
-restartUniverse = ->
-  $('#restart-universe').hide() 
-  @gravity = 0
-  fruitLoop = ->
+blowUpUniverse = ->
 
-    context.clearRect 0, 0, canvas.width, canvas.height
-    gPoints.map (g, index) ->
-      g.render()
+  @gravity = 1000
+
+  getDist = (x1, y1, x2, y2) ->
+    Math.sqrt Math.sqr(y2 - y1) + Math.sqr(x2 - x1)
+
+  ### ---- SETTINGS ---- ###
+
+  PARTICLE_NUMBERS = 500
+  GRAVITY_POINT_NUMBERS = 1
+
+  PARTICULE_SPEED = .4
+  VELOCITY = .90
+  COLORS = [
+    '#F2F3AE'
+    '#ECFF8B'
+    '#FFFCF9'
+    '#E0F2E9'
+    '#FCD9EE'
+    '#F2F3AE'
+    '#ECFF8B'
+    '#FFFCF9'
+    '#E0F2E9'
+    '#FCD9EE'
+    '#F2F3AE'
+    '#ECFF8B'
+    '#FFFCF9'
+    '#E0F2E9'
+    '#FCD9EE'
+    'orange'
+    'orange'
+    'red'
+    'blue'
+    'purple'
+    'red'
+  ]
+
+  ### ---- Particle ---- ###
+
+  Particle = do ->
+    `var Particle`
+
+    Particle = (x, y) ->
+      _classCallCheck this, Particle
+      @x = x
+      @y = y
+      @vel = Math.randomF(-4, 4)
+      @vel =
+        x: @vel
+        y: @vel
+        max: Math.randomF(2, 10)
+      @train = []
+      @color = COLORS[Math.floor(Math.random() * COLORS.length)]
       return
-    particles.map (p, index) ->
-      p.update gPoints
-      p.render()
+
+    Particle::render = ->
+      context.beginPath()
+      context.strokeStyle = @color
+      context.lineWidth = 1
+      context.moveTo @train[0].x, @train[0].y
+      i = @train.length - 1
+      i
+      while i > 0
+        context.lineTo @train[i].x, @train[i].y
+        i--
+      context.stroke()
       return
-    requestAnimationFrame fruitLoop
-    return
+
+    Particle::update = (gPoints) ->
+      force = @getForceOfNearestGravityPoint()
+      @vel.x += force.x
+      @vel.y += force.y
+      @x += @vel.x * PARTICULE_SPEED
+      @y += @vel.y * PARTICULE_SPEED
+      if Math.abs(@vel.x) > @vel.max
+        @vel.x *= VELOCITY
+      if Math.abs(@vel.y) > @vel.max
+        @vel.y *= VELOCITY
+      #trains
+      @train.push
+        x: @x
+        y: @y
+      if @train.length > 10
+        @train.splice 0, 1
+      return
+
+    Particle::getForceOfNearestGravityPoint = ->
+      _this = this
+      gpSelected = undefined
+      nearestD = 99999
+      d = undefined
+      gPoints.map (gp) ->
+        d = getDist(gp.x, gp.y, _this.x, _this.y)
+        if nearestD > d
+          nearestD = d
+          gpSelected = gp
+        return
+      gpSelected.getForceDirection @x, @y, nearestD
+
+    Particle
+
+  ### ---- GravityPoint ---- ###
+
+  GravityPoint = do ->
+    `var GravityPoint`
+    n = Math.abs(Math.floor(Math.random() * (0 - 30)) + 0)
+    GravityPoint = (x, y) ->
+      _classCallCheck this, GravityPoint
+      @x = x
+      @y = y
+      @gravity = 3000
+
+    GravityPoint::render = ->
+      context.beginPath()
+      context.strokeStyle = '#4F5AF2'
+      context.lineWidth = 2
+      context.arc @x, @y, @gravity, 0, Math.PI * 2
+      context.stroke()
+      return
+
+    GravityPoint::getForceDirection = (x, y, dist) ->
+      F = @gravity / dist
+      {
+        x: (@x - x) * .5 * F
+        y: (@y - y) * .5 * F
+      }
+
+    GravityPoint
+
+  Math.sqr = (a) ->
+    a * a
+
+  Math.randomF = (min, max) ->
+    `var i`
+    Math.random() * (max - min) + min
+
+  ### ---- START ---- ###
+
+  particles = []
+  gPoints = []
+  windowWidth = window.innerWidth
+  windowHeight = window.innerHeight
+
+  context = canvas.getContext('2d')
+  canvas.id = 'canvas'
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  document.body.appendChild canvas
+  i = 0
+  while i < PARTICLE_NUMBERS
+    particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
+    i++
+  i = 0
+  while i < GRAVITY_POINT_NUMBERS
+    gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
+    i++
+  fruitLoop()
+
+
+restartUniverse = ->
+
+  @gravity = 0
 
   getDist = (x1, y1, x2, y2) ->
     Math.sqrt Math.sqr(y2 - y1) + Math.sqr(x2 - x1)
@@ -210,8 +358,8 @@ restartUniverse = ->
   PARTICLE_NUMBERS = 1000
   GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 15)) + 0)
 
-  PARTICULE_SPEED = 0.9
-  VELOCITY = .90
+  PARTICULE_SPEED = 0.5
+  VELOCITY = .70
   COLORS = [
     '#F2F3AE'
     '#ECFF8B'
