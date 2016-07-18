@@ -22,7 +22,9 @@
 en:
   hello: "Hello world"
   band_name: "East Kin"
-  bio: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-        into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  bio_html: "East Kin is a Rock and Roll outfit that writes, rehearses, records, and performs out of Nashville TN.
+  As a Band E.K. is very new to the Nashville club scene, but it's members are firmly entrenched in said scene.
+  Performing in the area and across the country for the last 20 years in Old Union, Ballhog!, The Enablers,
+  Guy Smiley Blues Exchange and other bands, situations and configurations.
+  <br><br>
+  East Kin makes music for you, don't you think you should listen?  You do don't you? I knew you did."
