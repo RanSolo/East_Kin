@@ -21,9 +21,13 @@
 
 en:
   hello: "Hello world"
-  band_name: "East Kin"
-  blow_up_universe: "Destroy Universe"
+  all_things:  " - All Thing's East Kin... all the time..."
+  band_name: "East Kin's"
+  ekinaverse: ' "Ekinaverse"'
+  blow_up_universe: "Destroy Ekinaverse"
   synth_controls: "Synth Controls"
+
+  welcomes_you: " welcomes you to ... The "
   synth_explaination_html:  "<p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
   <p class='text-danger'>If the synth becomes choppy or non-responive hit the synth powerbutton in the bottom right corner of the

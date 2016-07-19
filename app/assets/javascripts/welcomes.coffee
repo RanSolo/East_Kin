@@ -41,7 +41,7 @@ randomizePartical = ->
   if groupDecider < 4
     return 500
   else
-    return 1000
+    return 750
 
 PARTICLE_NUMBERS = randomizePartical()
 GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 6)) + 0)
@@ -203,6 +203,8 @@ fruitLoop()
 
 blowUpUniverse = ()->
   $('#atomic-bomb').trigger('play')
+  $('#tokyo').show()
+  $('#life').hide()
   @gravity = 1000
 
   getDist = (x1, y1, x2, y2) ->
@@ -364,7 +366,8 @@ blowUpUniverse = ()->
 
 
 restartUniverse = ->
-
+  $('#tokyo').hide()
+  $('#life').show()
   @gravity = 0
 
   getDist = (x1, y1, x2, y2) ->
