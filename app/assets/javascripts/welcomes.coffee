@@ -30,7 +30,20 @@ getDist = (x1, y1, x2, y2) ->
 
 ### ---- SETTINGS ---- ###
 
-PARTICLE_NUMBERS = 500
+randomizePartical = ->
+  groupDecider = Math.abs(Math.floor(Math.random() * (0 - 6)) + 0)
+  if groupDecider < 1
+    return 7
+  if groupDecider < 2
+    return 25
+  if groupDecider < 3
+    return 200
+  if groupDecider < 4
+    return 500
+  else
+    return 1000
+
+PARTICLE_NUMBERS = randomizePartical()
 GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 6)) + 0)
 
 PARTICULE_SPEED = 0.8
@@ -222,6 +235,8 @@ blowUpUniverse = ()->
     'blue'
     'purple'
     'red'
+    'black'
+    'green'
   ]
 
   ### ---- Particle ---- ###
