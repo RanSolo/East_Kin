@@ -24,18 +24,18 @@ en:
   band_name: "East Kin"
   blow_up_universe: "Destroy Universe"
   synth_controls: "Synth Controls"
-  synth_explaination_html:  'You can control the synth with the keys in the piano keyboard above or with the
-  keyboard on your computer. On your computer keyboard with you can play with the controls window closed.
-  <br><br>
-  If the synth becomes choppy or non-responive hit the synth powerbutton in the bottom right corner of the
-  synth container twice to turn it off and on.
-  <br><br>
-  Number row = black keys<br>
-  Top row of letters = white keys<br>
-  Middle row of letters = major chords <br>
-  Bottom row of letters = minor chords<br>
-  Hold command button for sustain.
-  '
+  synth_explaination_html:  "<p>You can control the synth with the keys in the piano keyboard above or with the
+  keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
+  <p class='text-danger'>If the synth becomes choppy or non-responive hit the synth powerbutton in the bottom right corner of the
+  synth container twice to turn it off and on.</p>
+  Number row = black keys, Top row of letters = white keys<br>
+  Middle row of letters = major chords, Bottom row of letters = minor chords<br>
+  Hold command button for sustain.<br>
+  Change synth tones with the four wavesign buttons at the bottom of synth.
+  <p>
+    Synth widget created by <a href='http://jjjreisss.github.io/'>JOHNNY REIS</a>
+  </p>
+  "
   bio_html: "East Kin is a Rock and Roll outfit that writes, rehearses, records, and performs out of Nashville TN.
   As a Band E.K. is very new to the Nashville club scene, but it's members are firmly entrenched in said scene.
   Performing in the area and across the country for the last 20 years in Old Union, Ballhog!, The Enablers,
