@@ -202,8 +202,6 @@ while i < GRAVITY_POINT_NUMBERS
 fruitLoop()
 
 blowUpUniverse = ()->
-  $('#output').html (i, val) ->
-    val * 1 + 1
   $('#atomic-bomb').trigger('play')
   @gravity = 1000
 
