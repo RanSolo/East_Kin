@@ -17,15 +17,18 @@
         </button>
         <div class="collapse navbar-collapse text-right" id="bs-example-navbar-collapse-3">
           <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
+          <div id="output"></div>
           <ul class="nav navbar-nav">
             <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
             <li><%= link_to t(:band_name), welcomes_path, class: "navbar-brand" %></li>
             <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:video), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:funstuff), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
+            <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
             <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
+            <li id="output", class: 'btn-link'></li>
+
           </ul>
         </div>
       </div>
@@ -107,12 +110,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t(:fun_stuff) %></h4>
+        <h4 class="modal-title"><%= t(:synth_controls) %></h4>
       </div>
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-          <div id="synth-widget" >
-        </div>
+          <div id="synth-widget"></div>
+        <%= t(:synth_explaination) %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Hide</button>
