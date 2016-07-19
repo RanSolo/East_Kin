@@ -16,6 +16,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="collapse navbar-collapse text-right" id="bs-example-navbar-collapse-3">
+          <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
           <ul class="nav navbar-nav">
             <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
             <li><%= link_to t(:band_name), welcomes_path, class: "navbar-brand" %></li>
@@ -120,6 +121,7 @@
 
   </div>
 </div>
+
 </body>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

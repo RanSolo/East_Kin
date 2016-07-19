@@ -202,7 +202,7 @@ while i < GRAVITY_POINT_NUMBERS
 fruitLoop()
 
 blowUpUniverse = ()->
-
+  $('#atomic-bomb').trigger('play')
   @gravity = 1000
 
   getDist = (x1, y1, x2, y2) ->
