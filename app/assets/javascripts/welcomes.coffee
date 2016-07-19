@@ -55,6 +55,7 @@ COLORS = [
   '#E0F2E9'
   '#FCD9EE'
   'purple'
+  'aqua'
 ]
 
 ### ---- Particle ---- ###
@@ -135,23 +136,23 @@ GravityPoint = do ->
     if n > 2
       @gravity = Math.abs(Math.random() * (0 - .1) + 0)
 
-    if n > 7  && n < 13
+    if n > 4  && n < 8
       @gravity = 200
 
-    if n > 13  && n < 19
+    if n > 7  && n < 11
       @gravity = 400
 
-    if n > 18 && n < 24
+    if n > 10 && n < 14
       @gravity = 600
 
-    if n > 23 && n < 27
+    if n > 13 && n < 17
       @gravity = 800
 
-    if n > 26  && n < 29
-      @gravity = 100
+    if n > 16  && n < 29
+      @gravity = 1000
 
     if n > 28 && n < 32
-      @gravity = 0
+      @gravity = 2000
 
 
   GravityPoint::render = ->
