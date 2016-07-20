@@ -20,10 +20,10 @@
           <div id="output"></div>
           <ul class="nav navbar-nav">
             <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
-            <li><%= link_to t(:band_name) +  t(:ekinaverse) + t(:all_things), welcomes_path, class: "navbar-brand" %></li><br>
+            <li><%= link_to t(:band_name) +  t(:ekiniverse) + t(:all_things), welcomes_path, class: "navbar-brand" %></li><br>
             <li>
               <div id='tokyo' class='form-control btn-link pull-right'>Oh No! There Goes Tokyo!</div>
-              <div id='life' class='form-control btn-link pull-right'>New... Shiney... Life...</div>
+              <div id='life' class='form-control btn-link pull-right'>New... Shiney... Speedy... Life...</div>
             </li>
           </ul>
           <ul class="nav navbar-nav pull-right col-xl-5">
@@ -31,7 +31,7 @@
             <li><%= link_to t(:video), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
             <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:resume_ekinaverse), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
+            <li><%= link_to t(:restart_ekiniverse), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
             <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
             <li id="output", class: 'btn-link'></li>
           </ul>

@@ -23,10 +23,10 @@ en:
   hello: "Hello world"
   all_things:  " - All Thing's East Kin... all the time..."
   band_name: "East Kin's"
-  ekinaverse: ' "Ekinaverse"'
-  blow_up_universe: "Destroy Ekinaverse"
+  ekiniverse: "Universe"
+  blow_up_universe: "Destroy Universe"
   synth_controls: "Synth Controls"
-
+  restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
   synth_explaination_html:  "<p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
