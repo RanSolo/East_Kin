@@ -201,7 +201,10 @@ while i < GRAVITY_POINT_NUMBERS
 fruitLoop()
 
 blowUpUniverse = ()->
+  atomic_bomb =  document.getElementById('atomic-bomb')
+  atomic_bomb.volume = 0.2
   $('#atomic-bomb').trigger('play')
+
   $('#tokyo').show()
   $('#life').hide()
   @gravity = 1000
