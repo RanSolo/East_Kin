@@ -21,9 +21,9 @@
 
 en:
   hello: "Hello world"
-  all_things:  " - All Thing's East Kin... all the time..."
+  all_things:  "All thing's East Kin... all the time... "
   band_name: "East Kin's"
-  universe: "Universe"
+  universe: " Universe"
   blow_up_universe: "Destroy Universe"
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"

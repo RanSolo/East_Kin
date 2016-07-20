@@ -8,36 +8,44 @@
 <body>
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="bs-example-navbar-collapse-3">
-          <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
-          <div id="output"></div>
-          <ul class="nav navbar-nav">
-            <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
-            <li><%= link_to t(:band_name) +  t(:universe) + t(:all_things), welcomes_path, class: "navbar-brand" %></li><br>
-            <li>
-              <div id='tokyo' class='form-control btn-link pull-right'>Oh No! There Goes Tokyo!</div>
-              <div id='life' class='form-control btn-link pull-right'>New... Shiney... Speedy... Life...</div>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav pull-right col-xl-5">
-            <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:video), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
-            <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
-            <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
-            <li id="output", class: 'btn-link'></li>
-          </ul>
-
+      <div class='row'>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse text-right" id="bs-example-navbar-collapse-3">
+            <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
+            <div id="output"></div>
+            <ul class="nav navbar-nav">
+              <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
+              <li><%= link_to t(:band_name) +  t(:universe) , welcomes_path, class: "navbar-brand" %></li><br>
+            </ul>
+            <ul class="nav navbar-nav pull-right col-xl-5">
+              <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
+              <li><%= link_to t(:video), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
+              <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
+              <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
+              <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
+              <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
+              <li id="output", class: 'btn-link'></li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <ul class="col-lg-12 nav navbar-nav header-txt">
+        <li class='col-lg-offset-2 col-md-offset-2'>
+          <div class='text-warning text-right'><%= t(:all_things)%></div>
+        </li>
+        <li>
+          <div id='tokyo' class='text-danger pull-right'>Oh No! There Goes Tokyo!</div>
+          <div id='life' class='text-info pull-right'>New... Shiney... Speedy... Life...</div>
+        </li>
+      </ul>
+
     </div>
   </nav>
   <% if notice %>
