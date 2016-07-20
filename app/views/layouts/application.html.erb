@@ -24,13 +24,24 @@
               <li><%= link_to t(:band_name) +  t(:universe) , welcomes_path, class: "navbar-brand" %></li><br>
             </ul>
             <ul class="nav navbar-nav pull-right col-xl-5">
-              <li><%= link_to t(:music_controls), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
-              <li><%= link_to t(:video), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
-              <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
-              <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
               <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
               <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
-              <li id="output", class: 'btn-link'></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Decisions<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to t(:live), '#', type: "button", data: {toggle: "modal", target: "#liveModal"}, class: 'btn-link' %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to t(:listen), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to t(:watch), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
+                </ul>
+              </li>
+
+            <li id="output", class: 'btn-link'></li>
             </ul>
           </div>
         </div>
@@ -89,6 +100,23 @@
       </div>
       <div class="modal-body">
         <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/191082685&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false"></iframe>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="liveModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t(:live) %></h4>
+      </div>
+      <div class="modal-body">
+        <p class='text-center'>You don't know East Kin until you've seen them live. Coming soon to a bar near you... if you live in Nashville.</p>
       </div>
       <div class="modal-footer">
       </div>
