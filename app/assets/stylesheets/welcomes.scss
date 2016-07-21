@@ -10,18 +10,21 @@ body {
   padding: 0;
   color: white;
 }
-.modal-content
-{
-background-color: #0B0D23 !important;
+.modal-content {
+  background-color: #0B0D23 !important;
 }
 .modal-dialog{
-margin-top: 5em !important;
+  margin-top: 5em !important;
 }
 .header-txt {
   margin: 10px;
-  position: relative;
-  bottom: 25px;
-  right: 20px;
+  position: fixed;
+  top: 45px;
+  left: 65px;
+  width: 85%;
+  
+  z-index: 0;
+
 }
 #tokyo{
   display: none;
@@ -33,15 +36,14 @@ margin-top: 5em !important;
 .letter-container1 {
   z-index: 1000;
 }
-ul.dropdown-menu {
+
+ul.dropdown-menu, ul.collapse-dropdown {
   background-color:#0B0D23  !important;
   li {
 
   }
 }
-.divider{
-  background-color: red;
-}
+
 .crest {
   background-repeat:no-repeat;
   background-size:100% 100%;

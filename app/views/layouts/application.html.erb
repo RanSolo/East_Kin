@@ -4,6 +4,8 @@
   <title>EastKin</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -26,12 +28,14 @@
               <li class='crest'><%= link_to( '',welcomes_path, class: "navbar-brand") %></li>
               <li><%= link_to t(:band_name) +  t(:universe) , welcomes_path, class: "navbar-brand" %></li><br>
             </ul>
-            <ul class="nav navbar-nav pull-right">
+            <ul class="nav navbar-nav pull-right collapse-dropdown">
               <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
               <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Decisions<span class="caret"></span></a>
                 <ul class="dropdown-menu">
+
+                  <li role="separator" class="divider"></li>
                   <li><%= link_to t(:listen), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
                   <li role="separator" class="divider"></li>
                   <li><%= link_to t(:watch), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
@@ -53,16 +57,17 @@
 
 
     </div>
-    <ul class="nav navbar-nav header-txt navbar-right">
-      <li>
-        <div id='all-things' class='col-md-12 text-warning text-center'><%= t(:all_things)%></div>
-      </li>
-      <li>
-        <div id='tokyo' class='text-danger text-center'>Oh No! There Goes Tokyo!</div>
-        <div id='life' class='text-info text-center'>New... Shiney... Speedy... Life...</div>
-      </li>
-    </ul>
+
   </nav>
+  <ul class="nav navbar-nav header-txt navbar-right">
+    <li>
+      <div id='all-things' class='col-md-12 text-warning text-center'><%= t(:all_things)%></div>
+    </li>
+    <li>
+      <div id='tokyo' class='text-danger text-center'>Oh No! There Goes Tokyo!</div>
+      <div id='life' class='text-info text-center'>New... Shiney... Speedy... Life...</div>
+    </li>
+  </ul>
   <% if notice %>
     <p class="alert alert-info"><%= notice %></p>
   <% end %>
