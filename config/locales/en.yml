@@ -21,14 +21,15 @@
 
 en:
   hello: "Hello world"
-  all_things:  "All thing's East Kin... all the time... "
+  all_things:  "All thing's East Kin... all the time... Every visit is a metephorical snowflake. "
   band_name: "East Kin's"
   universe: " Universe"
   blow_up_universe: "Destroy Universe"
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
-  synth_explaination_html:  "<p>You can control the synth with the keys in the piano keyboard above or with the
+  synth_explaination_html:  "<p>Start a song and jam along, or just be write background music for the universe...</p>
+  <p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
   <p class='text-danger'>If the synth becomes choppy or non-responive hit the synth powerbutton in the bottom right corner of the
   synth container twice to turn it off and on.</p>

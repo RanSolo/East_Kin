@@ -44,7 +44,6 @@ randomizeParticle = ->
 
 PARTICLE_NUMBERS = randomizeParticle()
 GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 100)) + 0)
-
 PARTICULE_SPEED = 0.8
 VELOCITY = 1
 COLORS = [
@@ -185,10 +184,10 @@ gPoints = []
 windowWidth = window.innerWidth
 windowHeight = window.innerHeight
 canvas = document.createElement('canvas')
-context = canvas.getContext('2d')
 canvas.id = 'canvas'
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+canvas.width = 1600
+canvas.height = 1600
+context = canvas.getContext('2d')
 document.body.appendChild canvas
 i = 0
 while i < PARTICLE_NUMBERS
@@ -201,12 +200,14 @@ while i < GRAVITY_POINT_NUMBERS
 fruitLoop()
 
 blowUpUniverse = ()->
+  context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.2
   $('#atomic-bomb').trigger('play')
 
   $('#tokyo').show()
   $('#life').hide()
+  $('#all-things').hide()
   @gravity = 1000
 
   getDist = (x1, y1, x2, y2) ->
@@ -347,14 +348,8 @@ blowUpUniverse = ()->
 
   particles = []
   gPoints = []
-  windowWidth = window.innerWidth
-  windowHeight = window.innerHeight
 
-  context = canvas.getContext('2d')
-  canvas.id = 'canvas'
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-  document.body.appendChild canvas
+
   i = 0
   while i < PARTICLE_NUMBERS
     particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
@@ -363,12 +358,11 @@ blowUpUniverse = ()->
   while i < GRAVITY_POINT_NUMBERS
     gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
     i++
-  fruitLoop()
-
-
 
 restartUniverse = ->
+  context.clearRect(0, 0, canvas.width, canvas.height)
   $('#tokyo').hide()
+  $('#all-things').hide()
   $('#life').show()
   @gravity = 0
 
@@ -515,14 +509,7 @@ restartUniverse = ->
 
   particles = []
   gPoints = []
-  windowWidth = window.innerWidth
-  windowHeight = window.innerHeight
 
-  context = canvas.getContext('2d')
-  canvas.id = 'canvas'
-  canvas.width = window.innerWidth
-  canvas.height = window.innerHeight
-  document.body.appendChild canvas
   i = 0
   while i < PARTICLE_NUMBERS
     particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
@@ -531,4 +518,3 @@ restartUniverse = ->
   while i < GRAVITY_POINT_NUMBERS
     gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
     i++
-  fruitLoop()
