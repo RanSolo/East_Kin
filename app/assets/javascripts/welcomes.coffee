@@ -185,8 +185,8 @@ windowWidth = window.innerWidth
 windowHeight = window.innerHeight
 canvas = document.createElement('canvas')
 canvas.id = 'canvas'
-canvas.width = 1600
-canvas.height = 1000
+canvas.width = windowWidth
+canvas.height = windowHeight
 context = canvas.getContext('2d')
 document.body.appendChild canvas
 i = 0
