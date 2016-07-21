@@ -6,7 +6,7 @@ $ ->
   $(window).on 'load resize', ->
     canvasResize()
     return
-  $(window).on("orientationchange", ->
+  $(window).on "orientationchange", ->
     canvasResize()
     return
 
