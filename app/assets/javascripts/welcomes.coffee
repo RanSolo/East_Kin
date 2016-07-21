@@ -2,6 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+  # Here we call we check the width and height anytime it changes we call mobileCart()
+  $(window).on 'load resize', ->
+    canvasResize()
+    return
+
+  $(document).scroll ->
+    mobileCart()
+    return
+# shows the mobile cart only when the width is below 760px and above 750 in height.
+
   $('#restart-universe').click -> restartUniverse()
   $('#blow-up-universe').click -> blowUpUniverse()
 _classCallCheck = (instance, Constructor) ->
@@ -197,7 +207,22 @@ i = 0
 while i < GRAVITY_POINT_NUMBERS
   gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
   i++
+
+
+
 fruitLoop()
+canvasResize = ->
+  oldCanvas = document.getElementById('canvas')
+  document.body.removeChild(oldCanvas)
+
+  windowWidth = window.innerWidth
+  windowHeight = window.innerHeight
+  canvas = document.createElement('canvas')
+  canvas.id = 'canvas'
+  canvas.width = windowWidth
+  canvas.height = windowHeight
+  context = canvas.getContext('2d')
+  document.body.appendChild canvas
 
 blowUpUniverse = ()->
   context.clearRect(0, 0, canvas.width, canvas.height)
