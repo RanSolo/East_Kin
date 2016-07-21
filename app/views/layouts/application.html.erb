@@ -4,7 +4,7 @@
   <title>EastKin</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -31,26 +31,19 @@
               <li><%= link_to t(:band_name) +  t(:universe) , welcomes_path, class: "navbar-brand" %></li><br>
             </ul>
             <ul class="nav navbar-nav pull-right collapse-dropdown">
-              <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
-              <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Decisions<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-
                   <li role="separator" class="divider"></li>
                   <li><%= link_to t(:listen), '#', type: "button", data: {toggle: "modal", target: "#musicModal"}, class: 'btn-link' %></li>
-                  <li role="separator" class="divider"></li>
                   <li><%= link_to t(:watch), '#', type: "button", data: {toggle: "modal", target: "#videoModal"}, class: 'btn-link' %></li>
-                  <li role="separator" class="divider"></li>
                   <li><%= link_to t(:synth_controls), '#', type: "button", data: {toggle: "modal", target: "#funModal"}, class: 'btn-link' %></li>
-                  <li role="separator" class="divider"></li>
                   <li><%= link_to t(:biography), '#', type: "button", data: {toggle: "modal", target: "#bioModal"}, class: 'btn-link' %></li>
-                  <li role="separator" class="divider"></li>
                   <li><%= link_to t(:live), '#', type: "button", data: {toggle: "modal", target: "#liveModal"}, class: 'btn-link' %></li>
-
-
                 </ul>
               </li>
+              <li><%= link_to t(:restart_universe), '#', type: "button", class: 'btn-link', id: 'restart-universe' %></li>
+              <li><%= link_to t(:blow_up_universe), '#', type: "button", class: 'btn-link', id: 'blow-up-universe' %></li>
               <li id="output", class: 'btn-link'></li>
             </ul>
           </div>
