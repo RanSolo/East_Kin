@@ -6,6 +6,10 @@ $ ->
   $(window).on 'load resize', ->
     canvasResize()
     return
+  $(window).on("orientationchange", ->
+    canvasResize()
+    return
+});
 
   $(document).scroll ->
     mobileCart()
