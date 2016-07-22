@@ -137,7 +137,7 @@ Particle = do ->
 
 GravityPoint = do ->
   `var GravityPoint`
-  n = Math.abs(Math.floor(Math.random() * (0 - 10)) + 0)
+  n = Math.abs(Math.floor(Math.random() * (0 - 32)) + 0)
   GravityPoint = (x, y) ->
     _classCallCheck this, GravityPoint
     @x = x
@@ -145,7 +145,7 @@ GravityPoint = do ->
     if n > 0
       @gravity = 0
     if n > 1
-      @gravity = Math.random() * (0 - .1) + 0
+      @gravity = Math.random() * (0 - .2) + 0
 
     if n > 4  && n < 8
       @gravity = 200
