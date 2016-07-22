@@ -397,7 +397,7 @@ restartUniverse = ->
   ### ---- SETTINGS ---- ###
 
   PARTICLE_NUMBERS = randomizeParticle()
-  GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (2 - 20)) + 0)
+  GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (2 - 100)) + 0)
 
   PARTICULE_SPEED = Math.abs((Math.random() * (0 - 5)) + 0)
   VELOCITY =  Math.abs((Math.random() * (0.5 - 1)) + 0)
