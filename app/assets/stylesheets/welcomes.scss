@@ -60,6 +60,14 @@ ul.dropdown-menu{
   position: fixed;
   width: 100%;
   max-height:110px;
+  ul{
+    li{
+      a{
+          color: #bababa !important;
+      }
+
+    }
+  }
 }
 .crest2 {
   background-repeat:no-repeat;
