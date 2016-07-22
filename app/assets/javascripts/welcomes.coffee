@@ -144,8 +144,8 @@ GravityPoint = do ->
     @y = y
     if n > 0
       @gravity = 0
-    if n > 2
-      @gravity = Math.abs(Math.random() * (0 - .1) + 0)
+    if n > 1
+      @gravity = Math.random() * (0 - .1) + 0
 
     if n > 4  && n < 8
       @gravity = 200
@@ -202,15 +202,28 @@ canvas.width = windowWidth
 canvas.height = windowHeight
 context = canvas.getContext('2d')
 document.body.appendChild canvas
-i = 0
-while i < PARTICLE_NUMBERS
-  particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
-  i++
-i = 0
-while i < GRAVITY_POINT_NUMBERS
-  gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
-  i++
 
+pushParticles = ->
+  Math.sqr = (a) ->
+    a * a
+
+  Math.randomF = (min, max) ->
+    `var i`
+    Math.random() * (max - min) + min
+
+  ### ---- START ---- ###
+
+  particles = []
+  gPoints = []
+  i = 0
+  while i < PARTICLE_NUMBERS
+    particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
+    i++
+  i = 0
+  while i < GRAVITY_POINT_NUMBERS
+    gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
+    i++
+pushParticles()
 
 
 fruitLoop()
@@ -365,30 +378,14 @@ blowUpUniverse = ()->
 
     GravityPoint
 
-  Math.sqr = (a) ->
-    a * a
 
-  Math.randomF = (min, max) ->
-    `var i`
-    Math.random() * (max - min) + min
-
-  ### ---- START ---- ###
-
-  particles = []
-  gPoints = []
-
-
-  i = 0
-  while i < PARTICLE_NUMBERS
-    particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
-    i++
-  i = 0
-  while i < GRAVITY_POINT_NUMBERS
-    gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
-    i++
+  pushParticles()
 
 restartUniverse = ->
   context.clearRect(0, 0, canvas.width, canvas.height)
+  space_ship =  document.getElementById('space-ship')
+  space_ship.volume = 0.1
+  $('#space-ship').trigger('play')
   $('#tokyo').hide()
   $('#all-things').hide()
   $('#life').show()
@@ -400,9 +397,9 @@ restartUniverse = ->
   ### ---- SETTINGS ---- ###
 
   PARTICLE_NUMBERS = randomizeParticle()
-  GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 8)) + 0)
+  GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (2 - 20)) + 0)
 
-  PARTICULE_SPEED = Math.abs((Math.random() * (0 - 12)) + 0)
+  PARTICULE_SPEED = Math.abs((Math.random() * (0 - 5)) + 0)
   VELOCITY =  Math.abs((Math.random() * (0.5 - 1)) + 0)
   COLORS = [
     '#F2F3AE'
@@ -421,11 +418,11 @@ restartUniverse = ->
       _classCallCheck this, Particle
       @x = x
       @y = y
-      @vel = Math.randomF(-4, 4)
+      @vel = 3
       @vel =
         x: @vel
         y: @vel
-        max: Math.randomF(2, 10)
+        max: 2
       @train = []
       @color = COLORS[Math.floor(Math.random() * COLORS.length)]
       return
@@ -433,7 +430,8 @@ restartUniverse = ->
     Particle::render = ->
       context.beginPath()
       context.strokeStyle = @color
-      context.lineWidth = 1
+
+      context.lineWidth = .1
       context.moveTo @train[0].x, @train[0].y
       i = @train.length - 1
       i
@@ -457,7 +455,7 @@ restartUniverse = ->
       @train.push
         x: @x
         y: @y
-      if @train.length > 10
+      if @train.length > 100
         @train.splice 0, 1
       return
 
@@ -480,33 +478,26 @@ restartUniverse = ->
 
   GravityPoint = do ->
     `var GravityPoint`
-    n = Math.abs(Math.floor(Math.random() * (0 - 30)) + 0)
+    n = Math.abs(Math.floor(Math.random() * (0 - 12)) + 0)
     GravityPoint = (x, y) ->
       _classCallCheck this, GravityPoint
       @x = x
       @y = y
       if n > 0
-        @gravity = 0
+        @gravity = 1
       if n > 2
-        @gravity = Math.abs(Math.random() * (0 - .1) + 0)
-
-      if n > 4  && n < 8
-        @gravity = 200
-
-      if n > 7  && n < 11
-        @gravity = 400
-
-      if n > 10 && n < 14
-        @gravity = 600
-
-      if n > 13 && n < 17
-        @gravity = 800
-
-      if n > 16  && n < 29
+        @gravity = 5
+      if n > 3
+        @gravity = 7
+      if n > 4
+        @gravity = 750
+      if n > 6
         @gravity = 1000
+      if n > 8
+        @gravity = 10000
 
-      if n > 28 && n < 32
-        @gravity = 2000
+# 1 10 3000
+
 
 
     GravityPoint::render = ->
@@ -526,23 +517,4 @@ restartUniverse = ->
 
     GravityPoint
 
-  Math.sqr = (a) ->
-    a * a
-
-  Math.randomF = (min, max) ->
-    `var i`
-    Math.random() * (max - min) + min
-
-  ### ---- START ---- ###
-
-  particles = []
-  gPoints = []
-
-  i = 0
-  while i < PARTICLE_NUMBERS
-    particles.push new Particle(Math.randomF(0, windowWidth), Math.randomF(0, windowHeight))
-    i++
-  i = 0
-  while i < GRAVITY_POINT_NUMBERS
-    gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
-    i++
+  pushParticles()
