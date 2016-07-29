@@ -3,17 +3,13 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   # Here we call we check the width and height anytime it changes we call mobileCart()
-  $(window).on 'load resize', ->
-    canvasResize()
-    return
-  $(window).on "orientationchange", ->
+  $(window).on 'resize oreintationchange', ->
     canvasResize()
     return
 
   $(document).scroll ->
-    mobileCart()
+    canvasResize()
     return
-# shows the mobile cart only when the width is below 760px and above 750 in height.
 
   $('#restart-universe').click -> restartUniverse()
   $('#blow-up-universe').click -> blowUpUniverse()
@@ -25,7 +21,6 @@ _classCallCheck = (instance, Constructor) ->
 ### ---- Functions ----###
 
 fruitLoop = ->
-
   context.clearRect 0, 0, canvas.width, canvas.height
   gPoints.map (g, index) ->
     g.render()
@@ -69,6 +64,55 @@ COLORS = [
   'aqua'
 ]
 
+
+### ---- GravityPoint ---- ###
+
+GravityPoint = do ->
+  `var GravityPoint`
+  n = Math.abs(Math.floor(Math.random() * (0 - 32)) + 0)
+  GravityPoint = (x, y) ->
+    _classCallCheck this, GravityPoint
+    @x = x
+    @y = y
+    if n > 0
+      @gravity = 0
+    if n > 1
+      @gravity = Math.random() * (0 - .2) + 0
+
+    if n > 4  && n < 8
+      @gravity = 200
+
+    if n > 7  && n < 11
+      @gravity = 400
+
+    if n > 10 && n < 14
+      @gravity = 600
+
+    if n > 13 && n < 17
+      @gravity = 800
+
+    if n > 16  && n < 29
+      @gravity = 1000
+
+    if n > 28 && n < 32
+      @gravity = 2000
+
+  GravityPoint::render = ->
+    context.beginPath()
+    context.strokeStyle = '#4F5AF2'
+    context.lineWidth =
+    context.arc @x, @y, @gravity, 0, Math.PI * 1
+    context.stroke()
+    return
+
+  GravityPoint::getForceDirection = (x, y, dist) ->
+    F = @gravity / dist
+    {
+      x: (@x - x) * .5 * F
+      y: (@y - y) * .5 * F
+    }
+
+  GravityPoint
 ### ---- Particle ---- ###
 
 Particle = do ->
@@ -202,6 +246,55 @@ canvas.width = windowWidth
 canvas.height = windowHeight
 context = canvas.getContext('2d')
 document.body.appendChild canvas
+welcome_messages = new Array(
+    'Have you played with the synthesizer yet?',
+    'Click more descisions and listen to some tunes',
+    'Do you feel like a God?', 'Power makes you drunk.',
+    'Horton hears a who?', 'You never think twice...',
+    '... a time or three it was me',
+    'Have you destroyed or restarted East Kins Universe?',
+    '...the river will deliver your underscore.'
+    )
+welcome_messages.sort ->
+  0.5 - Math.random()
+plugWelcome = ->
+  message = welcome_messages.pop()
+  $('#all-things').text(message)
+  console.log(message)
+
+setTimeout (->
+  plugWelcome()
+), 15000
+setTimeout (->
+  plugWelcome()
+), 30000
+setTimeout (->
+  plugWelcome()
+), 45000
+setTimeout (->
+  plugWelcome()
+), 60000
+setTimeout (->
+  plugWelcome()
+), 75000
+setTimeout (->
+  plugWelcome()
+), 90000
+setTimeout (->
+  plugWelcome()
+), 105000
+setTimeout (->
+  plugWelcome()
+), 106500
+setTimeout (->
+  plugWelcome()
+), 18000
+setTimeout (->
+  plugWelcome()
+), 195000
+
+
+
 
 pushParticles = ->
   Math.sqr = (a) ->
@@ -230,7 +323,6 @@ fruitLoop()
 canvasResize = ->
   oldCanvas = document.getElementById('canvas')
   document.body.removeChild(oldCanvas)
-
   windowWidth = window.innerWidth
   windowHeight = window.innerHeight
   canvas = document.createElement('canvas')

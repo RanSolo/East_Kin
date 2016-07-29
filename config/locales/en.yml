@@ -1,4 +1,5 @@
 # Files in the config/locales directory are used for internationalization
+# 2Files in the live playlist internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
 #
@@ -26,6 +27,7 @@ en:
   universe: " Universe"
   blow_up_universe: "Destroy Universe"
   playlist_description_html: "<h4>East Kin's Freshman Effort - Full Album</h4>"
+  playlist_description2_html: "<h4>East Kin live</h4>"
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
