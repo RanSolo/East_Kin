@@ -16,6 +16,7 @@
 #= require bootstrap-sprockets
 #= require moment
 #= require fullcalendar
+#= require lodash
 #= require bootstrap-datetimepicker
 #= require turbolinks
 #= require_tree .

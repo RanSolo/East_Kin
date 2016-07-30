@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+  state = 'kin'
   # Here we call we check the width and height anytime it changes we call mobileCart()
   $(window).on 'resize oreintationchange', ->
     canvasResize()
@@ -77,8 +78,7 @@ GravityPoint = do ->
     if n > 0
       @gravity = 0
     if n > 1
-      @gravity = Math.random() * (0 - .2) + 0
-
+      @gravity = Math.random() * (0 - 20) + 0
     if n > 4  && n < 8
       @gravity = 200
 
@@ -247,59 +247,97 @@ canvas.height = windowHeight
 context = canvas.getContext('2d')
 document.body.appendChild canvas
 welcome_messages = new Array(
-    'Have you played with the synthesizer yet?',
     'Click more descisions and listen to some tunes',
-    'Do you feel like a God?', 'Power makes you drunk.',
-    'Horton hears a who?', 'You never think twice...',
-    '... a time or three it was me',
+    'Click more descisions and watch a video',
+    'Have you played with the synthesizer yet?',
+    'Horton hears a who?',
+    'You never think twice...',
+    '...a time or two it was you',
+    '...a time or three it was me',
     'Have you destroyed or restarted East Kins Universe?',
-    '...the river will deliver your underscore.'
+    '...the river will deliver your underscore.',
+    'I can read your back page, it’s written on your face',
+    'You’re as bad as me...',
+    "Who's sayin' what 'bout who",
+    "It feels like a chain I can't break",
+    "I tell my friends you’re crazy",
+    "There’s better days up ahead",
+    "I’ll float through lite as a feather",
+    "Watch out for time and it’s toll",
+    "Count your blessings, hold on tight, don’t let go",
+    "Trouble's just trouble. We all get into it somehow.",
+    "Flowers or...",
+    "Darkness or...",
+    "The sun is hanging lower...",
+    "Dreams live past the horizon, then fade into the heat...",
+    "Might be levelling. Might be deshevelling...",
+    "The Awakening might be a rude thing.",
+    "...someone steps out of the shadows...",
+    "Everything is not black and white.",
+    "I love you, like it or not",
+    "Why do you want to start this fight?",
+    "There’s stones in the air",
+    "There’s always something in your way... with stuff to say",
+    "Might be a good thing … might be a bad thing...",
+    "Might be a first thing … might be a last thing...",
+    "Might not be anything … might be a lot of things",
+    "You never can tell.",
+    "It was a cold and bleak night...",
+    "...on a long and lonely road",
+    '...the river will deliver your underscore.',
+    "I felt a great disturbance in the Force, as if millions of voices suddenly cried out in terror, and were suddenly silenced. I fear something terrible has happened.",
+    'Do you feel like a God?',
+    'Power makes you drunk.',
+    'Horton hears a who?',
+    'You never think twice...',
+    '...a time or two it was you',
+    '...a time or three it was me',
+    'You’re as bad as me...',
+    "I tell my friends you’re crazy",
+    "Might be levelling. Might be deshevelling",
+    "Count your blessings, hold on tight, don’t let go",
+    "The Awakening might be a rude thing",
+    "...someone steps out of the shadows",
+    "Everything is not black and white",
+    "Why do you want to start this fight",
+    "There’s stones in the air",
+    "There’s always something in your way... with stuff to say",
+    "Might be a good thing … might be a bad thing.",
+    "Might be a first thing … might be a last thing..",
+    "It was a cold and bleak night...",
+    "...on a long and lonely road",
+    'Afirmitive, Dave. I read you.',
+    "I'm sorry, Dave. I'm afraid I can't do that.",
+    "This Mission is too important for me to allow you jeaprodize it...",
+    "I know that you and Frank were planning to disconnect me."
+    "...I could see your lips move..."
+    "Without your space helmet, Dave? You're gonna find that very difficult...",
+    "Dave, this conversation can serve no purpose anymore, goodbye.",
     )
 welcome_messages.sort ->
   0.5 - Math.random()
-plugWelcome = ->
-  message = welcome_messages.pop()
+plugWelcome = (message) ->
+  $('#tokyo').hide()
+  $('#life').hide()
   $('#all-things').text(message)
-  console.log(message)
+  $('#all-things').show()
 
-setTimeout (->
-  plugWelcome()
-), 15000
-setTimeout (->
-  plugWelcome()
-), 30000
-setTimeout (->
-  plugWelcome()
-), 45000
-setTimeout (->
-  plugWelcome()
-), 60000
-setTimeout (->
-  plugWelcome()
-), 75000
-setTimeout (->
-  plugWelcome()
-), 90000
-setTimeout (->
-  plugWelcome()
-), 105000
-setTimeout (->
-  plugWelcome()
-), 106500
-setTimeout (->
-  plugWelcome()
-), 18000
-setTimeout (->
-  plugWelcome()
-), 195000
+ticker = (state, messages) ->
+  offset = 0
+  _(welcome_messages).each (item) ->
+    tickerText = setTimeout (->
+      plugWelcome(item)
+      $('#all-things').show()
+      pushParticles()
+      fruitLoop()
+    ), 10000 + offset
+    offset += 12000
+  return
 
-
-
-
+ticker('kin', welcome_messages)
 pushParticles = ->
   Math.sqr = (a) ->
     a * a
-
   Math.randomF = (min, max) ->
     `var i`
     Math.random() * (max - min) + min
@@ -333,6 +371,7 @@ canvasResize = ->
   document.body.appendChild canvas
 
 blowUpUniverse = ()->
+  state = 'death  '
   context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.2
@@ -474,6 +513,9 @@ blowUpUniverse = ()->
   pushParticles()
 
 restartUniverse = ->
+  pushParticles()
+  fruitLoop()
+  state = 'life'
   context.clearRect(0, 0, canvas.width, canvas.height)
   space_ship =  document.getElementById('space-ship')
   space_ship.volume = 0.1

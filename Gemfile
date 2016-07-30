@@ -20,6 +20,7 @@ gem 'fullcalendar-rails'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'lodash-rails'
 # Turbolinks makes following links in your web application faster. Read more:
 # https://github.com/rails/turbolinks
 gem 'turbolinks'
