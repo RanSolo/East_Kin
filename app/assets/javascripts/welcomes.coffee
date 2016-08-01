@@ -317,19 +317,19 @@ welcome_messages = new Array(
 welcome_messages.sort ->
   0.5 - Math.random()
 plugWelcome = (message) ->
-  $('#tokyo').hide()
-  $('#life').hide()
+  $('#tokyo').hide('slow')
+  $('#life').hide('slow')
   $('#all-things').text(message)
-  $('#all-things').show()
+  $('#all-things').show('slow')
 
 ticker = (state, messages) ->
+
   offset = 0
   _(welcome_messages).each (item) ->
     tickerText = setTimeout (->
       plugWelcome(item)
-      $('#all-things').show()
-      pushParticles()
-      fruitLoop()
+      $('#all-things').show('slow')
+      return
     ), 10000 + offset
     offset += 12000
   return
@@ -371,7 +371,8 @@ canvasResize = ->
   document.body.appendChild canvas
 
 blowUpUniverse = ()->
-  state = 'death  '
+  state = 'destroy'
+  ticker('destroy', destruction_messages)
   context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.2
@@ -468,9 +469,9 @@ blowUpUniverse = ()->
 
     Particle::getForceOfNearestGravityPoint = ->
       _this = this
-      gpSelected = undefined
+      gpSelected = null
       nearestD = 99999
-      d = undefined
+      d = null
       gPoints.map (gp) ->
         d = getDist(gp.x, gp.y, _this.x, _this.y)
         if nearestD > d
@@ -515,7 +516,8 @@ blowUpUniverse = ()->
 restartUniverse = ->
   pushParticles()
   fruitLoop()
-  state = 'life'
+  state = 'kin'
+  ticker('restart', welcome_messages)
   context.clearRect(0, 0, canvas.width, canvas.height)
   space_ship =  document.getElementById('space-ship')
   space_ship.volume = 0.1
@@ -595,9 +597,9 @@ restartUniverse = ->
 
     Particle::getForceOfNearestGravityPoint = ->
       _this = this
-      gpSelected = undefined
+      gpSelected = null
       nearestD = 99999
-      d = undefined
+      d = null
       gPoints.map (gp) ->
         d = getDist(gp.x, gp.y, _this.x, _this.y)
         if nearestD > d
