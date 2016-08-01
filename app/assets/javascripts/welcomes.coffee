@@ -246,6 +246,31 @@ canvas.width = windowWidth
 canvas.height = windowHeight
 context = canvas.getContext('2d')
 document.body.appendChild canvas
+destruction_messages = new Array(
+  "I felt a great disturbance in the Force,",
+  "as if millions of voices suddenly cried out in terror, and were suddenly silenced.",
+  "I fear something terrible has happened.</p>",
+  "There's beauty in destruction.",
+  "So many colors in fire.",
+  "Do you feel like a god?",
+  "Why do you want to start this fight",
+  'You never think twice...',
+  'You’re as bad as me...',
+  "Where is the fun in that",
+  "On your throne... King of the wasteland",
+  "The universe is setting like the sun at the end of a long day",
+  "Oh No! There Goes Tokyo!",
+  "There's beauty in destruction.",
+  "So many colors in fire.",
+  "Do you feel like a god?",
+  'Afirmitive, Dave. I read you.',
+  "I'm sorry, Dave. I'm afraid I can't do that.",
+  "This Mission is too important for me to allow you jeaprodize it...",
+  "I know that you and frank were planning to disconnect me."
+  "...I could see your lips move..."
+  "Without your space helmet, Dave? You're gonna find that very difficult...",
+  "Dave, this conversation can serve no purpose anymore, goodbye."
+)
 welcome_messages = new Array(
     'Click more descisions and listen to some tunes',
     'Click more descisions and watch a video',
@@ -271,13 +296,13 @@ welcome_messages = new Array(
     "The sun is hanging lower...",
     "Dreams live past the horizon, then fade into the heat...",
     "Might be levelling. Might be deshevelling...",
-    "The Awakening might be a rude thing.",
+    "The awakening might be a rude thing.",
     "...someone steps out of the shadows...",
     "Everything is not black and white.",
     "I love you, like it or not",
     "Why do you want to start this fight?",
     "There’s stones in the air",
-    "There’s always something in your way... with stuff to say",
+    "There’s always someone in your way... with stuff to say",
     "Might be a good thing … might be a bad thing...",
     "Might be a first thing … might be a last thing...",
     "Might not be anything … might be a lot of things",
@@ -285,7 +310,6 @@ welcome_messages = new Array(
     "It was a cold and bleak night...",
     "...on a long and lonely road",
     '...the river will deliver your underscore.',
-    "I felt a great disturbance in the Force, as if millions of voices suddenly cried out in terror, and were suddenly silenced. I fear something terrible has happened.",
     'Do you feel like a God?',
     'Power makes you drunk.',
     'Horton hears a who?',
@@ -301,37 +325,34 @@ welcome_messages = new Array(
     "Everything is not black and white",
     "Why do you want to start this fight",
     "There’s stones in the air",
-    "There’s always something in your way... with stuff to say",
+    "There’s always someone in your way... with stuff to say",
     "Might be a good thing … might be a bad thing.",
     "Might be a first thing … might be a last thing..",
     "It was a cold and bleak night...",
     "...on a long and lonely road",
-    'Afirmitive, Dave. I read you.',
-    "I'm sorry, Dave. I'm afraid I can't do that.",
-    "This Mission is too important for me to allow you jeaprodize it...",
-    "I know that you and Frank were planning to disconnect me."
-    "...I could see your lips move..."
-    "Without your space helmet, Dave? You're gonna find that very difficult...",
-    "Dave, this conversation can serve no purpose anymore, goodbye.",
+
     )
 welcome_messages.sort ->
   0.5 - Math.random()
+destruction_messages.sort ->
+  0.5 - Math.random()
 plugWelcome = (message) ->
-  $('#tokyo').hide('slow')
-  $('#life').hide('slow')
+  $('#tokyo').hide('slideOut')
+  $('#life').hide('slideOut')
+  $('#all-things').hide('slideOut')
   $('#all-things').text(message)
-  $('#all-things').show('slow')
+  $('#all-things').show('slideIn')
 
 ticker = (state, messages) ->
-
   offset = 0
   _(welcome_messages).each (item) ->
     tickerText = setTimeout (->
+
       plugWelcome(item)
-      $('#all-things').show('slow')
+
       return
-    ), 10000 + offset
-    offset += 12000
+    ), 12000 + offset
+    offset += 14000
   return
 
 ticker('kin', welcome_messages)
@@ -372,7 +393,7 @@ canvasResize = ->
 
 blowUpUniverse = ()->
   state = 'destroy'
-  ticker('destroy', welcome_messages)
+  ticker('destroy', destruction_messages)
   context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.2
