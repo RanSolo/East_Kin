@@ -372,12 +372,11 @@ canvasResize = ->
 
 blowUpUniverse = ()->
   state = 'destroy'
-  ticker('destroy', destruction_messages)
+  ticker('destroy', welcome_messages)
   context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.2
   $('#atomic-bomb').trigger('play')
-
   $('#tokyo').show()
   $('#life').hide()
   $('#all-things').hide()
@@ -477,9 +476,11 @@ blowUpUniverse = ()->
           nearestD = d
           gpSelected = gp
         return
-      if gpSelected = undefined
+      if gpSelected == undefined
+        pushParticles()
+        fruitLoop()
+      else
         gpSelected.getForceDirection @x, @y, nearestD
-
     Particle
 
   ### ---- GravityPoint ---- ###
@@ -519,9 +520,9 @@ restartUniverse = ->
   state = 'kin'
   ticker('restart', welcome_messages)
   context.clearRect(0, 0, canvas.width, canvas.height)
-  space_ship =  document.getElementById('space-ship')
-  space_ship.volume = 0.1
-  $('#space-ship').trigger('play')
+  # space_ship =  document.getElementById('space-ship')
+  # space_ship.volume = 0.1
+  # $('#space-ship').trigger('play')
   $('#tokyo').hide()
   $('#all-things').hide()
   $('#life').show()
@@ -606,8 +607,10 @@ restartUniverse = ->
           nearestD = d
           gpSelected = gp
         return
-      if gpSelected = undefined
-        gpSelected = undefined
+      if gpSelected == undefined
+        pushParticles()
+        fruitLoop()
+      else
         gpSelected.getForceDirection @x, @y, nearestD
     Particle
 
