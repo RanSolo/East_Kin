@@ -101,7 +101,7 @@ GravityPoint = do ->
     context.beginPath()
     context.strokeStyle = '#4F5AF2'
     context.lineWidth =
-    context.arc @x, @y, @gravity, 0, Math.PI * 1
+    context.arc @x, @y, @gravity, 0, Math.PI * 2
     context.stroke()
     return
 
@@ -389,7 +389,6 @@ blowUpUniverse = ()->
   ### ---- SETTINGS ---- ###
   PARTICLE_NUMBERS = 1000
   GRAVITY_POINT_NUMBERS = 1
-
   PARTICULE_SPEED = .3
   VELOCITY = 1
   COLORS = [
@@ -469,16 +468,17 @@ blowUpUniverse = ()->
 
     Particle::getForceOfNearestGravityPoint = ->
       _this = this
-      gpSelected = null
+      gpSelected = undefined
       nearestD = 99999
-      d = null
+      d = undefined
       gPoints.map (gp) ->
         d = getDist(gp.x, gp.y, _this.x, _this.y)
         if nearestD > d
           nearestD = d
           gpSelected = gp
         return
-      gpSelected.getForceDirection @x, @y, nearestD
+      if gpSelected = undefined
+        gpSelected.getForceDirection @x, @y, nearestD
 
     Particle
 
@@ -597,17 +597,18 @@ restartUniverse = ->
 
     Particle::getForceOfNearestGravityPoint = ->
       _this = this
-      gpSelected = null
+      gpSelected = undefined
       nearestD = 99999
-      d = null
+      d = undefined
       gPoints.map (gp) ->
         d = getDist(gp.x, gp.y, _this.x, _this.y)
         if nearestD > d
           nearestD = d
           gpSelected = gp
         return
-      gpSelected.getForceDirection @x, @y, nearestD
-
+      if gpSelected = undefined
+        gpSelected = undefined
+        gpSelected.getForceDirection @x, @y, nearestD
     Particle
 
   ### ---- GravityPoint ---- ###
