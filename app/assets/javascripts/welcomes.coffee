@@ -101,7 +101,7 @@ GravityPoint = do ->
     context.beginPath()
     context.strokeStyle = '#4F5AF2'
     context.lineWidth =
-    context.arc @x, @y, @gravity, 0, Math.PI * 2
+    context.arc @x, @y, @gravity, 0, Math.PI * 1
     context.stroke()
     return
 
@@ -498,7 +498,7 @@ blowUpUniverse = ()->
       context.beginPath()
       context.strokeStyle = '#4F5AF2'
       context.lineWidth = 2
-      context.arc @x, @y, @gravity, 0, Math.PI * 2
+      context.arc @x, @y, @gravity, 0, Math.PI * 1
       context.stroke()
       return
 
@@ -644,7 +644,7 @@ restartUniverse = ->
       context.beginPath()
       context.strokeStyle = '#4F5AF2'
       context.lineWidth = 2
-      context.arc @x, @y, @gravity, 0, Math.PI * 2
+      context.arc @x, @y, @gravity, 0, Math.PI * 1
       context.stroke()
       return
 
