@@ -1,8 +1,10 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+
 $ ->
-  state = 'kin'
+  window.state = 'kin'
+  console.log('kin ' + window.state)
   # Here we call we check the width and height anytime it changes we call mobileCart()
   $(window).on 'resize oreintationchange', ->
     canvasResize()
@@ -18,7 +20,10 @@ _classCallCheck = (instance, Constructor) ->
   if !(instance instanceof Constructor)
     throw new TypeError('Cannot call a class as a function')
   return
-
+  $('#tokyo').hide('slideOut')
+  $('#life').hide('slideOut')
+  $('#all-things').show('slideIn')
+  ticker(welcome_messages)
 ### ---- Functions ----###
 
 fruitLoop = ->
@@ -78,7 +83,7 @@ GravityPoint = do ->
     if n > 0
       @gravity = 0
     if n > 1
-      @gravity = Math.random() * (0 - 20) + 0
+      @gravity = Math.abs(Math.random() * (0 - 20) + 0)
     if n > 4  && n < 8
       @gravity = 200
 
@@ -249,113 +254,240 @@ document.body.appendChild canvas
 destruction_messages = new Array(
   "I felt a great disturbance in the Force,",
   "as if millions of voices suddenly cried out in terror, and were suddenly silenced.",
-  "I fear something terrible has happened.</p>",
-  "There's beauty in destruction.",
-  "So many colors in fire.",
-  "Do you feel like a god?",
-  "Why do you want to start this fight",
-  'You never think twice...',
-  'You’re as bad as me...',
-  "Where is the fun in that",
-  "On your throne... King of the wasteland",
-  "The universe is setting like the sun at the end of a long day",
-  "Oh No! There Goes Tokyo!",
-  "There's beauty in destruction.",
-  "So many colors in fire.",
-  "Do you feel like a god?",
-  'Afirmitive, Dave. I read you.',
-  "I'm sorry, Dave. I'm afraid I can't do that.",
-  "This Mission is too important for me to allow you jeaprodize it...",
-  "I know that you and frank were planning to disconnect me."
-  "...I could see your lips move..."
-  "Without your space helmet, Dave? You're gonna find that very difficult...",
-  "Dave, this conversation can serve no purpose anymore, goodbye."
+  "I fear something terrible has happened.",
+  # "There's beauty in destruction.",
+  # "So many colors in fire.",
+  # "Do you feel like a god?",
+  # "Where is the fun in that",
+  # "On your throne... King of the wasteland",
+  # "The universe is setting like the sun at the end of a long day",
+  # "Oh No! There Goes Tokyo!",
+  # "There's beauty in destruction.",
+  # "So many colors in fire.",
+  # "Do you feel like a god?",
+  # 'Afirmitive, Dave. I read you.',
+  # "I'm sorry, Dave. I'm afraid I can't do that.",
+  # "This Mission is too important for me to allow you jeaprodize it...",
+  # "I know that you and frank were planning to disconnect me."
+  # "...I could see your lips move..."
+  # "Without your space helmet, Dave? You're gonna find that very difficult...",
+  # "Dave, this conversation can serve no purpose anymore, goodbye."
+  # 'Click more descisions and listen to some tunes',
+  # 'Click more descisions and watch a video',
+  # 'Have you played with the synthesizer yet?',
+  # 'Horton hears a who?',
+  # 'You never think twice...',
+  # '...a time or two it was you',
+  # '...a time or three it was me',
+  # 'Have you destroyed or restarted East Kins Universe?',
+  # '...the river will deliver your underscore.',
+  # 'I can read your back page, it’s written on your face',
+  # 'You’re as bad as me...',
+  # "Who's sayin' what 'bout who",
+  # "It feels like a chain I can't break",
+  # "I tell my friends you’re crazy",
+  # "There’s better days up ahead",
+  # "I’ll float through lite as a feather",
+  # "Watch out for time and it’s toll",
+  # "Trouble's just trouble. We all get into it somehow.",
+  # "Flowers or...",
+  # "Darkness or...",
+  # "The sun is hanging lower...",
+  # "Dreams live past the horizon, then fade into the heat...",
+  # "Might be levelling. Might be deshevelling...",
+  # "The awakening might be a rude thing.",
+  # "...someone steps out of the shadows...",
+  # "Everything is not black and white.",
+  # "I love you, like it or not",
+  # "Why do you want to start this fight?",
+  # "There’s stones in the air",
+  # "There’s always someone in your way... with stuff to say",
+  # "Might be a good thing … might be a bad thing...",
+  # "Might be a first thing … might be a last thing...",
+  # "Might not be anything … might be a lot of things",
+  # "You never can tell.",
+  # "It was a cold and bleak night...",
+  # "...on a long and lonely road",
+  # '...the river will deliver your underscore.',
+  # 'Do you feel like a God?',
+  # 'Power makes you drunk.',
+  # 'Horton hears a who?',
+  # 'You never think twice...',
+  # '...a time or two it was you',
+  # '...a time or three it was me',
+  # 'You’re as bad as me...',
+  # "I tell my friends you’re crazy",
+  # "Might be levelling. Might be deshevelling",
+  # "The Awakening might be a rude thing",
+  # "...someone steps out of the shadows",
+  # "Everything is not black and white",
+  # "Why do you want to start this fight",
+  # "There’s stones in the air",
+  # "There’s always someone in your way... with stuff to say",
+  # "Might be a good thing … might be a bad thing.",
+  # "Might be a first thing … might be a last thing..",
+  # "It was a cold and bleak night...",
+  # "...on a long and lonely road",
 )
 welcome_messages = new Array(
     'Click more descisions and listen to some tunes',
     'Click more descisions and watch a video',
-    'Have you played with the synthesizer yet?',
-    'Horton hears a who?',
-    'You never think twice...',
-    '...a time or two it was you',
-    '...a time or three it was me',
-    'Have you destroyed or restarted East Kins Universe?',
-    '...the river will deliver your underscore.',
-    'I can read your back page, it’s written on your face',
-    'You’re as bad as me...',
-    "Who's sayin' what 'bout who",
-    "It feels like a chain I can't break",
-    "I tell my friends you’re crazy",
-    "There’s better days up ahead",
-    "I’ll float through lite as a feather",
-    "Watch out for time and it’s toll",
-    "Count your blessings, hold on tight, don’t let go",
-    "Trouble's just trouble. We all get into it somehow.",
-    "Flowers or...",
-    "Darkness or...",
-    "The sun is hanging lower...",
-    "Dreams live past the horizon, then fade into the heat...",
-    "Might be levelling. Might be deshevelling...",
-    "The awakening might be a rude thing.",
-    "...someone steps out of the shadows...",
-    "Everything is not black and white.",
-    "I love you, like it or not",
-    "Why do you want to start this fight?",
-    "There’s stones in the air",
-    "There’s always someone in your way... with stuff to say",
-    "Might be a good thing … might be a bad thing...",
-    "Might be a first thing … might be a last thing...",
-    "Might not be anything … might be a lot of things",
-    "You never can tell.",
-    "It was a cold and bleak night...",
-    "...on a long and lonely road",
-    '...the river will deliver your underscore.',
-    'Do you feel like a God?',
-    'Power makes you drunk.',
-    'Horton hears a who?',
-    'You never think twice...',
-    '...a time or two it was you',
-    '...a time or three it was me',
-    'You’re as bad as me...',
-    "I tell my friends you’re crazy",
-    "Might be levelling. Might be deshevelling",
-    "Count your blessings, hold on tight, don’t let go",
-    "The Awakening might be a rude thing",
-    "...someone steps out of the shadows",
-    "Everything is not black and white",
-    "Why do you want to start this fight",
-    "There’s stones in the air",
-    "There’s always someone in your way... with stuff to say",
-    "Might be a good thing … might be a bad thing.",
-    "Might be a first thing … might be a last thing..",
-    "It was a cold and bleak night...",
-    "...on a long and lonely road",
-
+    # 'Have you played with the synthesizer yet?',
+    # 'Horton hears a who?',
+    # 'You never think twice...',
+    # '...a time or two it was you',
+    # '...a time or three it was me',
+    # 'Have you destroyed or restarted East Kins Universe?',
+    # '...the river will deliver your underscore.',
+    # 'I can read your back page, it’s written on your face',
+    # 'You’re as bad as me...',
+    # "Who's sayin' what 'bout who",
+    # "It feels like a chain I can't break",
+    # "I tell my friends you’re crazy",
+    # "There’s better days up ahead",
+    # "I’ll float through lite as a feather",
+    # "Watch out for time and it’s toll",
+    # "Trouble's just trouble. We all get into it somehow.",
+    # "Flowers or...",
+    # "Darkness or...",
+    # "The sun is hanging lower...",
+    # "Dreams live past the horizon, then fade into the heat...",
+    # "Might be levelling. Might be deshevelling...",
+    # "The awakening might be a rude thing.",
+    # "...someone steps out of the shadows...",
+    # "Everything is not black and white.",
+    # "I love you, like it or not",
+    # "Why do you want to start this fight?",
+    # "There’s stones in the air",
+    # "There’s always someone in your way... with stuff to say",
+    # "Might be a good thing … might be a bad thing...",
+    # "Might be a first thing … might be a last thing...",
+    # "Might not be anything … might be a lot of things",
+    # "You never can tell.",
+    # "It was a cold and bleak night...",
+    # "...on a long and lonely road",
+    # '...the river will deliver your underscore.',
+    # 'Do you feel like a God?',
+    # 'Power makes you drunk.',
+    # 'Horton hears a who?',
+    # 'You never think twice...',
+    # '...a time or two it was you',
+    # '...a time or three it was me',
+    # 'You’re as bad as me...',
+    # "I tell my friends you’re crazy",
+    # "Might be levelling. Might be deshevelling",
+    # "The Awakening might be a rude thing",
+    # "...someone steps out of the shadows",
+    # "Everything is not black and white",
+    # "Why do you want to start this fight",
+    # "There’s stones in the air",
+    # "There’s always someone in your way... with stuff to say",
+    # "Might be a good thing … might be a bad thing.",
+    # "Might be a first thing … might be a last thing..",
+    # "It was a cold and bleak night...",
+    # "...on a long and lonely road"
+    )
+life_messages = new Array(
+    # 'Click more descisions and listen to some tunes',
+    # 'Click more descisions and watch a video',
+    # 'Have you played with the synthesizer yet?',
+    # 'Horton hears a who?',
+    # 'You never think twice...',
+    # '...a time or two it was you',
+    # '...a time or three it was me',
+    # 'Have you destroyed or restarted East Kins Universe?',
+    # '...the river will deliver your underscore.',
+    # 'I can read your back page, it’s written on your face',
+    # 'You’re as bad as me...',
+    # "Who's sayin' what 'bout who",
+    # "It feels like a chain I can't break",
+    # "I tell my friends you’re crazy",
+    # "There’s better days up ahead",
+    # "I’ll float through lite as a feather",
+    # "Watch out for time and it’s toll",
+    # "Count your blessings, hold on tight, don’t let go",
+    # "Trouble's just trouble. We all get into it somehow.",
+    # "Flowers or...",
+    # "Darkness or...",
+    # "The sun is hanging lower...",
+    # "Dreams live past the horizon, then fade into the heat...",
+    # "Might be levelling. Might be deshevelling...",
+    # "The awakening might be a rude thing.",
+    # "...someone steps out of the shadows...",
+    # "Everything is not black and white.",
+    # "I love you, like it or not",
+    # "Why do you want to start this fight?",
+    # "There’s stones in the air",
+    # "There’s always someone in your way... with stuff to say",
+    # "Might be a good thing … might be a bad thing...",
+    # "Might be a first thing … might be a last thing...",
+    # "Might not be anything … might be a lot of things",
+    # "You never can tell.",
+    # "It was a cold and bleak night...",
+    # "...on a long and lonely road",
+    # '...the river will deliver your underscore.',
+    # 'Do you feel like a God?',
+    # 'Power makes you drunk.',
+    # 'Horton hears a who?',
+    # 'You never think twice...',
+    # '...a time or two it was you',
+    # '...a time or three it was me',
+    # 'You’re as bad as me...',
+    # "I tell my friends you’re crazy",
+    # "Might be levelling. Might be deshevelling",
+    # "Count your blessings, hold on tight, don’t let go",
+    # "The Awakening might be a rude thing",
+    # "...someone steps out of the shadows",
+    # "Everything is not black and white",
+    # "Why do you want to start this fight",
+    # "There’s stones in the air",
+    # "There’s always someone in your way... with stuff to say",
+    # "Might be a good thing … might be a bad thing.",
+    # "Might be a first thing … might be a last thing..",
+    # "It was a cold and bleak night...",
+    # "...on a long and lonely road",
+    "How long until the first spring?",
+    "Let there be light.",
+    "Once upon a time there was a little... you.",
+    "How will you rule?",
+    "You have created an alternate universe.",
+    "Click East Kin's Universe - reload's East Kin's Universe."
     )
 welcome_messages.sort ->
   0.5 - Math.random()
 destruction_messages.sort ->
   0.5 - Math.random()
+life_messages.sort ->
+  0.5 - Math.random()
 plugWelcome = (message) ->
-  $('#tokyo').hide('slideOut')
-  $('#life').hide('slideOut')
-  $('#all-things').hide('slideOut')
-  $('#all-things').text(message)
-  $('#all-things').show('slideIn')
+  if window.state == 'kin'
+    $('#all-things').text(message)
+  if window.state == 'death'
+    $('#tokyo').text(message)
+    $('#all-things').text('')
+    $('#life').text('')
+  if window.state == 'life'
+    $('#life').text(message)
+    $('#tokyo').text('')
+    $('#all-things').text('')
 
-ticker = (state, messages) ->
+tickerText = undefined
+
+ticker = (messages) ->
+  myStopFunction()
   offset = 0
-  _(welcome_messages).each (item) ->
-    tickerText = setTimeout (->
-
+  _(messages).each (item) ->
+    tickerText = window.setTimeout (->
       plugWelcome(item)
-
       return
-    ), 12000 + offset
-    offset += 14000
-  return
+    ), 5000 + offset
+    offset += 5000
 
-ticker('kin', welcome_messages)
+myStopFunction = ->
+  while tickerText--
+    window.clearTimeout tickerText
+
+
 pushParticles = ->
   Math.sqr = (a) ->
     a * a
@@ -373,11 +505,9 @@ pushParticles = ->
     i++
   i = 0
   while i < GRAVITY_POINT_NUMBERS
-    gPoints.push new GravityPoint(Math.randomF(windowWidth * .01, windowWidth - (windowWidth * .01)), Math.randomF(windowHeight * .01, windowHeight - (windowHeight * .01)))
+    gPoints.push new GravityPoint(Math.randomF(windowWidth * 1, windowWidth - (windowWidth * 1)), Math.randomF(windowHeight * .1, windowHeight - (windowHeight * .1)))
     i++
 pushParticles()
-
-
 fruitLoop()
 canvasResize = ->
   oldCanvas = document.getElementById('canvas')
@@ -391,16 +521,18 @@ canvasResize = ->
   context = canvas.getContext('2d')
   document.body.appendChild canvas
 
-blowUpUniverse = ()->
-  state = 'destroy'
-  ticker('destroy', destruction_messages)
-  context.clearRect(0, 0, canvas.width, canvas.height)
-  atomic_bomb =  document.getElementById('atomic-bomb')
-  atomic_bomb.volume = 0.2
-  $('#atomic-bomb').trigger('play')
-  $('#tokyo').show()
+blowUpUniverse = () ->
   $('#life').hide()
   $('#all-things').hide()
+  $('#tokyo').show()
+  myStopFunction()
+  if window.state != 'death'
+    ticker(destruction_messages)
+  window.state = 'death'
+  context.clearRect(0, 0, canvas.width, canvas.height)
+  atomic_bomb =  document.getElementById('atomic-bomb')
+  atomic_bomb.volume = 0.1
+  $('#atomic-bomb').trigger('play')
   @gravity = 1000
 
   getDist = (x1, y1, x2, y2) ->
@@ -529,17 +661,18 @@ blowUpUniverse = ()->
         x: (@x - x) * .5 * F
         y: (@y - y) * .5 * F
       }
-
     GravityPoint
 
 
   pushParticles()
 
 restartUniverse = ->
+  myStopFunction()
   pushParticles()
   fruitLoop()
-  state = 'kin'
-  ticker('restart', welcome_messages)
+  if window.state != 'life'
+    ticker(life_messages)
+  window.state = 'life'
   context.clearRect(0, 0, canvas.width, canvas.height)
   # space_ship =  document.getElementById('space-ship')
   # space_ship.volume = 0.1
@@ -665,7 +798,7 @@ restartUniverse = ->
       context.beginPath()
       context.strokeStyle = '#4F5AF2'
       context.lineWidth = 2
-      context.arc @x, @y, @gravity, 0, Math.PI * 1
+      context.arc @x, @y, @gravity * 1, 0, Math.PI * 1
       context.stroke()
       return
 
