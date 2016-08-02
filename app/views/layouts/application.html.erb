@@ -68,7 +68,7 @@
     <p class="alert alert-warning"><%= alert %></p>
   <% end %>
   <%= yield %>
-  <!-- Trigger the modal with a button -->
+  <%= render 'modals' %>
 </body>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>
