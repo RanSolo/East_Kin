@@ -525,7 +525,6 @@ blowUpUniverse = () ->
   $('#life').hide()
   $('#all-things').hide()
   $('#tokyo').show()
-  myStopFunction()
   if window.state != 'death'
     ticker(destruction_messages)
   window.state = 'death'
@@ -667,9 +666,11 @@ blowUpUniverse = () ->
   pushParticles()
 
 restartUniverse = ->
-  myStopFunction()
   pushParticles()
   fruitLoop()
+  $('#tokyo').hide()
+  $('#all-things').hide()
+  $('#life').show()
   if window.state != 'life'
     ticker(life_messages)
   window.state = 'life'
@@ -677,9 +678,7 @@ restartUniverse = ->
   # space_ship =  document.getElementById('space-ship')
   # space_ship.volume = 0.1
   # $('#space-ship').trigger('play')
-  $('#tokyo').hide()
-  $('#all-things').hide()
-  $('#life').show()
+
   @gravity = 0
 
   getDist = (x1, y1, x2, y2) ->
