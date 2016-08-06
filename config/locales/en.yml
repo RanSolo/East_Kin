@@ -31,6 +31,16 @@ en:
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
+  take_cover: "Take Cover"
+  take_cover_html: "coming soon"
+  one_man: "One Man"
+  take_cover_html: "coming soon"
+  roll: "Roll"
+  roll_html: "coming soon"
+  alone: "I Don't Want To Be Alone"
+  alone_html: "coming soon"
+  rivers: "Rivers"
+  rivers_html: "coming soon"
   synth_explaination_html:  "<p>Start a song and jam along, or just be write background music for the universe...</p>
   <p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
@@ -50,3 +60,145 @@ en:
   Guy Smiley Blues Exchange and other bands, situations and configurations.
   <br><br>
   East Kin makes music for you, don't you think you should listen?  You do don't you? I knew you did."
+  hoping_this_time: Hoping This Time
+  hope_html: "
+    <p>
+      You think that I’d be used to it, <br>
+      You think that I’d be used to it by now.<br>
+      I thought that it would work,<br>
+      I thought that it would work this time around.<br>
+      I guess my expectations flew too high,<br>
+      Now they're crashing down right before my eyes.
+    </p>
+    <p class='chorus'>
+       I was hoping this time,<br>
+       Hoping it wouldn't go wrong.<br>
+       Goin outta my mind,<br>
+       Been lookin for someone like you for so long.<br>
+       Then you said goodbye, now all i do,<br>
+       Is think about fact that your gone<br>
+       I was hopin this time hopin it wouldn't go wrong.
+    </p>
+      <p>
+        Lord what can I do,<br>
+        Lord what can I do about the shape I'm in.<br>
+        How could I let this happen?<br>
+        how could I let this happen to me again?<br>
+        I guess I should've known it all the while.<br>
+        I should've seen it coming for a country mile.
+      </p>
+      <p class='chorus'>
+         I was hoping this time,<br>
+         Hoping it wouldn't go wrong.<br>
+         Goin outta my mind,<br>
+         Been lookin for someone like you for so long.<br>
+         Then you said goodbye, now all i do,<br>
+         Is think about fact that your gone<br>
+         I was hopin this time hopin it wouldn't go wrong.
+      </p>
+      <p class='bridge'>
+        It feels like a chain like a chain that I can't break.<br>
+        I don't know how much more, much more my poor heart can take
+      </p>
+      <p class='chorus'>
+         I was hoping this time,<br>
+         Hoping it wouldn't go wrong.<br>
+         Goin outta my mind,<br>
+         Been lookin for someone like you for so long.<br>
+         Then you said goodbye, now all i do,<br>
+         Is think about fact that your gone<br>
+         I was hopin this time hopin it wouldn't go wrong.
+      </p>
+      <p>Randy Russell - Ransolo Music (ASCAP), Johnny Neel - Straight Up Songs (ASCAP)</p>
+    "
+  plate: Alot On My Plate
+  plate_html: "
+    <p>
+      I got a lot on my plate,<br>
+      I ain’t got no time for no heartache.<br>
+      And I got reasons I can’t say,<br>
+      They don’t matter much anyway.
+    </p>
+    <p>
+      Just a little of this and a little of that,<br>
+      And I left a little out there that I shoulda took back.<br>
+      And a time or two it was you,<br>
+      And a time or three it was me.
+    </p>
+    <p class='chorus'>
+    	You tell your friends I’m crazy,<br>
+    	I tell my friends you’re crazy,<br>
+    	Now don’t you think that maybe,<br>
+    	It’s time I stop calling you baby, baby.
+    </p>
+    <p>
+      There’s better days up ahead,<br>
+      I’m gonna travel that road alone instead,<br>
+      Of having you at my side,<br>
+      Making it a bumpy ride.
+    </p>
+    <p>
+      Now I’m sure I’ll see some nasty weather,<br>
+      That I’ll float through lite as a feather.<br>
+      And I’ll still have problems that I know,<br>
+      but those problems will be my own.
+    </p>
+    <p class='chorus'>
+    	you tell your friends I’m crazy.<br>
+    	I tell my friends you’re crazy.<br>
+    	Now don’t you think that maybe,<br>
+    	It’s time I stop calling you baby, baby.
+    </p>
+    <p>Third verse same as the first.</p>
+    <p>Randy Russell - Ransolo Music (ASCAP)</p>
+  "
+  compensated: Compensated
+  compensated_html: "
+    <p>
+      I’m getting paid well … I’m getting compensated,<br>
+      With the handout … from the copacetic.<br>
+      Livin life high with easy expectations.<br>
+      I can abide with my reparations.
+    </p>
+    <p class='chorus'>
+      I had to take the money.<br>
+    	I had to oblige the offer.<br>
+    	I held out my hands,<br>
+    	And took what everyone was after.<br>
+      And life started moving faster.
+    </p>
+    <p>
+      I had to feel good and go with the flow …<br>
+      Take the easy way keep that golden glow.<br>
+      Livin life high filling all my orders …<br>
+      The blink of an eye my wallets getting shorter.<br>
+    </p>
+    <p class='chorus'>
+      I had to take the money.<br>
+    	I had to oblige the offer.<br>
+    	I held out my hands,<br>
+    	And took what everyone was after.<br>
+      And life started moving faster.
+    </p>
+    <p class='bridge'>
+      Bridge:<br>
+    	You’re just stealing from the well, <br>
+    	That provides for everyone else.<br>
+    	You never think twice,<br>
+    	About the damage you done to yourself.<br>
+    </p>
+    <p>
+      I’m getting paid well … I’m getting compensated,<br>
+      By the bossman … everything’s copacetic.<br>
+      Livin life high with easy expectations.<br>
+      I can abide with my reparations.
+    </p>
+    <p class='chorus'>
+      I had to take the money.<br>
+    	I had to oblige the offer.<br>
+    	I held out my hands,<br>
+    	And took what everyone was after.<br>
+      And life started moving faster.
+    </p>
+    <p>John Zvolensky - Zeebird Songs(ASCAP) 2015</p>
+  "
