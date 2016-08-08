@@ -178,8 +178,11 @@ Particle = do ->
         nearestD = d
         gpSelected = gp
       return
-    gpSelected.getForceDirection @x, @y, nearestD
-
+    if gpSelected == undefined
+      pushParticles()
+      fruitLoop()
+    else
+      gpSelected.getForceDirection @x, @y, nearestD
   Particle
 
 ### ---- GravityPoint ---- ###
@@ -194,8 +197,7 @@ GravityPoint = do ->
     if n > 0
       @gravity = 0
     if n > 1
-      @gravity = Math.random() * (0 - .2) + 0
-
+      @gravity = Math.abs(Math.random() * (0 - 20) + 0)
     if n > 4  && n < 8
       @gravity = 200
 

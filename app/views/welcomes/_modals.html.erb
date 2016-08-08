@@ -12,7 +12,7 @@
         <p><%= t(:bio_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -111,12 +111,10 @@
       </div>
       <div class="modal-body">
         <h4 class="modal-title"><%= t(:Album) %></h4>
-        <ul class='unstyled-list'>
-        <li><%= link_to t(:fresman_effort), '#', type: "button", data: {dismiss:"modal", toggle: "modal", target: "#freshman"}, class: 'btn-link' %></li>
-        </ul>
+        <%= link_to t(:fresman_effort), '#', type: "button", data: {dismiss:"modal", toggle: "modal", target: "#freshman"}, class: 'btn-link' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Hide</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -131,23 +129,24 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t(:freshman_effort) %></h4>
+        <%= image_tag 'East Kin - Freshman Effort.png', class:'img img-responsive col-md-3 pull-right cover'%>
       </div>
       <div class="modal-body">
         <ul class="freshman-effort">
-          <li><%= link_to t(:hoping_this_time), '#', type: "button", data: {dismiss:"modal", toggle: "modal", target: "#hope"}, class: 'btn-link' %></li>
+          <li><%= link_to t(:hope), '#', type: "button", data: {toggle: "modal", target: "#hope"}, class: 'btn-link' %></li>
           <li><%= link_to t(:plate), '#', type: "button", data: {toggle: "modal", target: "#plate"}, class: 'btn-link' %></li>
           <li><%= link_to t(:compensated), '#', type: "button", data: {toggle: "modal", target: "#compensated"}, class: 'btn-link' %></li>
           <li><%= link_to t(:take_cover), '#', type: "button", data: {toggle: "modal", target: "#take-cover"}, class: 'btn-link' %></li>
           <li><%= link_to t(:one_man), '#', type: "button", data: {toggle: "modal", target: "#one-man"}, class: 'btn-link' %></li>
           <li><%= link_to t(:roll), '#', type: "button", data: {toggle: "modal", target: "#roll"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:nobody), '#', type: "button", data: {toggle: "modal", target: "#nobody"}, class: 'btn-link' %></li>
+          <li><%= link_to t(:nobodys_fault), '#', type: "button", data: {toggle: "modal", target: "#nobodys-fault"}, class: 'btn-link' %></li>
           <li><%= link_to t(:alone), '#', type: "button", data: {toggle: "modal", target: "#alone"}, class: 'btn-link' %></li>
           <li><%= link_to t(:rivers), '#', type: "button", data: {toggle: "modal", target: "#rivers"}, class: 'btn-link' %></li>
         </ul>
       </div>
       <div class="modal-footer">
+        <%= link_to t(:back), '#', type: "button", data: {dismiss:"modal", toggle: "modal", target: "#lyrics"}, class: 'btn btn-default pull-left' %>
         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <%= link_to t(:lyrics), '#', type: "button", data: {dismiss:"modal", toggle: "modal", target: "#lyrics"}, class: 'btn btn-default pull-left' %>
       </div>
     </div>
 
@@ -160,13 +159,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t(:hoping_this_time) %></h4>
+        <h4 class="modal-title"><%= t(:hope) %></h4>
       </div>
       <div class="modal-body">
         <p><%= t(:hope_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -185,7 +184,7 @@
         <p><%= t(:compensated_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -204,7 +203,7 @@
         <p><%= t(:take_cover_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -223,7 +222,7 @@
         <p><%= t(:one_man_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -242,7 +241,7 @@
         <p><%= t(:roll_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -261,7 +260,7 @@
         <p><%= t(:nobodys_fault_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
@@ -280,32 +279,32 @@
         <p><%= t(:alone_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="Rivers" class="modal fade" role="dialog">
+<div id="rivers" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t(:Rivers) %></h4>
+        <h4 class="modal-title"><%= t(:rivers) %></h4>
       </div>
       <div class="modal-body">
         <p><%= t(:rivers_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="Rivers" class="modal fade" role="dialog">
+<div id="plate" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -318,7 +317,7 @@
         <p><%= t(:plate_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 

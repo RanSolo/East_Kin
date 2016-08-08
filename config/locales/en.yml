@@ -31,16 +31,7 @@ en:
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
-  take_cover: "Take Cover"
-  take_cover_html: "coming soon"
-  one_man: "One Man"
-  take_cover_html: "coming soon"
-  roll: "Roll"
-  roll_html: "coming soon"
-  alone: "I Don't Want To Be Alone"
-  alone_html: "coming soon"
-  rivers: "Rivers"
-  rivers_html: "coming soon"
+
   synth_explaination_html:  "<p>Start a song and jam along, or just be write background music for the universe...</p>
   <p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
@@ -201,4 +192,236 @@ en:
       And life started moving faster.
     </p>
     <p>John Zvolensky - Zeebird Songs(ASCAP) 2015</p>
+  "
+  take_cover: "Take Cover"
+  take_cover_html: "
+    <p>
+      There’s stones in the air.<br>
+      Those stones they don’t care.<br>
+      Who’s throwing them at you.<br>
+      Who’s saying what bout who
+    </p>
+    <p class='chorus'>
+    	They’re gonna rain down...<br>
+    	You better take cover.<br
+    	What goes up must come down...<br>
+    	You better take cover.
+    </p>
+    <p>
+      There’s stones in the air.<br>
+      Those stones they don’t care.<br>
+      If your home is brick or glass.<br>
+      If your ring is gold or brass.
+    </p>
+    <p class='chorus'>
+    	They’re gonna rain down...<br>
+    	You better take cover.<br
+    	What goes up must come down...<br>
+    	You better take cover.
+    </p>
+    <p class='bridge'>
+    	Bridge:<br>
+    	There’s always someone in your way,<br>
+    	With stuff to say.<br>
+    	Let 'em talk until they’re face turns blue,<br>
+    	Cause sticks and stones are all that hurts you.
+    </p>
+    <p>
+      There’s stones in the air...<br>
+      Those stones they don’t care.<br>
+      Who’s throwing them at you.<br>
+      Who’s saying what bout who.
+    </p>
+    <p class='chorus'>
+    	They’re gonna rain down...<br>
+    	You better take cover.<br
+    	What goes up must come down...<br>
+    	You better take cover.
+    </p>
+  "
+  one_man: "One Man"
+  one_man_html: "
+    <p>
+      How hard can one man cry?<br>
+      Before his tears all up and dry...<br>
+      And he can't find a reason why...<br>
+      To get up in the morning and even try?<br>
+      How hard can one man cry?<br>
+      How hard can one man cry?
+    </p>
+    <p>
+      How far can one man go?<br>
+      When he aint got hardly nothing to show...<br>
+      But a empty life on a dead end road...<br>
+      And what time you got left don't matter no more?<br>
+      How far can one man go?<br>
+    </p>
+    <p class='chorus'>
+      Here I am just one man,<br>
+      Doing my best to understand.<br>
+      Been here too long in this living hell,<br>
+      Lord can't you hear me callin, callin for help.
+    </p>
+    <p>
+      How long can one man wait?<br>
+      2-4-7-3-6-5 days.<br>
+      How much more can one man take...<br>
+      Before his back and heart both break?<br>
+      How long can one man wait?<br>
+      How long can one man wait?
+    </p>
+    <p class='chorus'>
+      Here I am just one man,<br>
+      Doing my best to understand.<br>
+      Been here too long in this living hell,<br>
+      Lord can't you hear me callin, callin for help.
+    </p>
+  "
+  nobodys_fault: "Nobody's Fault But Mine, Pt. 2"
+  nobodys_fault_html: "
+    <p class='chorus'>
+      Nobody’s fault but mine... I sing the same song all the time.<br>
+      Tired of feelin’ sorry for myself.<br>
+      I’m gonna blame everything on everybody else.<br>
+      Yeah, even if it’s plain to see it all falls back on me.<br>
+      Ain’t no use sittin’ here cryin’ ain’t nobody’s fault but mine.
+    </p>
+    <p>
+      You know I ain’t been livin’ right,<br>
+      I got thrown in the drunk tank monday night.<br>
+      Mama said she paid my last bail,<br>
+      If it happens again I’m gonna rot in jail.<br>
+      Just a victim of circumstance,<br>
+      That’s my story from now on.<br>
+      I should be ridin’ high...<br>
+      And I don’t know why...<br>
+      When or where it all went wrong.
+    </p>
+    <p class='chorus'>
+      Nobody’s fault but mine... I sing the same song all the time.<br>
+      Tired of feelin’ sorry for myself.<br>
+      I’m gonna blame everything on everybody else.<br>
+      Yeah, even if it’s plain to see it all falls back on me.<br>
+      Ain’t no use sittin’ here cryin’ ain’t nobody’s fault but mine.
+    </p>
+    <p>
+      I know I probably should notta,<br>
+      But, I got caught with the farmers daughter.<br>
+      In walks Dad he’s gotta big shotgun.<br>
+      He’s yellin’ and screaming at the top of his lungs.<br>
+      Ain’t nothing like a warning shot,<br>
+      Hot lead screamin’ over your head...<br>
+      Makes a man’s feet beat down the street...<br>
+      It’s a sound you’ll never forget
+    </p>
+    <p class='chorus'>
+      Nobody’s fault but mine... I sing the same song all the time.<br>
+      Tired of feelin’ sorry for myself.<br>
+      I’m gonna blame everything on everybody else.<br>
+      Yeah, even if it’s plain to see it all falls back on me.<br>
+      Ain’t no use sittin’ here cryin’, ain’t nobody’s fault but mine.<br><br>
+      No, I can't change ain't no use in tryin', ain’t nobody’s fault but mine.
+    </p>
+  "
+  roll: "Roll"
+  roll_html: "
+    <p>
+      I ain’t lying you know it’s been tough,<br>
+      I’ve been trying I don’t know if that’s enough.<br>
+      I loved you then and I love you now,<br>
+      Trouble's just trouble, we all get into it somehow.
+    </p>
+    <p class='chorus'>
+    	When you’re all rock and I’m all roll.<br>
+    	Yeah, you’re all talk and I’m all show.<br>
+    	Got to watch out for time and it’s toll,<br>
+    	When you’re all rock and I’m all roll.
+    </p>
+    <p>
+      You’re all peaches and I’m all cream,<br>
+      We’re the only two who know just what I mean.<br>
+      Ain’t no question, I already know.<br>
+      I’ll just count my blessings, hold on tight and don’t let go.
+    </p>
+    <p class='chorus'>
+    	When you’re all rock and I’m all roll.<br>
+    	Yeah, you’re all talk and I’m all show.<br>
+    	Got to watch out for time and it’s toll,<br>
+    	When you’re all rock and I’m all roll.
+    </p>
+	  <p>Solo:</p>
+    <p>3rd Verse Same as the 1st</p>
+  "
+  alone: "I Don't Want To Be Alone"
+  alone_html: "
+  <p>
+    There’s a choice to make, give or take,<br>
+    stay or make a break for the door.<br>
+    I prob’ly should go home but I don’t wanna be alone,<br>
+    I promise I’ll be gone in the mornin’.
+  </p>
+  <p class='chorus'>
+  	Don’t you know I’ve heard that same old story,<br>
+  	About as many times as I pledged allegiance to Old Glory.<br>
+  	All that’s left to say is go ahead and stay,<br>
+  	I should go home but I don’t wanna be alone.
+  </p>
+  <p>
+    I can read your back page it’s written on your face,<br>
+    You don’t want me to go, I can tell you don’t.<br>
+    You’re as bad as me, that’s plain to see,<br>
+    You should send me home, but you don’t wanna be alone.
+  </p>
+  <p class='chorus'>
+  	Don’t you know I’ve heard that same old story,<br>
+  	About as many times as I pledged allegiance to Old Glory.<br>
+  	All that’s left to say is go ahead and stay,<br>
+  	I should go home but I don’t wanna be alone.
+  </p>
+  <p>Solo - Repeat Chorus</p>
+  "
+  rivers: "Rivers"
+  rivers_html: "
+    <p class='chorus'>
+      Movin' through the deep south, You feel the pull of the rivers.<br>
+      Sings a song, That sounds so familiar.<br>
+      It’s the source, of all southern life,<br>
+      Flows through the heart and soul.<br>
+      Movin' through the deep south, You feel the pull of the rivers.
+    </p>
+    <p>
+      From the mighty Mississippi … To the tangled Tennessee,<br>
+      Over the wide Hiawassee … Down the rapids of the Ocoee.<br>
+      They say the southern sound … Comes From the rivers flown' south.<br>
+      Its the pull that brings … Brings the emotion out.<br><br>
+      The real origination of a song inspiriration comes straight from the source.<br>
+    </p>
+    <p class='chorus'>
+      Movin' through the deep south, You feel the pull of the rivers.<br>
+      Sings a song, That sounds so familiar.<br>
+      It’s the source, of all southern life,<br>
+      Flows through the heart and soul.<br>
+      Movin' through the deep south, You feel the pull of the rivers.
+    </p>
+    <p>
+      From the mighty Chattahoochee … To Chickamaunga creek.<br>
+      They fuel the soul of everyone you know … That lives downstream.<br>
+      From their early life by a far off spring.<br>
+      Till they find themselves, connecting Dixie South … Straight to the sea.<br><br>
+      The real origination of a song inspiriration comes straight from the source.
+    </p>
+    <p class='bridge'>
+      Bridge:
+      From the Calfkiller river and the Caney Fork,<br>
+      The Buffalo, the beaver and so many more.<br>
+      You got the Nolichucky, Looseahatchie, Tellico,<br>
+      The rivers can deliver your underscore.
+    </p>
+    <p class='chorus'>
+      Movin' through the deep south, You feel the pull of the rivers.<br>
+      Sings a song, That sounds so familiar.<br>
+      It’s the source, of all southern life...<br>
+      Flows through the heart and soul.<br>
+      Movin' through the deep south, You feel the pull of the rivers
+    </p>
   "
