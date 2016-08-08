@@ -19,4 +19,5 @@
 #= require lodash
 #= require bootstrap-datetimepicker
 #= require turbolinks
+
 #= require_tree .
