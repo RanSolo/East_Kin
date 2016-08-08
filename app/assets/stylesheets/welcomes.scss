@@ -25,7 +25,24 @@ body {
 }
 .modal-dialog{
   margin-top: 5em !important;
+  opacity: .9;
 }
+#drawModal{
+  .modal-dialog{
+    margin-top: 5em !important;
+    width: 100%;
+  }
+}
+#color-sample, #color-picker {
+  width: 20%!important;
+  opacity: 1;
+}
+#drawing-canvas{
+  cursor:none;
+}
+#drawingWidget{
+}
+
 .header-txt {
   margin: 10px;
   position: fixed;

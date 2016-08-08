@@ -32,7 +32,7 @@ en:
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
 
-  synth_explaination_html:  "<p>Start a song and jam along, or just be write background music for the universe...</p>
+  synth_explaination_html:  "<p>Start a song and jam along, or just be background music for the universe...</p>
   <p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>
   <p class='text-danger'>If the synth becomes choppy or non-responive hit the synth powerbutton in the bottom right corner of the
