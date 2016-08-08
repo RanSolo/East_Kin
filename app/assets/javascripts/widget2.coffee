@@ -225,22 +225,22 @@ Widget::setUpDrawingWidget = ->
   return
 
 Widget::setUpDrawingCanvas = ->
-  @setSize @drawingCanvasElement, @widgetWidth * 4 / 5, @widgetHeight
+  @setSize @drawingCanvasElement, @widgetWidth * 4 / 5, @widgetHeight - (@widgetWidth * 4/5)
   @drawingCanvasElement.setAttribute 'width', @widgetWidth * 4 / 5
   @drawingCanvasElement.setAttribute 'height', @widgetHeight - (@widgetWidth * 1/5)
   @drawingCanvasElement.id = 'drawing-canvas'
   return
 
 Widget::setUpColorPickerContainer = ->
-  @setSize @colorPickerContainer, @widgetWidth * 1 / 5, @widgetHeight
+  @setSize @colorPickerContainer, @widgetWidth * 1 / 4, @widgetHeight
   @colorPickerContainer.style.display = 'inline-block'
   @colorPickerContainer.style.position = 'absolute'
   @colorPickerContainer.id = 'color-picker-container'
   return
 
 Widget::setUpColorPicker = ->
-  @setSize @colorPickerElement, @widgetWidth * 1 / 5, @widgetHeight - (@widgetWidth * 1/5)
-  @colorPickerElement.setAttribute 'width', @widgetWidth * 1 / 5
+  @setSize @colorPickerElement, @widgetWidth * 1 / 4, @widgetHeight - (@widgetWidth * 1/5)
+  @colorPickerElement.setAttribute 'width', @widgetWidth * 1 / 4
   @colorPickerElement.setAttribute 'height', @widgetHeight - (@widgetWidth * 1 / 5)
   @colorPickerElement.id = 'color-picker'
   return
