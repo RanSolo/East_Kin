@@ -427,8 +427,8 @@ ticker = (messages) ->
     tickerText = window.setTimeout (->
       plugWelcome(item)
       return
-    ), 5000 + offset
-    offset += 5000
+    ), 10000 + offset
+    offset += 15000
 
 myStopFunction = ->
   while tickerText--
