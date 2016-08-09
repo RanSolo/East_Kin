@@ -27,11 +27,11 @@
           '.html_safe + t(:synth_explaination_html) },
          footer: {content: '' } %>
 <%= modal_dialog id: "drawModal",
-         header: { show_close: true, dismiss: 'modal', title: t(:draw) },
+         header: { show_close: true, dismiss: 'modal', title: t(:draw) + '- Mousewheel to change size of brush, click color to change color and see clear and save controls inside the color preview.' },
          body:   { content: "
            <div id='drawing-widget''></div>
           ".html_safe },
-         footer: {content: t(:draw_explaination_html) } %>
+         footer: {content: image_tag('EKBoat.png') } %>
 
 <div id="lyrics" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
