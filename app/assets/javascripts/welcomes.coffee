@@ -70,54 +70,6 @@ COLORS = [
   'aqua'
 ]
 
-
-### ---- GravityPoint ---- ###
-
-GravityPoint = do ->
-  `var GravityPoint`
-  n = Math.abs(Math.floor(Math.random() * (0 - 32)) + 0)
-  GravityPoint = (x, y) ->
-    _classCallCheck this, GravityPoint
-    @x = x
-    @y = y
-    if n > 0
-      @gravity = 0
-    if n > 1
-      @gravity = Math.abs(Math.random() * (0 - 20) + 0)
-    if n > 4  && n < 8
-      @gravity = 200
-
-    if n > 7  && n < 11
-      @gravity = 400
-
-    if n > 10 && n < 14
-      @gravity = 600
-
-    if n > 13 && n < 17
-      @gravity = 800
-
-    if n > 16  && n < 29
-      @gravity = 1000
-
-    if n > 28 && n < 32
-      @gravity = 2000
-
-  GravityPoint::render = ->
-    context.beginPath()
-    context.strokeStyle = '#4F5AF2'
-    context.lineWidth =
-    context.arc @x, @y, @gravity, 0, Math.PI * 1
-    context.stroke()
-    return
-
-  GravityPoint::getForceDirection = (x, y, dist) ->
-    F = @gravity / dist
-    {
-      x: (@x - x) * .5 * F
-      y: (@y - y) * .5 * F
-    }
-
-  GravityPoint
 ### ---- Particle ---- ###
 
 Particle = do ->
@@ -216,7 +168,6 @@ GravityPoint = do ->
     if n > 28 && n < 32
       @gravity = 2000
 
-
   GravityPoint::render = ->
     context.beginPath()
     context.strokeStyle = '#4F5AF2'
@@ -233,7 +184,6 @@ GravityPoint = do ->
     }
 
   GravityPoint
-
 Math.sqr = (a) ->
   a * a
 

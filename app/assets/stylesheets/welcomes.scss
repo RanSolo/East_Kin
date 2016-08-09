@@ -28,10 +28,23 @@ body {
   opacity: .9;
   width: 70%;
 }
+.close {
+  color: rgb(249, 37, 9);
+  opacity: 1;
+
+}
 #drawModal{
+  top:-60px!important;
   .modal-dialog{
-    margin-top: 5em !important;
+    top:0!important;
     width: 100%;
+    .modal.fade {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
   }
 }
 #example{
