@@ -26,11 +26,18 @@ body {
 .modal-dialog{
   margin-top: 5em !important;
   opacity: .9;
+  width: 70%;
 }
 #drawModal{
   .modal-dialog{
     margin-top: 5em !important;
     width: 100%;
+  }
+}
+#example{
+  z-index: 10000;
+  .modal-dialog{
+    opacity: 1;
   }
 }
 #color-sample, #color-picker {
