@@ -16,7 +16,6 @@ body {
   padding: 0;
   color: white;
 }
-.cover{margin-top: 25px;}
 .chorus{
   margin-left: 30px;
 }
@@ -31,12 +30,13 @@ body {
 .close {
   color: rgb(249, 37, 9);
   opacity: 1;
-
+}
+.lyric {
+  top:-60px!important;
 }
 #drawModal{
   top:-60px!important;
   .modal-dialog{
-    top:0!important;
     width: 100%;
     .modal.fade {
     -webkit-transition: none;
@@ -44,7 +44,7 @@ body {
     -ms-transition: none;
     -o-transition: none;
     transition: none;
-}
+    }
   }
 }
 #example{
@@ -60,8 +60,7 @@ body {
 #drawing-canvas{
   cursor:none;
 }
-#drawingWidget{
-}
+
 
 .header-txt {
   margin: 10px;

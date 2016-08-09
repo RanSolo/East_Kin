@@ -211,6 +211,7 @@ destruction_messages = new Array(
   "So many colors in fire.",
   "Do you feel like a god?",
   "Where is the fun in that",
+  "Might be a good King, Might be a bad King."
   "On your throne... King of the wasteland",
   "The universe is setting like the sun at the end of a long day",
   "Oh No! There Goes Tokyo!",
@@ -280,11 +281,24 @@ destruction_messages = new Array(
   "Might be a first thing … might be a last thing..",
   "It was a cold and bleak night...",
   "...on a long and lonely road",
+  'Yeah, it’s just me, myself and pride.',
+  'It’s a great day at the CIA',
+  'I was havin’ a fine time till we intertwined.',
+  'You’re seein’ red, I see in black and white.',
+  'I got a big problem that starts with why and ends with y-o-u.',
+  'I’ve been plotting out words to shout.',
+  'This conversations overdue.',
+  'I’ll take it up with you when you call.'
+
 )
 welcome_messages = new Array(
     'Click more descisions and listen to some tunes',
+    'Listen to some tunes while you restart and destroy the universe.',
+    'Listen to some tunes while you draw pictures or jam along with the synth.',
     'Click more descisions and watch a video',
     'Have you played with the synthesizer yet?',
+    'Have you drawn anything?',
+    'Click more descisions, fire up some tunes and follow the lyrics.',
     'Horton hears a who?',
     'You never think twice...',
     '...a time or two it was you',
@@ -318,26 +332,7 @@ welcome_messages = new Array(
     "You never can tell.",
     "It was a cold and bleak night...",
     "...on a long and lonely road",
-    '...the river will deliver your underscore.',
-    'Do you feel like a God?',
-    'Power makes you drunk.',
-    'Horton hears a who?',
-    'You never think twice...',
-    '...a time or two it was you',
-    '...a time or three it was me',
-    'You’re as bad as me...',
-    "I tell my friends you’re crazy",
-    "Might be levelling. Might be deshevelling",
-    "The Awakening might be a rude thing",
-    "...someone steps out of the shadows",
-    "Everything is not black and white",
-    "Why do you want to start this fight",
-    "There’s stones in the air",
-    "There’s always someone in your way... with stuff to say",
-    "Might be a good thing … might be a bad thing.",
-    "Might be a first thing … might be a last thing..",
-    "It was a cold and bleak night...",
-    "...on a long and lonely road"
+    '...the river will deliver your underscore.'
     )
 life_messages = new Array(
     'Click more descisions and listen to some tunes',

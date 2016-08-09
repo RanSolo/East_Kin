@@ -10,7 +10,7 @@
          footer: { content: '' } %>
 <%= modal_dialog id: "liveModal",
          header: { show_close: true, dismiss: 'modal', title: t(:live) },
-         body:   { content: "<p class='text-center'>You don't know East Kin until you've seen them live. Coming soon to a bar near you... if you live in Nashville.</p>".html_safe },
+         body:   { content: "<p class='text-center'>You don't know East Kin until you've seen them live. Coming soon to a bar near you... if you live in Nashville.</p><iframe width='100%' height='450' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/245714662&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>".html_safe },
          footer: { content: '' } %>
 <%= modal_dialog id: "videoModal",
          header: { show_close: true, dismiss: 'modal', title: t(:video) },
@@ -64,7 +64,6 @@
         <%= link_to t(:fresman_effort), '#', type: "button", data: {toggle: "modal", target: "#freshman"}, class: 'btn-link' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -79,9 +78,9 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t(:freshman_effort) %></h4>
-        <%= image_tag 'East Kin - Freshman Effort.png', class:'img img-responsive col-md-3 pull-right cover'%>
       </div>
       <div class="modal-body">
+        <%= image_tag 'East Kin - Freshman Effort.png', class:'img img-responsive col-md-3 pull-right cover'%>
         <ul class="freshman-effort">
           <li><%= link_to t(:hope), '#', type: "button", data: {toggle: "modal", target: "#hope"}, class: 'btn-link' %></li>
           <li><%= link_to t(:plate), '#', type: "button", data: {toggle: "modal", target: "#plate"}, class: 'btn-link' %></li>
@@ -95,13 +94,12 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="hope" class="modal fade" role="dialog">
+<div id="hope" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -114,13 +112,12 @@
         <p><%= t(:hope_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="compensated" class="modal fade" role="dialog">
+<div id="compensated" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -133,13 +130,12 @@
         <p><%= t(:compensated_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="take-cover" class="modal fade" role="dialog">
+<div id="take-cover" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -152,13 +148,12 @@
         <p><%= t(:take_cover_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="one-man" class="modal fade" role="dialog">
+<div id="one-man" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -171,13 +166,12 @@
         <p><%= t(:one_man_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="roll" class="modal fade" role="dialog">
+<div id="roll" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -190,13 +184,12 @@
         <p><%= t(:roll_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="nobodys-fault" class="modal fade" role="dialog">
+<div id="nobodys-fault" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -209,13 +202,12 @@
         <p><%= t(:nobodys_fault_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="alone" class="modal fade" role="dialog">
+<div id="alone" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -228,13 +220,12 @@
         <p><%= t(:alone_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="rivers" class="modal fade" role="dialog">
+<div id="rivers" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -247,13 +238,12 @@
         <p><%= t(:rivers_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
   </div>
 </div>
-<div id="plate" class="modal fade" role="dialog">
+<div id="plate" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
@@ -266,7 +256,6 @@
         <p><%= t(:plate_html) %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Back</button>
       </div>
     </div>
 
