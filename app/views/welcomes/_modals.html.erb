@@ -26,7 +26,7 @@
           <div class="embed-responsive embed-responsive-16by9">
             <iframe width="400" height="315" src="https://www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
           </div>
-            '.html_safe + image_tag('EKBoat.png')},
+            '.html_safe + image_tag('EKBoat.png') + image_tag('smileyou.png')},
          footer: { content: '' } %>
 <%= modal_dialog id: "funModal",
          header: { show_close: true, dismiss: 'modal', title: t(:synth_controls) },
@@ -41,7 +41,7 @@
            <a type='button' data-toggle='modal' href='#example', class='btn-link'>Drawing Examples</a>".html_safe
           },
          body:   { content: "<div id='drawing-widget'></div>".html_safe },
-         footer: {content: "<a type='button' data-toggle='modal' href='#drawModal', class='btn-default'>Back</a>".html_safe } %>
+         footer: {content: "" } %>
 <%= modal_dialog id: "example",
         header: { show_close: true, dismiss: 'modal', title: t(:example) },
         body:   { content: '
