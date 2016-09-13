@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcomes#index'
+  get 'welcomes/:id/edit' => 'welcomes#edit', :as => :restart_count
+# you can change put to post as you see fit
+  post 'welcomes/:id/edit' => 'welcomes#update'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

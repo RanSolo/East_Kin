@@ -16,6 +16,9 @@ body {
   padding: 0;
   color: white;
 }
+#form, #form1{
+  padding: 0 !important;
+}
 .chorus{
   margin-left: 30px;
 }
@@ -76,26 +79,63 @@ body {
   margin-left: 15px;
   display: none;
 }
+#tokyo-mobile, #life-mobile{
+  display: none;
+  background-color:rgba(#0b0d22, 0.79) !important;
+}
 
 .letter-container1 {
   z-index: 1000;
 }
 
+.navbar-header {
+  height: inherit;
+  width: 100%;
+}
+#score-board {
+  top: 4.5px;
+  max-width: 12%;
+  min-width: 12%;
+
+}
+#score-board-mobile {
+  bottom: 20px;
+
+}
 a.navbar-brand {
+  width: 110%;
   font-size: 22px;
   font-family: "Benguiat" !important;
+  background-color:#0b0d22 !important;
 }
 ul.collapse-dropdown {
+  width: 100%;
+  margin: 0;
   li {
     font-size: 18px;
     font-family: "Benguiat" !important;
     background-color:rgba(#0b0d22, 0.79)  !important;
+    a{
+      font-size: 18px;
+      font-family: "Benguiat" !important;
+    }
   }
 }
 ul.dropdown-menu{
-  font-family: "Benguiat" !important;
-  background-color:rgba(#0b0d22, 0.49)  !important;
+  li {
+    a{
+    font-size: 18px;
+    font-family: "Benguiat" !important;
+    background-color:rgba(#0b0d22, 0.49)  !important;
+  }
+  }
 
+}
+#all-things-mobile{
+  position: absolute;
+  bottom: 10px;
+  left: -50px;
+  max-height: 50px;
 }
 
 .crest {
@@ -135,6 +175,7 @@ ul.dropdown-menu{
   overflow: scroll
 }
 nav.navbar.navbar-default{
+  max-height: 75px;
   margin-bottom: 0px !important;
   border: none;
   border-radius: 0px !important;

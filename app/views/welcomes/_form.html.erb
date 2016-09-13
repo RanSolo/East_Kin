@@ -1,4 +1,4 @@
-<%= form_for @welcome, :html => { :class => "form-horizontal welcome" } do |f| %>
+<%= form_for @welcome, html: { class: "form-horizontal welcome", remote: true } do |f| %>
 
   <% if @welcome.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -43,10 +43,24 @@
     </div>
     <%=f.error_span(:logo) %>
   </div>
+  <div class="form-group">
+    <%= f.label :restart_count, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :restart_count, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:restart_count) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :destroy_count, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :destroy_count, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:destroy_count) %>
+  </div>
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit nil, :remote => true, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 welcomes_path, :class => 'btn btn-default' %>
     </div>

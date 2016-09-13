@@ -4,7 +4,6 @@
 
 $ ->
   window.state = 'kin'
-  console.log('kin ' + window.state)
   # Here we call we check the width and height anytime it changes we call mobileCart()
   $(window).on 'resize oreintationchange', ->
     canvasResize()
@@ -13,9 +12,10 @@ $ ->
   $(document).scroll ->
     canvasResize()
     return
-
-  $('#restart-universe').click -> restartUniverse()
-  $('#blow-up-universe').click -> blowUpUniverse()
+  document.addEventListener 'turbolinks:load', ->
+    $('#restart-universe').click -> restartUniverse()
+    $('#blow-up-universe').click -> blowUpUniverse()
+  return
 _classCallCheck = (instance, Constructor) ->
   if !(instance instanceof Constructor)
     throw new TypeError('Cannot call a class as a function')
@@ -259,6 +259,7 @@ destruction_messages = new Array(
   "Might be a first thing … might be a last thing...",
   "Might not be anything … might be a lot of things",
   "You never can tell.",
+  "Whose side are you on anyway?.",
   "It was a cold and bleak night...",
   "...on a long and lonely road",
   '...the river will deliver your underscore.',
@@ -302,6 +303,7 @@ welcome_messages = new Array(
     'Horton hears a who?',
     'You never think twice...',
     '...a time or two it was you',
+    "Whose side are you on anyway?.",
     '...a time or three it was me',
     'Have you destroyed or restarted East Kins Universe?',
     '...the river will deliver your underscore.',
@@ -350,6 +352,7 @@ life_messages = new Array(
     "It feels like a chain I can't break",
     "I tell my friends you’re crazy",
     "There’s better days up ahead",
+    "Whose side are you on anyway?.",
     "I’ll float through lite as a feather",
     "Watch out for time and it’s toll",
     "Count your blessings, hold on tight, don’t let go",
@@ -469,6 +472,8 @@ canvasResize = ->
   document.body.appendChild canvas
 
 blowUpUniverse = () ->
+  $('.lifeOrDeath').val('death')
+  console.log($('.lifeOrDeath').val())
   $('#life').hide()
   $('#all-things').hide()
   $('#tokyo').show()
@@ -613,6 +618,8 @@ blowUpUniverse = () ->
   pushParticles()
 
 restartUniverse = ->
+  $('.lifeOrDeath').val('life')
+  console.log($('.lifeOrDeath').val())
   pushParticles()
   fruitLoop()
   $('#tokyo').hide()

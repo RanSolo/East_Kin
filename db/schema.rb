@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714041935) do
+ActiveRecord::Schema.define(version: 20160811223229) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "venue_id"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20160714041935) do
     t.string   "link3"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string   "lyric"
+    t.string   "title"
+    t.string   "writers"
+    t.date     "copyright"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "venues", force: :cascade do |t|
@@ -43,8 +53,11 @@ ActiveRecord::Schema.define(version: 20160714041935) do
     t.string   "headline"
     t.string   "message"
     t.string   "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "destroy_count"
+    t.integer  "restart_count"
+    t.boolean  "deathOrLife"
   end
 
 end

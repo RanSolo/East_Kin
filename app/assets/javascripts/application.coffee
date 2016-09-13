@@ -17,7 +17,11 @@
 #= require moment
 #= require fullcalendar
 #= require lodash
+#= require widget
+#= require widget2
+#= require welcomes
+#=
 #= require bootstrap-datetimepicker
 #= require turbolinks
-
-#= require_tree .
+#= require init
+#= require app.chart

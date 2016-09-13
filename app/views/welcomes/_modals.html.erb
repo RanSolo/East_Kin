@@ -62,6 +62,7 @@
       <div class="modal-body">
         <h4 class="modal-title"><%= t(:Album) %></h4>
         <%= link_to t(:fresman_effort), '#', type: "button", data: {toggle: "modal", target: "#freshman"}, class: 'btn-link' %>
+        <%= link_to t(:other), '#', type: "button", data: {toggle: "modal", target: "#other"}, class: 'btn-link' %>
       </div>
       <div class="modal-footer">
       </div>
@@ -91,6 +92,25 @@
           <li><%= link_to t(:nobodys_fault), '#', type: "button", data: {toggle: "modal", target: "#nobodys-fault"}, class: 'btn-link' %></li>
           <li><%= link_to t(:alone), '#', type: "button", data: {toggle: "modal", target: "#alone"}, class: 'btn-link' %></li>
           <li><%= link_to t(:rivers), '#', type: "button", data: {toggle: "modal", target: "#rivers"}, class: 'btn-link' %></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="other" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul class="other">
+          <li><%= link_to t(:want_to), '#', type: "button", data: {toggle: "modal", target: "#want-to"}, class: 'btn-link' %></li>
         </ul>
       </div>
       <div class="modal-footer">
@@ -254,6 +274,24 @@
       </div>
       <div class="modal-body">
         <p><%= t(:plate_html) %></p>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="want-to" class="modal fade lyric" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= t(:want_to) %></h4>
+      </div>
+      <div class="modal-body">
+        <p><%= t(:want_to_html) %></p>
       </div>
       <div class="modal-footer">
       </div>
