@@ -99,11 +99,13 @@ body {
 
 }
 #score-board-mobile {
-  bottom: 20px;
+  position: relative;
+  bottom: 0;
 
 }
 a.navbar-brand {
   width: 110%;
+  z-index: 10000;
   font-size: 22px;
   font-family: "Benguiat" !important;
   background-color:#0b0d22 !important;
@@ -124,12 +126,17 @@ ul.collapse-dropdown {
 ul.dropdown-menu{
   li {
     a{
-    font-size: 18px;
-    font-family: "Benguiat" !important;
-    background-color:rgba(#0b0d22, 0.49)  !important;
+      font-size: 18px;
+      font-family: "Benguiat" !important;
+      background-color:rgba(#0b0d22, 0.49)  !important;
+    }
   }
-  }
+}
 
+.btn-group{
+  margin-top: 5px;
+  padding: 0 !important;
+  background-color:rgba(#0b0d22, 0.79) !important;
 }
 #all-things-mobile{
   position: absolute;
@@ -176,6 +183,7 @@ ul.dropdown-menu{
 }
 nav.navbar.navbar-default{
   max-height: 75px;
+  min-height: 75px;
   margin-bottom: 0px !important;
   border: none;
   border-radius: 0px !important;

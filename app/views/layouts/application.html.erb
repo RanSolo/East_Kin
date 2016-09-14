@@ -52,7 +52,7 @@
                 </label>
               </div>
             </li>
-            <li class="dropdown  col-md-2">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Decisions<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li role="separator" class="divider"></li>
@@ -66,25 +66,24 @@
               </ul>
             </li>
             <li role="separator" class="divider"></li>
-
-            <%= form_tag '/welcomes/1/edit', remote: true, class:'col-xs-2', id:'form' do %>
+            <div class='btn-group col-sm-12 col-xs-12 col-md-5' role="group" aria-label="decision">
               <li>
-                <%= hidden_field_tag 'lifeOrDeath', 'life' %>
-                <%= link_to @welcome, type: "button", role:"button", remote: true, onclick:"$('#form').submit();",class: 'btn navbar-btn text-center col-md-2', id: 'restart-universe'  do %>
-                  <%= t(:restart_universe)%>
+                <%= form_tag '/welcomes/1/edit', remote: true, id:'form' do %>
+                  <%= hidden_field_tag 'lifeOrDeath', 'life' %>
+                  <%= link_to @welcome, type: "button", role:"button", remote: true, onclick:"$('#form').submit();",class: 'btn btn-secondary text-center pull-left', id: 'restart-universe'  do %>
+                    <%= t(:restart_universe)%>
+                  <% end %>
                 <% end %>
-              </li>
-            <% end %>
-            <li role="separator" class="divider"></li>
-            <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class: 'col-xs-2' do %>
-              <%= hidden_field_tag 'lifeOrDeath', 'death' %>
-              <li>
-                  <%= link_to @welcome, type: "button", role:"button", onclick:"$('#form1').submit();", remote: true, class: 'btn navbar-btn text-center col-md-2', id: 'blow-up-universe' do %>
+                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1' do %>
+                  <%= hidden_field_tag 'lifeOrDeath', 'death' %>
+                  <%= link_to @welcome, type: "button", role:"button", onclick:"$('#form1').submit();", remote: true, class: 'btn btn-secondary text-center pull-right', id: 'blow-up-universe' do %>
                     <%= t(:blow_up_universe)%>
                   <% end %>
+                <% end %>
               </li>
-            <% end %>
+            </div>
             <li class='pull-right text-right hidden-xs' id='score-board'>
+
               <div>
                 <label>
                   <%= t(:for) %>:&nbsp;&nbsp;<span class="restart-count"><%= @welcome.restart_count %></span>
