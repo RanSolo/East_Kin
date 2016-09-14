@@ -7,7 +7,7 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
  def index
-   @welcome = Welcome.find(1)
+   set_welcome
  end
   # GET /welcomes/1
   # GET /welcomes/1.json
