@@ -10,7 +10,7 @@
 }
 .your-clock {
   position: absolute;
-  top: 70px;
+  bottom: 0;
   z-index: -1;
 }
 body {
@@ -79,13 +79,17 @@ body {
   font-family: "Benguiat" !important;
   font-size: 20px;
 }
-#tokyo, #life{
+#tokyo, #life, #life-mobile, #tokyo-mobile{
   margin-left: 15px;
   display: none;
+  position: relative;
+  bottom: 15px;
 }
-#tokyo-mobile, #life-mobile{
-  display: none;
-  background-color:rgba(#0b0d22, 0.79) !important;
+#tokyo-mobile, #tokyo, #life, #life-mobile, #all-things, #all-things-mobile{
+  line-height: 28px;
+  background-color:#0b0d22 !important;
+  border-radius: 25px;
+  padding: 0 5px;
 }
 
 .letter-container1 {
@@ -98,9 +102,8 @@ body {
 }
 #score-board {
   top: 8.5px;
-  max-width: 12%;
-  min-width: 12%;
-
+  padding: 5px;
+  border-radius: 25px;
 }
 #score-board-mobile {
   position: relative;
@@ -109,6 +112,7 @@ body {
 }
 a.navbar-brand {
   width: 110%;
+  text-align: center;
   z-index: 10000;
   font-size: 22px;
   font-family: "Benguiat" !important;
@@ -149,12 +153,17 @@ ul.dropdown-menu{
   padding: 0 !important;
   background-color:rgba(#0b0d22, 0.79) !important;
 }
-#all-things-mobile{
-  position: absolute;
+#all-things-mobile, #all-things{
+  position: relative;
   bottom: 15px;
-  left: -50px;
   max-height: 50px;
+  border-radius: 0 0 25px 0;
 }
+#all-things-mobile{
+left: -80px;
+bottom: 45px;
+padding-left: 20px;
+width: 100%;}
 
 .crest {
   background-repeat:no-repeat;
@@ -174,7 +183,6 @@ ul.dropdown-menu{
       a{
           color: #bababa !important;
       }
-
     }
   }
 }
@@ -193,8 +201,6 @@ ul.dropdown-menu{
   overflow: scroll
 }
 nav.navbar.navbar-default{
-  max-height: 75px;
-  min-height: 75px;
   margin-bottom: 0px !important;
   border: none;
   border-radius: 0px !important;
