@@ -8,7 +8,11 @@
   font-family: "Benguiat";
   src: url('Benguiat.ttf') format("truetype");
 }
-
+.your-clock {
+  position: absolute;
+  top: 70px;
+  z-index: -1;
+}
 body {
   overflow: hidden;
   background-color: #0B0D23 !important;
@@ -164,7 +168,7 @@ ul.dropdown-menu{
 .navbar{
   position: fixed;
   width: 100%;
-  max-height:110px;
+
   ul{
     li{
       a{

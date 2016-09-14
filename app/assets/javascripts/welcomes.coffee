@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
+
   window.state = 'kin'
   # Here we call we check the width and height anytime it changes we call mobileCart()
   $(window).on 'resize oreintationchange', ->
@@ -131,6 +133,7 @@ Particle = do ->
         gpSelected = gp
       return
     if gpSelected == undefined
+      clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
       pushParticles()
       fruitLoop()
     else
@@ -472,6 +475,9 @@ canvasResize = ->
   document.body.appendChild canvas
 
 blowUpUniverse = () ->
+  clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter'
+  )
+  clock.reset ->
   $('.lifeOrDeath').val('death')
   console.log($('.lifeOrDeath').val())
   $('#life').hide()
@@ -618,6 +624,7 @@ blowUpUniverse = () ->
   pushParticles()
 
 restartUniverse = ->
+  clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
   $('.lifeOrDeath').val('life')
   console.log($('.lifeOrDeath').val())
   pushParticles()

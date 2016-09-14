@@ -10,6 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class='row'>
@@ -115,8 +116,11 @@
   <% if alert %>
     <p class="alert alert-warning"><%= alert %></p>
   <% end %>
+
   <%= yield %>
+  <div class="col-md-offset-2 your-clock"></div>
   <%= render 'modals' %>
+
 
 </body>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
