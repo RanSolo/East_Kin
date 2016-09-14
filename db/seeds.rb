@@ -19,5 +19,3 @@ oldUnion = Venue.create([{
                       location: 'Nashville, TN',
                       about: 'Soulshine Pizza Factory invites you to come on down and see us at any of our four great locations. We’re family friendly, have a great variety of freshly prepared menu items, include full bars and offer live entertainment the way only the South can! Choose your location and visit their respective page to find out the details like operating hours, menu items, live music and event schedules and more. Thanks for the visit!'
                       }])
-
-event = Event.create([{ title: 'Brass-grass-roots!', venue_id: 1, description: "Here's what's going on", start_time: rand_time(1.month.from_now)}])
