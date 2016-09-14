@@ -101,8 +101,10 @@ body {
   width: 100%;
 }
 #score-board {
-  top: 8.5px;
-  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  padding: 25px;
   border-radius: 25px;
 }
 #score-board-mobile {

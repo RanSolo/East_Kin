@@ -67,17 +67,17 @@
               </ul>
             </li>
             <li role="separator" class="divider"></li>
-            <div class='btn-group col-sm-5 col-xs-12 col-md-5' role="group" aria-label="decision">
+            <div class='btn-group col-sm-6 col-xs-12 col-md-6' role="group" aria-label="decision">
               <li>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form' do %>
+                <%= form_tag '/welcomes/1/edit', remote: true, class: 'col-xs-3 pull-right', id:'form' do %>
                   <%= hidden_field_tag 'lifeOrDeath', 'life' %>
-                  <%= link_to @welcome, type: "button", role:"button", remote: true, onclick:"$('#form').submit();",class: 'btn btn-secondary text-center pull-left', id: 'restart-universe'  do %>
+                  <%= link_to @welcome, type: "button", role:"button", remote: true, onclick:"$('#form').submit();", class: 'btn btn-secondary text-center', id: 'restart-universe'  do %>
                     <%= t(:restart_universe)%>
                   <% end %>
                 <% end %>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1' do %>
+                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class: 'col-xs-3 pull-right' do %>
                   <%= hidden_field_tag 'lifeOrDeath', 'death' %>
-                  <%= link_to @welcome, type: "button", role:"button", onclick:"$('#form1').submit();", remote: true, class: 'btn btn-secondary text-center pull-right', id: 'blow-up-universe' do %>
+                  <%= link_to @welcome, type: "button", role:"button", onclick:"$('#form1').submit();", remote: true, class: 'btn btn-secondary text-center pull-right', id: 'blow-up-universe'  do %>
                     <%= t(:blow_up_universe)%>
                   <% end %>
                 <% end %>
