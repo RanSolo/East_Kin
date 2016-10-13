@@ -8,11 +8,7 @@
   font-family: "Benguiat";
   src: url('Benguiat.ttf') format("truetype");
 }
-.your-clock {
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-}
+
 body {
   overflow: hidden;
   background-color: #0B0D23 !important;
@@ -33,6 +29,7 @@ body {
   margin-top: 5em !important;
   opacity: .9;
   width: 70%;
+  height: 100%;
 }
 .close {
   color: rgb(249, 37, 9);
@@ -61,9 +58,11 @@ body {
   }
 }
 #color-sample, #color-picker {
-  width: 20%!important;
+
   opacity: 1;
 }
+
+
 #drawing-canvas{
   cursor:none;
 }

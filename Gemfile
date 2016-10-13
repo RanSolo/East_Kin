@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '5'
 gem 'animate-scss'
 # Use SCSS for stylesheets
 gem "twitter-bootstrap-rails"
@@ -61,7 +61,6 @@ gem 'kaminari'
 gem 'nori'
 gem 'puma'
 gem 'twilio-ruby'
-gem 'less-rails'
 gem 'therubyracer'
 group :production do
   gem 'rails_12factor'

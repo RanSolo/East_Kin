@@ -375,7 +375,7 @@ setupPowerButtonElement = (widgetWidth, widgetHeight) ->
   powerButtonStyleString = 'width: ' + widgetWidth / 20 + 'px;' + 'height: ' + widgetHeight / 15 + 'px;' + 'background: ' + powerButtonColor() + ';' + 'position: absolute;' + 'right: ' + widgetWidth / 40 + 'px;' + 'bottom: ' + widgetHeight / 150 + 'px;' + 'box-shadow: 0px 0px 1px 1px;'
   powerButtonElement.style.cssText = powerButtonStyleString
   powerButtonElement.id = 'power-button'
-  document.getElementById('synth-widget').appendChild powerButtonElement
+  document.getElementById('universe').appendChild powerButtonElement
   powerButtonElement.addEventListener 'click', flipPowerSwitch
   return
 

@@ -20,9 +20,9 @@ window.DrawingCanvas = (id) ->
     @blankImageData
   ]
   @drawing = true
-  @stamping = false
+  @stamping = true
   @color = '#000'
-  @size = 20
+  @size = 10
   return
 
 main = ->
@@ -46,8 +46,8 @@ DrawingCanvas::mouseDown = (e, color, size) ->
 DrawingCanvas::mouseMove = (e) ->
   @prevX = @currX
   @prevY = @currY
-  @currX = e.pageX - (@canvas.getBoundingClientRect().left) - (window.scrollX)
-  @currY = e.pageY - (@canvas.getBoundingClientRect().top) - (window.scrollY)
+  @currX = e.pageX - (@canvas.getBoundingClientRect().left)
+  @currY = e.pageY - (@canvas.getBoundingClientRect().top)
   if @drawing
     @drawStroke()
   else
@@ -211,12 +211,12 @@ Widget = ->
   @saveImagePicture = document.createElement('img')
   @clearImageElement = document.createElement('button')
   @clearImagePicture = document.createElement('img')
-  @widgetWidth = @drawingWidgetElement.getAttribute('width') or 900
-  @widgetHeight = @drawingWidgetElement.getAttribute('height') or 550
+  @widgetWidth = @drawingWidgetElement.getAttribute('width') or window.innerWidth * 9/10
+  @widgetHeight = @drawingWidgetElement.getAttribute('height') or window.innerHeight
   return
 
 Widget::setSize = (element, width, height) ->
-  element.style.width = '90%'
+  element.style.width = '95%'
   element.style.height = height + 'px'
   return
 
@@ -225,31 +225,31 @@ Widget::setUpDrawingWidget = ->
   return
 
 Widget::setUpDrawingCanvas = ->
-  @setSize @drawingCanvasElement, @widgetWidth * 4 / 5, @widgetHeight - (@widgetWidth * 4/5)
-  @drawingCanvasElement.setAttribute 'width', @widgetWidth * 4 / 5
-  @drawingCanvasElement.setAttribute 'height', @widgetHeight - (@widgetWidth * 1/5)
+
+  @drawingCanvasElement.setAttribute 'width', @widgetWidth
+  @drawingCanvasElement.setAttribute 'height', @widgetHeight
   @drawingCanvasElement.id = 'drawing-canvas'
   return
 
 Widget::setUpColorPickerContainer = ->
-  @setSize @colorPickerContainer, @widgetWidth * 1 / 4, @widgetHeight
+  @setSize @colorPickerContainer, @widgetWidth * 1/5, @widgetHeight * 3/5
   @colorPickerContainer.style.display = 'inline-block'
   @colorPickerContainer.style.position = 'absolute'
   @colorPickerContainer.id = 'color-picker-container'
   return
 
 Widget::setUpColorPicker = ->
-  @setSize @colorPickerElement, @widgetWidth * 1 / 4, @widgetHeight - (@widgetWidth * 1/5)
-  @colorPickerElement.setAttribute 'width', @widgetWidth * 1 / 4
-  @colorPickerElement.setAttribute 'height', @widgetHeight - (@widgetWidth * 1 / 5)
+
+  @colorPickerElement.setAttribute 'width', @widgetWidth * 1 / 10
+  @colorPickerElement.setAttribute 'height', @widgetHeight *4/5
   @colorPickerElement.id = 'color-picker'
   return
 
 Widget::setUpColorSample = ->
-  @setSize @colorSampleElement, @widgetWidth * 1 / 5, @widgetWidth * 1 / 5
+  @setSize @colorSampleElement, @widgetWidth * 1 / 5, @widgetHeight * 1/ 5
   @colorSampleElement.style.background = 'black'
   @colorSampleElement.style.position = 'absolute'
-  @colorSampleElement.style.bottom = '0'
+  @colorSampleElement.style.bottom = '-80'
   @colorSampleElement.id = 'color-sample'
   return
 

@@ -34,7 +34,6 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
           <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
-          <%= audio_tag("Spaceship.mp3", id: 'space-ship') %>
           <div id="output"></div>
           <ul class="nav navbar-nav collapse-dropdown">
             <li class='crest hidden-xs hidden-sm'><%= link_to( '',welcomes_path) %></li>
@@ -67,9 +66,9 @@
               </ul>
             </li>
             <li role="separator" class="divider"></li>
-            <div class='btn-group col-sm-6 col-xs-12 col-md-6' role="group" aria-label="decision">
+            <div class='btn-group pull-right col-sm-6 col-xs-12 col-md-6' role="group" aria-label="decision">
               <li>
-                <%= form_tag '/welcomes/1/edit', remote: true, class: 'col-xs-3 pull-right', id:'form' do %>
+                <%= form_tag '/welcomes/1/edit', remote: true, class: 'col-xs-3 pull-left', id:'form' do %>
                   <%= hidden_field_tag 'lifeOrDeath', 'life' %>
                   <%= link_to @welcome, type: "button", role:"button", remote: true, onclick:"$('#form').submit();", class: 'btn btn-secondary text-center', id: 'restart-universe'  do %>
                     <%= t(:restart_universe)%>
@@ -101,15 +100,17 @@
       </div>
     </div>
   </nav>
-  <ul class="hidden-xs nav navbar-nav header-txt navbar-right">
-    <li >
-      <div id='all-things' class='col-md-12 text-warning text-center'><%= t(:all_things)%></div>
-    </li>
-    <li>
-      <div id='tokyo' class='text-danger text-center'>Oh No! There Goes Tokyo!</div>
-      <div id='life' class='text-info text-center'>New... Shiney... Speedy... Life...</div>
-    </li>
-  </ul>
+  <div class='container-fluid'>
+    <ul class="hidden-xs header-txt list-unstyled col-md-12">
+      <li >
+        <div id='all-things' class=' text-warning text-center'><%= t(:all_things)%></div>
+      </li>
+      <li>
+        <div id='tokyo' class='text-danger text-center'>Oh No! There Goes Tokyo!</div>
+        <div id='life' class='text-info text-center'>New... Shiney... Speedy... Life...</div>
+      </li>
+    </ul>
+  </div>
   <% if notice %>
     <p class="alert alert-info"><%= notice %></p>
   <% end %>
@@ -118,10 +119,11 @@
   <% end %>
 
   <%= yield %>
-  <div class="col-md-offset-2 your-clock"></div>
+
   <%= render 'modals' %>
 
 
 </body>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </html>

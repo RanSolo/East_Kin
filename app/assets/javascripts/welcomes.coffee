@@ -4,7 +4,6 @@
 
 $ ->
   clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
-
   window.state = 'kin'
   # Here we call we check the width and height anytime it changes we call mobileCart()
   $(window).on 'resize oreintationchange', ->
@@ -26,6 +25,7 @@ _classCallCheck = (instance, Constructor) ->
   $('#life').hide('slideOut')
   $('#all-things').show('slideIn')
   ticker(welcome_messages)
+
 ### ---- Functions ----###
 
 fruitLoop = ->
