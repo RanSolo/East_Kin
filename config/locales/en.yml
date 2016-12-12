@@ -31,6 +31,20 @@ en:
   synth_controls: "Synth Controls"
   restart_universe: "Restart Universe"
   welcomes_you: " welcomes you to ... The "
+  freshman_effort: "Freshman Effort"
+  listen: "Listen"
+  watch: "Watch"
+  biography: "Biography"
+  live: "Live"
+  lyrics: "Lyrics"
+  synth_controls: "Synth Controls"
+  draw: "Draw"
+  for: "For"
+  against: 'Against'
+  music: "Music"
+  video: "Video"
+  album: "Album"
+  other: "Other"
 
   synth_explaination_html:  "<p>Start a song and jam along, or just be background music for the universe...</p>
   <p>You can control the synth with the keys in the piano keyboard above or with the
@@ -101,7 +115,7 @@ en:
       	&copy; 2016 - Randy Russell - Ransolo Music (ASCAP), Johnny Neel - Straight Up Songs (ASCAP)
     </p>
   "
-  hoping_this_time: Hoping This Time
+  hope: Hoping This Time
   hope_html: "
     <p>
       You think that I’d be used to it, <br>

@@ -15,21 +15,33 @@ body {
   margin: 0;
   padding: 0;
   color: white;
+  font-size: 18px;
 }
+p, a, span {
+  font-size: 16px;
+}
+
 #form, #form1{
   padding: 0 !important;
 }
 .chorus{
   margin-left: 30px;
 }
+.modal {
+  top: -60px!important;
+}
 .modal-content {
+  top: 60px!important;
   background-color: #0B0D23 !important;
+}
+.modal-body {
+  min-height: 300px;
 }
 .modal-dialog{
   margin-top: 5em !important;
   opacity: .9;
-  width: 70%;
-  height: 100%;
+  width: 80%;
+  padding: 0 400px 0 400px;
 }
 .close {
   color: rgb(249, 37, 9);
@@ -38,10 +50,12 @@ body {
 .lyric {
   top:-60px!important;
 }
+#funModal{ height: 100% }
 #drawModal{
-  top: -60px!important;
+  top: -120px!important;
   .modal-dialog{
-    width: 100%;
+    padding: 0;
+    width: 100% !important;
   -webkit-transition: none;
   -moz-transition: none;
   -ms-transition: none;
