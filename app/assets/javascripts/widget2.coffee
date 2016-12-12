@@ -9,7 +9,7 @@ window.DrawingCanvas = (id) ->
   @currX = 0
   @currY = 0
   @rgbString = 'yellow'
-  @ctx.lineJoin = @ctx.lineCap = 'square'
+  @ctx.lineJoin = @ctx.lineCap = 'round'
   @blankImageData = @getImageData()
   @history = [
     @blankImageData
