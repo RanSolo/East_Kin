@@ -40,8 +40,7 @@ p, a, span {
 .modal-dialog{
   margin-top: 5em !important;
   opacity: .9;
-  width: 80%;
-  padding: 0 400px 0 400px;
+  padding: 0 10% 0 10%;
 }
 .close {
   color: rgb(249, 37, 9);
@@ -106,7 +105,9 @@ p, a, span {
 .letter-container1 {
   z-index: 1000;
 }
-
+li.divider {
+  margin-bottom: 0!important;
+}
 .navbar-header {
   height: inherit;
   width: 100%;
@@ -170,7 +171,7 @@ ul.dropdown-menu{
   position: relative;
   bottom: 15px;
   max-height: 50px;
-  border-radius: 0 0 25px 0;
+  border-radius: 0 0 25px 25px;
 }
 #all-things-mobile{
 left: -80px;
