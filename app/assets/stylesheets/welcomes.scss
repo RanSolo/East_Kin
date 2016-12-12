@@ -39,16 +39,14 @@ body {
   top:-60px!important;
 }
 #drawModal{
-  top:-60px!important;
+  top: -60px!important;
   .modal-dialog{
     width: 100%;
-    .modal.fade {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-    }
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
   }
 }
 #example{
@@ -58,12 +56,12 @@ body {
   }
 }
 #color-sample, #color-picker {
-
   opacity: 1;
 }
 
 
 #drawing-canvas{
+
   cursor:none;
 }
 

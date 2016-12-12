@@ -9,7 +9,7 @@ window.DrawingCanvas = (id) ->
   @currX = 0
   @currY = 0
   @rgbString = 'yellow'
-  @ctx.lineJoin = @ctx.lineCap = 'round'
+  @ctx.lineJoin = @ctx.lineCap = 'square'
   @blankImageData = @getImageData()
   @history = [
     @blankImageData
@@ -212,11 +212,11 @@ Widget = ->
   @clearImageElement = document.createElement('button')
   @clearImagePicture = document.createElement('img')
   @widgetWidth = @drawingWidgetElement.getAttribute('width') or window.innerWidth * 9/10
-  @widgetHeight = @drawingWidgetElement.getAttribute('height') or window.innerHeight
+  @widgetHeight = @drawingWidgetElement.getAttribute('height') or window.innerHeight * 9/10
   return
 
 Widget::setSize = (element, width, height) ->
-  element.style.width = '95%'
+  element.style.width = width + 'px'
   element.style.height = height + 'px'
   return
 
@@ -225,14 +225,14 @@ Widget::setUpDrawingWidget = ->
   return
 
 Widget::setUpDrawingCanvas = ->
-
   @drawingCanvasElement.setAttribute 'width', @widgetWidth
   @drawingCanvasElement.setAttribute 'height', @widgetHeight
+  @colorPickerContainer.style.position = 'absolute'
   @drawingCanvasElement.id = 'drawing-canvas'
   return
 
 Widget::setUpColorPickerContainer = ->
-  @setSize @colorPickerContainer, @widgetWidth * 1/5, @widgetHeight * 3/5
+  @setSize @colorPickerContainer, @widgetWidth * 1/10, @widgetHeight * 4/5
   @colorPickerContainer.style.display = 'inline-block'
   @colorPickerContainer.style.position = 'absolute'
   @colorPickerContainer.id = 'color-picker-container'
@@ -241,12 +241,13 @@ Widget::setUpColorPickerContainer = ->
 Widget::setUpColorPicker = ->
 
   @colorPickerElement.setAttribute 'width', @widgetWidth * 1 / 10
-  @colorPickerElement.setAttribute 'height', @widgetHeight *4/5
+  @colorPickerElement.setAttribute 'height', @widgetHeight * 4/5
+  @colorPickerContainer.style.position = 'absolute'
   @colorPickerElement.id = 'color-picker'
   return
 
 Widget::setUpColorSample = ->
-  @setSize @colorSampleElement, @widgetWidth * 1 / 5, @widgetHeight * 1/ 5
+  @setSize @colorSampleElement, @widgetWidth * 1 / 10, @widgetHeight * 1/ 5
   @colorSampleElement.style.background = 'black'
   @colorSampleElement.style.position = 'absolute'
   @colorSampleElement.style.bottom = '-80'
@@ -260,7 +261,7 @@ Widget::setUpSaveImage = ->
   @saveImageElement.style.padding = '2px'
   @saveImageElement.style.borderRadius = '5px'
   @saveImageElement.id = 'save-image'
-  floppySize = '60px'
+  floppySize = 60
   @saveImagePicture.src = 'http://res.cloudinary.com/ddhru3qpb/image/upload/w_' + floppySize + ',h_' + floppySize + '/save_tkicwp.png'
   return
 
@@ -271,7 +272,7 @@ Widget::setUpClearImage = ->
   @clearImageElement.style.padding = '2px'
   @clearImageElement.style.borderRadius = '5px'
   @clearImageElement.id = 'clear-image'
-  newPageSize = @widgetWidth * 1 / 25
+  newPageSize = 60
   @clearImagePicture.src = 'http://res.cloudinary.com/ddhru3qpb/image/upload/w_' + newPageSize + ',h_' + newPageSize + '/new_eolomw.png'
   return
 

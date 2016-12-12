@@ -40,9 +40,9 @@
            and see clear and save controls inside the color preview. -
            <a type='button' data-toggle='modal' href='#example', class='btn-link'>Drawing Examples</a>".html_safe
           },
-         body:   { content: "<div id='drawing-widget'></div>".html_safe },
+         body:   { content: "<div class='row'></div><div id='drawing-widget'></div>".html_safe },
          footer: {content: "" } %>
-         
+
 <%= modal_dialog id: "example",
         header: { show_close: true, dismiss: 'modal', title: t(:example) },
         body:   { content: '
