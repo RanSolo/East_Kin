@@ -52,11 +52,11 @@ randomizeParticle = ->
   if groupDecider < 2
     return 25
   if groupDecider < 3
-    return 100
-  if groupDecider < 4
     return 200
-  else
+  if groupDecider < 4
     return 300
+  else
+    return 450
 
 PARTICLE_NUMBERS = randomizeParticle()
 GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 100)) + 0)
@@ -166,10 +166,10 @@ GravityPoint = do ->
       @gravity = 250
 
     if n > 24  && n < 29
-      @gravity = 300
+      @gravity = 550
 
     if n > 28 && n < 32
-      @gravity = 400
+      @gravity = 650
 
   GravityPoint::render = ->
     context.beginPath()
@@ -744,11 +744,11 @@ restartUniverse = ->
       if n > 3
         @gravity = 7
       if n > 4
-        @gravity = 250
+        @gravity = 750
       if n > 6
-        @gravity = 500
+        @gravity = 1000
       if n > 8
-        @gravity = 759
+        @gravity = 10000
 
 # 1 10 3000
 
