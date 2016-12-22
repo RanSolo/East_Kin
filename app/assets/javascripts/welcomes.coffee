@@ -732,7 +732,7 @@ restartUniverse = ->
 
   GravityPoint = do ->
     `var GravityPoint`
-    n = Math.abs(Math.floor(Math.random() * (0 - 12)) + 0)
+    n = Math.abs(Math.floor(Math.random() * (0 - 10)) + 0)
     GravityPoint = (x, y) ->
       _classCallCheck this, GravityPoint
       @x = x
@@ -744,11 +744,11 @@ restartUniverse = ->
       if n > 3
         @gravity = 7
       if n > 4
-        @gravity = 750
+        @gravity = 250
       if n > 6
-        @gravity = 1000
+        @gravity = 500
       if n > 8
-        @gravity = 10000
+        @gravity = 759
 
 # 1 10 3000
 
