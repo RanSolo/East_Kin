@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'turbolinks:load', ->
+$ ->
   clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
   window.state = 'kin'
   # Here we call we check the width and height anytime it changes we call mobileCart()
@@ -772,4 +772,3 @@ restartUniverse = ->
     GravityPoint
 
   pushParticles()
-  return
