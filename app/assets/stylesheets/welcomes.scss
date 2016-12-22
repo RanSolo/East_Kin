@@ -36,6 +36,7 @@ body {
   margin-left: 10% !important;
   width: 80%;
   height: 100%;
+  transition: none;
 }
 .close {
   color: rgb(249, 37, 9);
@@ -44,6 +45,13 @@ body {
 }
 .lyric {
   top:-60px!important;
+}
+.modal {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+
 }
 #drawModal{
   top:-60px!important;
