@@ -54,9 +54,9 @@ randomizeParticle = ->
   if groupDecider < 3
     return 200
   if groupDecider < 4
-    return 500
+    return 300
   else
-    return 750
+    return 450
 
 PARTICLE_NUMBERS = randomizeParticle()
 GRAVITY_POINT_NUMBERS = Math.abs(Math.floor(Math.random() * (0 - 100)) + 0)
@@ -153,23 +153,23 @@ GravityPoint = do ->
       @gravity = 0
     if n > 1
       @gravity = Math.abs(Math.random() * (0 - 20) + 0)
-    if n > 4  && n < 8
+    if n > 8 && n < 15
       @gravity = 200
 
-    if n > 7  && n < 11
+    if n > 14  && n < 18
       @gravity = 400
 
-    if n > 10 && n < 14
-      @gravity = 600
+    if n > 17 && n < 21
+      @gravity = 500
 
-    if n > 13 && n < 17
+    if n > 20 && n < 25
+      @gravity = 650
+
+    if n > 24  && n < 29
       @gravity = 800
 
-    if n > 16  && n < 29
-      @gravity = 1000
-
     if n > 28 && n < 32
-      @gravity = 2000
+      @gravity = 1000
 
   GravityPoint::render = ->
     context.beginPath()
