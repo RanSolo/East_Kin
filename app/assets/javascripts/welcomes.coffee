@@ -154,22 +154,22 @@ GravityPoint = do ->
     if n > 1
       @gravity = Math.abs(Math.random() * (0 - 20) + 0)
     if n > 8 && n < 15
-      @gravity = 200
+      @gravity = 100
 
     if n > 14  && n < 18
-      @gravity = 400
+      @gravity = 200
 
     if n > 17 && n < 21
-      @gravity = 500
+      @gravity = 300
 
     if n > 20 && n < 25
-      @gravity = 650
+      @gravity = 450
 
     if n > 24  && n < 29
-      @gravity = 800
+      @gravity = 550
 
     if n > 28 && n < 32
-      @gravity = 1000
+      @gravity = 650
 
   GravityPoint::render = ->
     context.beginPath()

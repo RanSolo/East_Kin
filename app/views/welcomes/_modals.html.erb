@@ -6,17 +6,17 @@
          footer: { content: '' } %>
 <%= modal_dialog id: "musicModal",
          header: { show_close: true, dismiss: 'modal', title: t(:music) },
-         body:   { content: '<iframe width="100%" height="545" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'.html_safe },
+         body:   { content: '<iframe width="100%" height="545" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'.html_safe },
          footer: { content: '' } %>
 <%= modal_dialog id: "liveModal",
          header: { show_close: true, dismiss: 'modal', title: t(:live) },
-         body:   { content: "<p class='text-center'>You don't know East Kin until you've seen them live. Coming soon to a bar near you... if you live in Nashville.</p><iframe width='100%' height='450' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/245714662&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>".html_safe },
+         body:   { content: "<p class='text-center'>You don't know East Kin until you've seen them live. Coming soon to a bar near you... if you live in Nashville.</p><iframe width='100%' height='450' scrolling='no' frameborder='no' src='//api.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/245714662&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'></iframe>".html_safe },
          footer: { content: '' } %>
 <%= modal_dialog id: "videoModal",
          header: { show_close: true, dismiss: 'modal', title: t(:video) },
          body:   { content: '
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width=100% src="https://www.youtube.com/embed/kyA8oP08WQ0" frameborder="0" allowfullscreen></iframe>
+            <iframe width=100% src="//www.youtube.com/embed/kyA8oP08WQ0" frameborder="0" allowfullscreen></iframe>
           </div>
             '.html_safe},
          footer: { content: '' } %>
@@ -24,7 +24,7 @@
          header: { show_close: true, dismiss: 'modal', title: t(:drawing_example) },
          body:   { content: '
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="400" height="315" src="https://www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
+            <iframe width="400" height="315" src="//www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
           </div>
             '.html_safe + image_tag('EKBoat.png') + image_tag('smileyou.png')},
          footer: { content: '' } %>
@@ -47,7 +47,7 @@
         header: { show_close: true, dismiss: 'modal', title: t(:example) },
         body:   { content: '
          <div class="embed-responsive embed-responsive-16by9">
-           <iframe width="560" height="315" autoplay:"true" src="https://www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
+           <iframe width="560" height="315" autoplay:"true" src="//www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
          </div>
            '.html_safe },
         footer: { content: '' } %>
@@ -63,7 +63,7 @@
       </div>
       <div class="modal-body">
         <h4 class="modal-title"><%= t(:Album) %></h4>
-        <h4><%= link_to t(:freshman_effort), '#', type: "button", data: {toggle: "modal", target: "#freshman"}, class: 'btn-link' %></h4>
+        <h4><%= link_to t(:fresman_effort), '#', type: "button", data: {toggle: "modal", target: "#freshman"}, class: 'btn-link' %></h4>
         <h4><%= link_to t(:other), '#', type: "button", data: {toggle: "modal", target: "#other"}, class: 'btn-link' %></h4>
       </div>
       <div class="modal-footer">
