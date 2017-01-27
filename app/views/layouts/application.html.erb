@@ -70,11 +70,10 @@
       player.stopVideo();
     }
 
-  $(function() {
-      $(".dial").knob();
-  });
+    $(function() {
+        $(".dial").knob();
+    });
   </script>
-
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class='row'>
@@ -156,10 +155,10 @@
                 <li><%= link_to t(:lyrics), '#', type: "button", data:
                                 {toggle: "modal", target: "#lyrics"},
                                  class: 'btn-link' %></li>
-                <li><%= link_to t(:synth_controls), '#', type: "button", data:
+                <li class='hidden-sm hidden-xs'><%= link_to t(:synth_controls), '#', type: "button", data:
                                 {toggle: "modal", target: "#funModal"},
                                  class: 'btn-link' %></li>
-                <li><%= link_to t(:draw), '#', type: "button", data:
+                <li class='hidden-sm hidden-xs'><%= link_to t(:draw), '#', type: "button", data:
                                 {toggle: "modal", target: "#drawModal"},
                                  class: 'btn-link' %></li>
               </ul>
