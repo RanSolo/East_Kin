@@ -24,34 +24,38 @@ body {
 }
 .modal-content {
   background-color: #0B0D23 !important;
+  opacity: 0.9;
 }
-.modal-body {
-  min-height: 300px;
-}
-.modal-body {
-  min-height: 450px;
-}
-.modal-dialog{
-  margin-top: 5em !important;
-  margin-left: 10% !important;
-  width: 80%;
+.modal-dialog {
+  margin-left: 25% !important;
+  width: 50%;
   height: 100%;
   transition: none;
 }
 .close {
   color: rgb(249, 37, 9);
   opacity: 1;
+  margin-right: 10px;
   z-index: 10053;
 }
 .lyric {
-  top:-60px!important;
+
+  opacity: 1 !important;
 }
 .modal {
   -webkit-transition: none;
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
-
+}
+@media (max-width: 1000px) {
+  .modal-dialog {
+    margin-top: 5em !important;
+    margin-left: 2.5% !important;
+    width: 94%;
+    height: 100%;
+    transition: none;
+  }
 }
 #drawModal{
   top:-60px!important;

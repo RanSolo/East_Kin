@@ -45,7 +45,21 @@ en:
   video: "Video"
   album: "Album"
   other: "Other"
-
+  freshman_notes_html:  "
+    <p>
+      Mandolin/Vocals - Randy Russell<br>
+      Guitars - Johnny Zvolensky<br>
+      Bass/Vocals - Jeff Collett<br>
+      Drums - Justin Amaral<br><br>
+      Special Guest:<br>
+      Keyboards/Vocals/Vocal Production - Johnny Neel
+    </p>
+    <br>
+    <p>Tracking sessions at Loud Recording with Jake Burns at the helm</p>
+    <p>Overdubs and Producing handle by Jon Zvolensky at Sound Emporium</p>
+    <p>Johnny Neel appears courtesy of courtesy and friendship.</p>
+    <p>Thanks: Mom, Mine and yours.</p>
+  "
   synth_explaination_html:  "<p>Start a song and jam along, or just be background music for the universe...</p>
   <p>You can control the synth with the keys in the piano keyboard above or with the
   keyboard on your computer. On your computer keyboard with you can play with the controls window closed.</p>

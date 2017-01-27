@@ -6,33 +6,45 @@
          footer: { content: '' } %>
 <%= modal_dialog id: "musicModal",
          header: { show_close: true, dismiss: 'modal', title: t(:music) },
-         body:   { content: '<iframe width="100%" height="545" scrolling="no" frameborder="no" src="//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'.html_safe },
+         body:   { content: '
+           <iframe width="100%" height="545" scrolling="no" frameborder="no"
+             src="//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+           </iframe>'.html_safe },
          footer: { content: ''.html_safe } %>
 <%= modal_dialog id: "liveModal",
          header: { show_close: true, dismiss: 'modal', title: t(:live) },
-         body:   { content: '<p class="text-center">You dont know East Kin until
-                                you see them live. Coming soon to a bar near
-                                you... if you live in Nashville.</p>
-                              <p class="text-center"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Feastkin.nashville%2Fposts%2F609995899125162&width=500" width="500" height="446" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></p>'.html_safe },
+         body:   { content: '
+          <p class="text-center">
+            You dont know East Kin until
+            you see them live. Coming soon to a bar near
+            you... if you live in Nashville.
+          </p>
+          <p class="text-center">
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Feastkin.nashville%2Fposts%2F609995899125162&width=500"
+                    width="500" height="446" style="border:none;overflow:hidden"
+                    scrolling="no" frameborder="0" allowTransparency="true">
+            </iframe>
+          </p>'.html_safe },
          footer: { content: '' } %>
 <%= modal_dialog id: "videoModal",
          header: { show_close: true, dismiss: 'modal', title: t(:video) },
          body:   { content: '
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width=100% src="//www.youtube.com/embed/kyA8oP08WQ0" frameborder="0" allowfullscreen></iframe>
+            <iframe width=100% src="//www.youtube.com/embed/kyA8oP08WQ0"
+              frameborder="0" allowfullscreen></iframe>
           </div>
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="100%" src="//www.youtube.com/embed/PIebThYRo9I" frameborder="0" allowfullscreen></iframe>
-          </div>
-            '.html_safe},
+            <iframe width="100%" src="//www.youtube.com/embed/PIebThYRo9I"
+              frameborder="0" allowfullscreen></iframe>
+          </div>'.html_safe},
          footer: { content: '' } %>
 <%= modal_dialog id: "example",
          header: { show_close: true, dismiss: 'modal', title: t(:drawing_example) },
          body:   { content: '
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe width="400" height="315" src="//www.youtube.com/embed/yA8gaiW4Bdg" frameborder="0" allowfullscreen></iframe>
-          </div>
-            '.html_safe + image_tag('EKBoat.png') + image_tag('smileyou.png')},
+            <iframe width="400" height="315" src="//www.youtube.com/embed/yA8gaiW4Bdg"
+            frameborder="0" allowfullscreen></iframe>
+          </div>'.html_safe + image_tag('EKBoat.png') + image_tag('smileyou.png')},
          footer: { content: '' } %>
 <%= modal_dialog id: "funModal",
          header: { show_close: true, dismiss: 'modal', title: t(:synth_controls) },
@@ -44,7 +56,8 @@
          header: { show_close: true, dismiss: 'modal', title:
            "Draw - Mousewheel to change size of brush, click color to change color
            and see clear and save controls inside the color preview. -
-           <a type='button' data-toggle='modal' href='#example', class='btn-link'>Drawing Examples</a>".html_safe
+           <a type='button' data-toggle='modal' href='#example', class='btn-link'>
+           Drawing Examples</a>".html_safe
           },
          body:   { content: "<div class='row'></div><div id='drawing-widget'></div>".html_safe },
          footer: {content: "" } %>
@@ -77,21 +90,24 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:freshman_effort) %></h4>
       </div>
       <div class="modal-body">
         <%= image_tag 'East Kin - Freshman Effort.png', class:'img img-responsive col-md-3 pull-right cover'%>
-        <ul class="freshman-effort">
-          <li><%= link_to t(:hope), '#', type: "button", data: {toggle: "modal", target: "#hope"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:plate), '#', type: "button", data: {toggle: "modal", target: "#plate"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:compensated), '#', type: "button", data: {toggle: "modal", target: "#compensated"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:take_cover), '#', type: "button", data: {toggle: "modal", target: "#take-cover"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:one_man), '#', type: "button", data: {toggle: "modal", target: "#one-man"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:roll), '#', type: "button", data: {toggle: "modal", target: "#roll"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:nobodys_fault), '#', type: "button", data: {toggle: "modal", target: "#nobodys-fault"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:alone), '#', type: "button", data: {toggle: "modal", target: "#alone"}, class: 'btn-link' %></li>
-          <li><%= link_to t(:rivers), '#', type: "button", data: {toggle: "modal", target: "#rivers"}, class: 'btn-link' %></li>
+        <ul class="freshman-effort list-unstyled">
+          <li><%= link_to t(:hope), '#', type: "button", data: {toggle: "modal", target: "#hope", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:plate), '#', type: "button", data: {toggle: "modal", target: "#plate", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:compensated), '#', type: "button", data: {toggle: "modal", target: "#compensated", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:take_cover), '#', type: "button", data: {toggle: "modal", target: "#take-cover", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:one_man), '#', type: "button", data: {toggle: "modal", target: "#one-man", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:roll), '#', type: "button", data: {toggle: "modal", target: "#roll", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:nobodys_fault), '#', type: "button", data: {toggle: "modal", target: "#nobodys-fault", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:alone), '#', type: "button", data: {toggle: "modal", target: "#alone", dismiss:'modal'}, class: 'btn-link' %></li>
+          <li><%= link_to t(:rivers), '#', type: "button", data: {toggle: "modal", target: "#rivers", dismiss:'modal'}, class: 'btn-link' %></li>
+          <br>
+          <li><%= t(:freshman_notes_html) %></li>
         </ul>
       </div>
       <div class="modal-footer">
@@ -106,12 +122,13 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:other) %></h4>
       </div>
       <div class="modal-body">
         <ul class="other">
-          <li><%= link_to t(:want_to), '#', type: "button", data: {toggle: "modal", target: "#want-to"}, class: 'btn-link' %></li>
+          <li><%= link_to t(:want_to), '#', type: "button", data: {toggle: "modal", target: "#want-to", dismiss: "modal"}, class: 'btn-link' %></li>
         </ul>
       </div>
       <div class="modal-footer">
@@ -126,7 +143,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:hope) %></h4>
       </div>
       <div class="modal-body">
@@ -144,7 +162,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:compensated) %></h4>
       </div>
       <div class="modal-body">
@@ -162,7 +181,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:take_cover) %></h4>
       </div>
       <div class="modal-body">
@@ -180,7 +200,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:one_man) %></h4>
       </div>
       <div class="modal-body">
@@ -198,7 +219,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:roll) %></h4>
       </div>
       <div class="modal-body">
@@ -216,7 +238,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:nobodys_fault) %></h4>
       </div>
       <div class="modal-body">
@@ -234,7 +257,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:alone) %></h4>
       </div>
       <div class="modal-body">
@@ -252,7 +276,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:rivers) %></h4>
       </div>
       <div class="modal-body">
@@ -270,7 +295,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: {toggle: "modal", target: "#freshman", dismiss:'modal'}, class: 'close' %>
         <h4 class="modal-title"><%= t(:plate) %></h4>
       </div>
       <div class="modal-body">
@@ -288,7 +314,8 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+        <%= link_to "<", '#', type: "button", data: { dismiss:'modal', toggle: "modal", target: "#other"}, class: 'close' %>
         <h4 class="modal-title"><%= t(:want_to) %></h4>
       </div>
       <div class="modal-body">
