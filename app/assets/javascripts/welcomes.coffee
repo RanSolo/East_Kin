@@ -6,7 +6,9 @@ $ ->
   $('#soundcloud').css('background-color', 'none')
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')
-
+  $('.navbar-toggle').click = ->
+    alert('hey')
+    $('.decisions.dropdown-toggle').dropdown();
   onYouTubeIframeAPIReady = ->
     player = new (YT.Player)('player',
       height: '100%'

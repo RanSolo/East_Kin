@@ -1,0 +1,63 @@
+  <ul class="list-inline text-left">
+  <li>
+    <% if active == 'listen' %>
+      <%= link_to t(:listen), '#', type: "button", data:
+                    {toggle: "modal", target: "#musicModal"},
+                     class: 'btn btn-link', disabled: 'true' %>
+    <% else %>
+      <%= link_to t(:listen), '#', type: "button", data:
+                    {toggle: "modal", target: "#musicModal"},
+                     class: 'btn btn-link' %>
+    <% end %>
+  </li>
+  <li>
+    <% if active == 'watch' %>
+      <%= link_to t(:watch), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#videoModal"},
+                   class: 'btn btn-link active', disabled: true %></li>
+    <% else %>
+      <%= link_to t(:watch), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#videoModal"},
+                   class: 'btn btn-link' %></li>
+    <% end %>
+  <li>
+    <% if active == 'bio' %>
+      <%= link_to t(:biography), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#bioModal"},
+                   class: 'btn btn-link', disabled: true %></li>
+    <% else %>
+      <%= link_to t(:biography), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#bioModal"},
+                   class: 'btn btn-link' %></li>
+    <% end %>
+  <li>
+    <% if active == 'Lyrics' %>
+      <%= link_to t(:lyrics), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#lyrics"},
+                   class: 'btn btn-link', disabled: true %></li>
+    <% else %>
+      <%= link_to t(:lyrics), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#lyrics", locals: {active: 'lyrics'}},
+                   class: 'btn btn-link active' %></li>
+    <% end %>
+  <li class='hidden-sm hidden-xs'>
+    <% if active == 'synth' %>
+      <%= link_to t(:synth_controls), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#funModal"},
+                   class: 'btn btn-link' %></li>
+    <% else %>
+      <%= link_to t(:synth_controls), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#funModal"},
+                   class: 'btn btn-link' %></li>
+    <% end %>
+  <li class='hidden-sm hidden-xs'>
+    <% if active == 'draw' %>
+      <%= link_to t(:draw), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#drawModal"},
+                   class: 'btn btn-link' %></li>
+    <% else %>
+      <%= link_to t(:draw), '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#drawModal"},
+                   class: 'btn btn-link' %></li>
+    <% end %>
+</ul>
