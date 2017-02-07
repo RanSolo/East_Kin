@@ -1,63 +1,67 @@
-  <ul class="list-inline text-left">
+<ul class="list-inline text-left">
   <li>
     <% if active == 'listen' %>
-      <%= link_to t(:listen), '#', type: "button", data:
-                    {toggle: "modal", target: "#musicModal"},
-                     class: 'btn btn-link', disabled: 'true' %>
+      <%= glyph 'headphones'%> <%= t(:listen) %>
     <% else %>
-      <%= link_to t(:listen), '#', type: "button", data:
-                    {toggle: "modal", target: "#musicModal"},
-                     class: 'btn btn-link' %>
+      <%= link_to '#', type: "button", data: {toggle: "modal", target: "#musicModal"},
+                   class: 'btn btn-link' do %>
+          <%= glyph 'headphones'%> <%= t(:listen) %>
+      <% end %>
     <% end %>
   </li>
   <li>
     <% if active == 'watch' %>
-      <%= link_to t(:watch), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#videoModal"},
-                   class: 'btn btn-link active', disabled: true %></li>
+      <%= glyph 'film'%> <%= t(:watch) %>
     <% else %>
-      <%= link_to t(:watch), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#videoModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+        <%= glyph 'film'%> <%= t(:watch) %>
+      <% end %>
     <% end %>
+  </li>
   <li>
     <% if active == 'bio' %>
-      <%= link_to t(:biography), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#bioModal"},
-                   class: 'btn btn-link', disabled: true %></li>
+      <%= glyph :book %> <%= t(:biography) %>
     <% else %>
-      <%= link_to t(:biography), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#bioModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+                   <%= glyph :book %> <%= t(:biography) %>
+      <% end %>
     <% end %>
+  </li>
   <li>
-    <% if active == 'Lyrics' %>
-      <%= link_to t(:lyrics), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#lyrics"},
-                   class: 'btn btn-link', disabled: true %></li>
+    <% if active == 'lyrics' %>
+      <%= glyph :pencil %> <%= t(:lyrics) %>
     <% else %>
-      <%= link_to t(:lyrics), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#lyrics", locals: {active: 'lyrics'}},
-                   class: 'btn btn-link active' %></li>
+                   class: 'btn btn-link' do %>
+        <%= glyph :pencil %> <%= t(:lyrics) %>
+      <% end %>
     <% end %>
+  </li>
   <li class='hidden-sm hidden-xs'>
     <% if active == 'synth' %>
-      <%= link_to t(:synth_controls), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#funModal"},
-                   class: 'btn btn-link' %></li>
+      <%= glyph :music %> <%= t(:synth_controls) %>
     <% else %>
-      <%= link_to t(:synth_controls), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#funModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+        <%= glyph :music %> <%= t(:synth_controls) %>
+      <% end %>
     <% end %>
+  </li>
   <li class='hidden-sm hidden-xs'>
     <% if active == 'draw' %>
-      <%= link_to t(:draw), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#drawModal"},
-                   class: 'btn btn-link' %></li>
+      <%= glyph :picture %> <%= t(:draw) %>
     <% else %>
-      <%= link_to t(:draw), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#drawModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+          <%= glyph :picture %> <%= t(:draw) %>
+      <% end %>
     <% end %>
+  </li>
 </ul>

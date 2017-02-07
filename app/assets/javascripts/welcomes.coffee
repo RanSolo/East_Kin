@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+  $(".dial").knob()
   $('#soundcloud').css('background-color', 'none')
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')

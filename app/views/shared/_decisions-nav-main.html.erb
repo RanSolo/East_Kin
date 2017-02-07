@@ -1,27 +1,44 @@
 <ul class="dropdown-menu list-inline text-left">
   <li>
-      <%= link_to t(:listen), '#', type: "button", data:
-                    {toggle: "modal", target: "#musicModal"},
-                     class: 'btn btn-link' %>
+    <%= link_to '#', type: "button", data:
+                  {toggle: "modal", target: "#musicModal"},
+                   class: 'btn btn-link' do %>
+      <%= glyph 'headphones'%> <%= t(:listen) %>
+    <% end %>
   </li>
   <li>
-      <%= link_to t(:watch), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#videoModal"},
-                   class: 'btn btn-link active' %></li>
+    <%= link_to '#', type: "button", data:
+                {toggle: "modal", dismiss:'modal', target: "#videoModal"},
+                 class: 'btn btn-link' do %>
+      <%= glyph :film %> <%= t(:watch) %>
+    <% end %>
+  </li>
   <li>
-      <%= link_to t(:biography), '#', type: "button", data:
-                  {toggle: "modal", dismiss:'modal', target: "#bioModal"},
-                   class: 'btn btn-link' %></li>
+    <%= link_to '#', type: "button", data:
+              {toggle: "modal", dismiss:'modal', target: "#bioModal"},
+               class: 'btn btn-link' do %>
+      <%= glyph :book %> <%= t(:bio) %>
+    <% end %>
+  </li>
   <li>
-      <%= link_to t(:lyrics), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#lyrics"},
-                   class: 'btn btn-link', locals: {active: 'lyrics'} %></li>
+                   class: 'btn btn-link', locals: {active: 'lyrics'} do %>
+        <%= glyph :pencil %> <%= t(:lyrics) %>
+      <% end %>
+                 </li>
   <li class='hidden-sm hidden-xs'>
-      <%= link_to t(:synth_controls), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#funModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+                   <%= glyph :music %> <%= t(:synth_controls) %>
+                   <% end %>
+  </li>
   <li class='hidden-sm hidden-xs'>
-      <%= link_to t(:draw), '#', type: "button", data:
+      <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#drawModal"},
-                   class: 'btn btn-link' %></li>
+                   class: 'btn btn-link' do %>
+        <%= glyph :picture %> <%= t(:draw) %>
+      <% end %>
+                 </li>
 </ul>

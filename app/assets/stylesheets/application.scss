@@ -11,11 +11,18 @@
  * file per style scope.
  *
  */
+
 @import 'bootstrap-datetimepicker';
 @import "bootstrap-sprockets";
-@import "bootstrap_and_overrides";
 @import "bootstrap";
+@import "bootstrap_and_overrides";
+@import "welcomes";
+@import "scaffolds";
+@import "songs";
 @import 'animate/bounce';
 @import 'animate/fadeIn';
 @import 'fullcalendar';
 @import 'flipclock';
+@import 'animate/bounce';
+@import 'animate/fadeIn';
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";

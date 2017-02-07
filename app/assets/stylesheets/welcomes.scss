@@ -1,13 +1,6 @@
 // Place all the styles related to the welcomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import 'animate/bounce';
-@import 'animate/fadeIn';
-
-@font-face {
-  font-family: "Benguiat";
-  src: url('Benguiat.ttf') format("truetype");
-}
 
 body {
   overflow: hidden;
@@ -57,9 +50,11 @@ body {
     transition: none;
   }
 }
+
 #drawModal{
 
   .modal-dialog{
+    margin-top: 0 !important;
     margin-left: 0 !important;
     width: 100%;
     transition: none;
@@ -267,4 +262,20 @@ nav.navbar.navbar-default{
 .f a {
   font-size: 0.8rem;
   color: #F2F3AE;
+}
+#musicModal {
+  z-index: 1000000;
+  .modal-content {
+    background: transparent;
+  }
+  .modal-dialog {
+    width: 100%;
+    margin-left: 0 !important;
+
+    background: transparent;
+  }
+  .modal-header {
+    border-bottom: none;
+    padding: 0;
+  }
 }

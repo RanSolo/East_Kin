@@ -1,16 +1,18 @@
 <!-- Modal -->
 
 <%= modal_dialog id: "bioModal",
-         header: { show_close: true, dismiss: 'modal', title: t(:biography) },
+         header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'bio'}) },
          body:   { content: t(:bio_html) },
          footer: { content: '' } %>
+
 <%= modal_dialog id: "musicModal",
-         header: { show_close: true, dismiss: 'modal', title: t(:music) },
+         header: { show_close: true, dismiss: 'modal' },
          body:   { content: '
-           <iframe width="100%" height="545" scrolling="no" frameborder="no"
-             src="//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false">
+           <iframe width="100%" height="300" scrolling="no" frameborder="no"
+             src="//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false">
            </iframe>'.html_safe },
          footer: { content: ''.html_safe } %>
+
 <%= modal_dialog id: "liveModal",
          header: { show_close: true, dismiss: 'modal', title: t(:live) },
          body:   { content: '
@@ -26,6 +28,7 @@
             </iframe>
           </p>'.html_safe },
          footer: { content: '' } %>
+
 <%= modal_dialog id: "videoModal",
          header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'watch'}) },
          body:   { content: '
@@ -38,6 +41,7 @@
               frameborder="0" allowfullscreen></iframe>
           </div>'.html_safe},
          footer: { content: '' } %>
+
 <%= modal_dialog id: "example",
          header: { show_close: true, dismiss: 'modal', title: t(:drawing_example) },
          body:   { content: '
@@ -46,14 +50,17 @@
             frameborder="0" allowfullscreen></iframe>
           </div>'.html_safe + image_tag('EKBoat.png') + image_tag('smileyou.png')},
          footer: { content: '' } %>
+
 <%= modal_dialog id: "funModal",
-         header: { show_close: true, dismiss: 'modal', title: t(:synth_controls) },
-         body:   { content: '
-            <div id="synth-widget"></div>
-          '.html_safe + t(:synth_explaination_html) },
+         header: { show_close: true,
+                   dismiss: 'modal',
+                   title: "#{render partial: 'shared/decisions-nav',
+                                    locals: { active: 'synth' }}".html_safe },
+         body:   { content: "<div id='synth-widget'></div>".html_safe + t(:synth_explaination_html) },
          footer: {content: '' } %>
+
 <%= modal_dialog id: "drawModal",
-         header: { show_close: true, dismiss: 'modal', title:
+         header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'bio'}) +
            "Draw - Mousewheel to change size of brush, click color to change color
            and see clear and save controls inside the color preview. -
            <a type='button' data-toggle='modal' href='#example', class='btn-link'>
@@ -62,28 +69,26 @@
          body:   { content: "<div class='row'></div><div id='drawing-widget'></div>".html_safe },
          footer: {content: "" } %>
 
-<div id="lyrics" class="modal fade" role="dialog">
-  <div id="player" style="position: fixed; z-index: -99; width: 100%; height: 100%"></div>
-  <div class="modal-dialog modal-lg">
+<%= modal_dialog id: "lyrics",
+         header: { show_close: true,
+                   dismiss: 'modal',
+                   title:  (render partial: 'shared/decisions-nav', locals: { active: 'lyrics' }) },
+         body:   { content: "<h4 class='modal-title'>#{t(:Album)}</h4>
+           <h4>#{link_to t(:freshman_effort), '#', type: 'button', data: {toggle: 'modal', target: '#freshman'}, class: 'btn-link'}</h4>
+           <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
+         ".html_safe },
+         footer: {content: "" } %>
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <%= render partial: 'shared/decisions-nav', locals: {active: :lyrics}%>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t(:lyrics) %></h4>
-      </div>
-      <div class="modal-body">
-        <h4 class="modal-title"><%= t(:Album) %></h4>
-        <h4><%= link_to t(:freshman_effort), '#', type: "button", data: {toggle: "modal", target: "#freshman"}, class: 'btn-link' %></h4>
-        <h4><%= link_to t(:other), '#', type: "button", data: {toggle: "modal", target: "#other"}, class: 'btn-link' %></h4>
-      </div>
-      <div class="modal-footer">
-      </div>
-    </div>
-
-  </div>
-</div>
+<%= modal_dialog id: "contact",
+         header: { show_close: true,
+                   dismiss: 'modal',
+                   title: "#{render partial: 'shared/decisions-nav', locals: { active: 'lyrics' }}".html_safe
+          },
+         body:   { content: "<h4 class='modal-title'>#{t(:Album)}</h4>
+           <h4>#{link_to t(:freshman_effort), '#', type: 'button', data: {toggle: 'modal', target: '#freshman'}, class: 'btn-link'}</h4>
+           <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
+         ".html_safe },
+         footer: {content: "" } %>
 
 <div id="freshman" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
