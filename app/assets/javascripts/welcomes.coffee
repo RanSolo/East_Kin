@@ -8,7 +8,6 @@ $ ->
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')
   $('.navbar-toggle').click = ->
-    alert('hey')
     $('.decisions.dropdown-toggle').dropdown();
   onYouTubeIframeAPIReady = ->
     player = new (YT.Player)('player',
@@ -527,9 +526,7 @@ blowUpUniverse = () ->
   )
   clock.reset ->
   $('.lifeOrDeath').val('death')
-  console.log($('.lifeOrDeath').val())
-  $('#life').hide()
-  $('#all-things').hide()
+  $('#life, #all-things').hide()
   $('#tokyo').show()
   if window.state != 'death'
     ticker(destruction_messages)
@@ -677,9 +674,9 @@ restartUniverse = ->
   console.log($('.lifeOrDeath').val())
   pushParticles()
   fruitLoop()
-  $('#tokyo').hide()
-  $('#all-things').hide()
-  $('#life').show()
+  $('#tokyo, #tokyo-mobile').hide()
+  $('#all-things, #all-things-mobile').hide()
+  $('#life, #life-mobile').show()
   if window.state != 'life'
     ticker(life_messages)
   window.state = 'life'
