@@ -67,9 +67,9 @@
          footer: {content: "" } %>
 
 <%= modal_dialog id: "lyrics",
-         header: { show_close: true,
-                   dismiss: 'modal',
-                   title:  (render partial: 'shared/decisions-nav', locals: { active: 'lyrics' }) },
+         header: { show_close: true, dismiss: 'modal', title: (
+                   render partial: 'shared/decisions-nav',
+                   locals: { active: 'lyrics' }) },
          body:   { content: "<h4 class='modal-title'>#{t(:Album)}</h4>
            <h4>#{link_to t(:freshman_effort), '#', type: 'button', data: {toggle: 'modal', target: '#freshman'}, class: 'btn-link'}</h4>
            <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
