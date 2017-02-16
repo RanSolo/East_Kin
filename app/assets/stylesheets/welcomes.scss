@@ -177,10 +177,11 @@ ul.dropdown-menu{
 }
 
 .btn-secondary {
+  font-size: 16px;
   width: 50% !important;
 }
 
-#all-things-mobile, #all-things{
+#all-things{
   position: relative;
   max-height: 50px;
   border-radius: 0 0 25px 0;
@@ -194,15 +195,6 @@ ul.dropdown-menu{
 .all-things {
   width: 50%;
   top: 20px;
-}
-
-#all-things-mobile{
-  font-size: 15px;
-  top: -90px;
-  float: right;
-  text-align: right;
-  padding-left: 10px;
-  width: 65%;
 }
 
 .crest {
