@@ -15,6 +15,13 @@
   </li>
   <li>
     <%= link_to '#', type: "button", data:
+              {toggle: "modal", dismiss:'modal', target: "#liveModal"},
+               class: 'btn btn-link' do %>
+      <%= glyph :calendar %> <%= t(:live) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#', type: "button", data:
               {toggle: "modal", dismiss:'modal', target: "#bioModal"},
                class: 'btn btn-link' do %>
       <%= glyph :book %> <%= t(:bio) %>
