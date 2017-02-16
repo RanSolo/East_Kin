@@ -21,13 +21,24 @@
     <% end %>
   </li>
   <li>
+    <% if active == 'live' %>
+      <%= glyph :calendar %> <%= t(:live) %>
+    <% else %>
+      <%= link_to '#', type: "button", data:
+                  {toggle: "modal", dismiss:'modal', target: "#liveModal"},
+                   class: 'btn btn-link' do %>
+                   <%= glyph :calendar %> <%= t(:calendar) %>
+      <% end %>
+    <% end %>
+  </li>
+  <li>
     <% if active == 'bio' %>
       <%= glyph :book %> <%= t(:bio) %>
     <% else %>
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#bioModal"},
                    class: 'btn btn-link' do %>
-                   <%= glyph :book %> <%= t(:biography) %>
+                   <%= glyph :book %> <%= t(:bio) %>
       <% end %>
     <% end %>
   </li>
