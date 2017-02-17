@@ -5,7 +5,7 @@
 $ ->
   $(".dial").knob()
   $('#soundcloud').css('background-color', 'none')
-  $('#lyrics').prepend("<div id='player' style='position: fixed; z-index: -99; width: 100%; height: 100%'></div>")
+  $('#lyrics').prepend("<div class='hidden-sm hidden-xs' id='player' style='position: fixed; z-index: -99; width: 100%; height: 100%'></div>")
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')
   onYouTubeIframeAPIReady = ->

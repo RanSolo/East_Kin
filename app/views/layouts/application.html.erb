@@ -75,41 +75,37 @@
       <div class='row'>
         <ul class="nav navbar-nav header-txt">
           <div class="container-fluid">
-          <div class="row">
-            <div class='btn-group btn-group-justified'>
-            <li class='the-buttons' role="group" aria-label="decision">
-              <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
-                 role="button" aria-haspopup="true" aria-expanded="true">
-                 <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
-                 <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
-              </a>
-              <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
-                <%= hidden_field_tag 'lifeOrDeath', 'life' %>
-                <%= link_to @welcome, type: "button", role:"button",
-                            remote: true, onclick:"$('#form').submit();",
-                            class: 'btn btn-secondary',
-                            id: 'restart-universe'  do %>
-                  <%= glyph :flash %><span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
+            <div class="row">
+              <div class='btn-group btn-group-justified'>
+              <li class='the-buttons' role="group" aria-label="decision">
+                <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
+                   role="button" aria-haspopup="true" aria-expanded="true">
+                   <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
+                   <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
+                </a>
+                <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
+                  <%= hidden_field_tag 'lifeOrDeath', 'life' %>
+                  <%= link_to @welcome, type: "button", role:"button",
+                              remote: true, onclick:"$('#form').submit();",
+                              class: 'btn btn-secondary',
+                              id: 'restart-universe'  do %>
+                    <%= glyph :flash %><span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
-                <%= hidden_field_tag 'lifeOrDeath', 'death' %>
-                <%= link_to @welcome, type: "button", role:"button",
-                            onclick:"$('#form1').submit();",
-                            remote: true,
-                            class: 'btn btn-secondary',
-                            id: 'blow-up-universe'  do %>
-
-
-                  <%= glyph :fire %><span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
+                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
+                  <%= hidden_field_tag 'lifeOrDeath', 'death' %>
+                  <%= link_to @welcome, type: "button", role:"button",
+                              onclick:"$('#form1').submit();",
+                              remote: true,
+                              class: 'btn btn-secondary',
+                              id: 'blow-up-universe'  do %>
+                    <%= glyph :fire %><span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
                   <% end %>
-                  <% end %>
-                  <%= render partial: 'shared/decisions-nav-main' %>
-          </li>
-
+                <% end %>
+                <%= render partial: 'shared/decisions-nav-main' %>
+            </li>
           </div>
-          </div>
-
+        </div>
 
         </ul>
         <div class="navbar-header">
