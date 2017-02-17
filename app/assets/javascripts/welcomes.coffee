@@ -8,8 +8,6 @@ $ ->
   $('#lyrics').prepend("<div id='player' style='position: fixed; z-index: -99; width: 100%; height: 100%'></div>")
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')
-  $('.navbar-toggle').click = ->
-    $('.decisions.dropdown-toggle').dropdown();
   onYouTubeIframeAPIReady = ->
     player = new (YT.Player)('player',
       height: '100%'

@@ -75,33 +75,38 @@
       <div class='row'>
         <ul class="nav navbar-nav header-txt">
           <div class="container-fluid">
-          <div class="row the-buttons">
-            <li class='btn-group btn-group-justified' role="group" aria-label="decision">
-              <a href="#" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
+          <div class="row">
+            <div class='btn-group btn-group-justified'>
+            <li class='the-buttons' role="group" aria-label="decision">
+              <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
                  role="button" aria-haspopup="true" aria-expanded="true">
-                 More Decisions <span class="caret"></span>
+                 <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
+                 <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
               </a>
-              <%= render partial: 'shared/decisions-nav-main' %>
-              <%= form_tag '/welcomes/1/edit', remote: true, id:'form' do %>
+              <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
                 <%= hidden_field_tag 'lifeOrDeath', 'life' %>
                 <%= link_to @welcome, type: "button", role:"button",
                             remote: true, onclick:"$('#form').submit();",
-                            class: 'btn btn-secondary pull-left',
+                            class: 'btn btn-secondary',
                             id: 'restart-universe'  do %>
-                  <%= t(:restart_universe)%>
+                  <%= glyph :flash %><span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
                 <% end %>
               <% end %>
-              <%= form_tag '/welcomes/1/edit', remote: true, id:'form1' do %>
+              <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
                 <%= hidden_field_tag 'lifeOrDeath', 'death' %>
                 <%= link_to @welcome, type: "button", role:"button",
                             onclick:"$('#form1').submit();",
                             remote: true,
-                            class: 'btn btn-secondary pull-right',
+                            class: 'btn btn-secondary',
                             id: 'blow-up-universe'  do %>
-                  <%= t(:blow_up_universe)%>
-                <% end %>
-              <% end %>
-            </li>
+
+
+                  <%= glyph :fire %><span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
+                  <% end %>
+                  <% end %>
+                  <%= render partial: 'shared/decisions-nav-main' %>
+          </li>
+
           </div>
           </div>
 
@@ -116,26 +121,6 @@
               <%= link_to( '',welcomes_path) %></li>
             <li class='navbar-link col-md-3 col-sm-3 col-xs-3 hidden-xs'><%= link_to t(:band_name) +  t(:universe),
                 welcomes_path, class: "navbar-brand" %></li>
-            <li class='col-md-12 hidden-sm hidden-md hidden-lg hidden-xl'
-                id='score-board-mobile'>
-              <div class='col-xs-5 pull-left'>
-                <label>
-                  <%= t(:for) %>:&nbsp;
-                  <span class="restart-count">
-                    <%= @welcome.restart_count %>
-                  </span>
-                </label>
-              </div>
-              &nbsp;&nbsp;
-              <div class='col-xs-6 text-right pull-right'>
-                <label>
-                  <%= t(:against)%>:&nbsp;
-                  <span class="destroy-count">
-                    <%= @welcome.destroy_count %>
-                  </span>
-                </label>
-              </div>
-            </li>
             <li>
               <ul class="header-txt list-unstyled">
                 <li class='col-md-12'>
@@ -151,26 +136,29 @@
                 </li>
               </ul>
             </li>
-            <li class='pull-right text-right hidden-xs' id='score-board'>
-              <div>
-                <label>
-                  <%= t(:for) %>:&nbsp;
-                  <span class="restart-count">
-                    <%= @welcome.restart_count %>
-                  </span>
-                </label>
-              </div>
-              &nbsp;&nbsp;
-              <div>
-                <label>
-                  <%= t(:against)%>:&nbsp;
-                  <span class="destroy-count">
-                    <%= @welcome.destroy_count %>
-                  </span>
-                </label>
-              </div>
-            </li>
           </ul>
+          <div class='row'>
+          <div class='col-md-2 col-sm-3 col-xs-11 alert-warning alert text-center pull-right' id='score-board'>
+            <span>Scoreboard</span>
+            <hr>
+            <label class='score-item'>
+              <%= t(:for) %>:&nbsp;
+              <span class="restart-count">
+                <%= @welcome.restart_count %>
+              </span>
+            </label>
+
+          &nbsp;&nbsp;
+          <div>
+            <label class='score-item'>
+              <%= t(:against)%>:&nbsp;
+              <span class="destroy-count">
+                <%= @welcome.destroy_count %>
+              </span>
+            </label>
+          </div>
+          </div>
+          </div>
         </div>
       </div>
     </div>
