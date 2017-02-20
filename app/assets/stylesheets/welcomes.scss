@@ -38,6 +38,8 @@ body {
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
+  -webkit-overflow-scrolling: auto
+}
 }
 @media (max-width: 1000px) {
   .modal-dialog {
