@@ -38,7 +38,8 @@ body {
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
-  -webkit-overflow-scrolling: auto
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
 }
 }
 @media (max-width: 1000px) {
