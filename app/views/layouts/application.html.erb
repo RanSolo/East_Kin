@@ -83,6 +83,13 @@
                    <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
                    <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
                 </a>
+                <div class='btn'>
+                  <%= link_to '#', type: "button", role:'button', data:
+                                {toggle: "modal", target: "#musicModal"},
+                                 class: 'btn btn-secondary' do %>
+                    <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
+                  <% end %>
+                </div>
                 <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
                   <%= hidden_field_tag 'lifeOrDeath', 'life' %>
                   <%= link_to @welcome, type: "button", role:"button",
@@ -102,6 +109,7 @@
                     <%= glyph :fire %><span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
                   <% end %>
                 <% end %>
+
                 <%= render partial: 'shared/decisions-nav-main' %>
             </li>
           </div>

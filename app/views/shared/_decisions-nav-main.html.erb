@@ -2,13 +2,6 @@
   <div class='btn-group btn-group-justified'>
 
     <%= link_to '#', type: "button", data:
-                  {toggle: "modal", target: "#musicModal"},
-                   class: 'btn btn-secondary' do %>
-      <li class="btn-group" role="group"><%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span></li>
-    <% end %>
-
-
-    <%= link_to '#', type: "button", data:
                 {toggle: "modal", dismiss:'modal', target: "#videoModal"},
                  class: 'btn btn-secondary' do %>
       <li class="btn-group" role="group"><%= glyph :film %> <span class='hidden-sm hidden-xs'><%= t(:watch) %></span></li>
