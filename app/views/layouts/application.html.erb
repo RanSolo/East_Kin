@@ -46,7 +46,7 @@
                   controls: 0,
                   showinfo: 0,
                   autohide: 1,
-                  modestbranding: 1,
+                  modestbranding: 0,
                   vq: 'hd1080'},
         videoId: 'V-mCuFYfJdI',
         events: {
@@ -64,7 +64,6 @@
 
     var done = false;
     function onPlayerStateChange(event) {
-
     }
     function stopVideo() {
       player.stopVideo();
@@ -178,7 +177,6 @@
   <%= yield %>
 
   <%= render 'modals' %>
-
 
 </body>
 

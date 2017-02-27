@@ -2,10 +2,12 @@
   <div class='btn-group btn-group-justified'>
 
     <%= link_to '#', type: "button", data:
-                {toggle: "modal", dismiss:'modal', target: "#videoModal"},
+                {toggle: "modal", dismiss:'modal', target: "#contactModal"},
                  class: 'btn btn-secondary' do %>
-      <li class="btn-group" role="group"><%= glyph :film %> <span class='hidden-sm hidden-xs'><%= t(:watch) %></span></li>
+      <li class="btn-group" role="group"><%= glyph :phone %> <span class='hidden-sm hidden-xs'><%= t(:contact) %></span></li>
     <% end %>
+
+
 
 
     <%= link_to '#', type: "button", data:
