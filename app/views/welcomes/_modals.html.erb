@@ -73,14 +73,41 @@
          footer: {content: "" } %>
 
 <%= modal_dialog id: "lyrics",
-         header: { show_close: true, dismiss: 'modal', title: (
-                   render partial: 'shared/decisions-nav',
-                   locals: { active: 'lyrics' }) },
-         body:   { content: "<h4 class='modal-title'>#{t(:Album)}</h4>
-           <h4>#{link_to t(:freshman_effort), '#', type: 'button', data: {toggle: 'modal', target: '#freshman'}, class: 'btn-link'}</h4>
-           <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
-         ".html_safe },
-         footer: {content: "" } %>
+  header: {
+    show_close: true, dismiss: 'modal', title: (
+    render partial: 'shared/decisions-nav',
+    locals: { active: 'lyrics' }) },
+  body:   { content: "<h4 class='modal-title'>#{t(:Album)}</h4>
+   <h4>#{link_to t(:freshman_effort), '#', type: 'button', data: {toggle: 'modal', target: '#freshman'}, class: 'btn-link'}</h4>
+   <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
+  ".html_safe },
+  footer: {content: "" } %>
+
+<%= modal_dialog id: "contactModal",
+  header: { show_close: true, dismiss: 'modal',
+             title: (render partial: 'shared/decisions-nav',
+             locals: { active: 'contact'}) },
+  body:   {
+    content: "
+      <h4>Booking/Band Contact<hr><h4>
+      <a class='btn btn-default btn-sm' href='tel:+1+615-403-1333'>
+        Call East Kin's Agent/Guitar Player</a><br><br>
+      <a class='btn btn-default btn-sm'
+         href='mailto:jzvolensky@gmail.com?
+         subject=Message to East Kin from eastkin.us'>
+         Mail East Kin's Agent/Guitar Player
+      </a><br><br>
+      <h4>Developement Contact<hr><h4>
+      <h6>eastkin.us is Developed by RanSolo</h6>
+      <a class='btn btn-default btn-sm'
+         href='tel:+1+615-604-5706'>
+         Call East Kin's Developer/Mando Player</a><br><br>
+      <a class='btn btn-default btn-sm'
+         href='mailto:ransolo@me.com?subject=Message to East Kin from eastkin.us'>
+         Mail East Kin's Developer/Mando Player
+      </a><br><br>".html_safe },
+  footer: { content: "" } %>
+
 <div id="freshman" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
@@ -279,7 +306,6 @@
 </div>
 <div id="plate" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -293,12 +319,10 @@
       <div class="modal-footer">
       </div>
     </div>
-
   </div>
 </div>
 <div id="want-to" class="modal fade lyric" role="dialog">
   <div class="modal-dialog modal-lg">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -312,31 +336,5 @@
       <div class="modal-footer">
       </div>
     </div>
-
   </div>
 </div>
-<%= modal_dialog id: "contactModal",
-        header: { show_close: true, dismiss: 'modal',
-                  title: (render partial: 'shared/decisions-nav',
-                  locals: { active: 'contact'}) },
-        body:   { content: "<div class='container'>
-                              <h4>Social Media<hr><h4>
-                              
-                              <h4>Booking/Band Contact<hr><h4>
-                               <a class='btn btn-default btn-sm' href='tel:+1+615-403-1333'>
-                                 Call East Kin's Agent/Guitar Player</a><br><br>
-                               <a class='btn btn-default btn-sm'
-                                  href='mailto:jzvolensky@gmail.com?
-                                  subject=Message to East Kin from eastkin.us'>
-                                  Mail East Kin's Agent/Guitar Player
-                               </a><br><br>
-                               <h4>Developement Contact<hr><h4>
-                               <h6>eastkin.us is Developed by RanSolo</h6>
-                               <a class='btn btn-default btn-sm'
-                                  href='tel:+1+615-604-5706'>
-                                  Call East Kin's Developer/Mando Player</a><br><br>
-                               <a class='btn btn-default btn-sm'
-                                  href='mailto:ransolo@me.com?subject=Message to East Kin from eastkin.us'>
-                                  Mail East Kin's Developer/Mando Player
-                               </a><br><br>".html_safe },
-        footer: { content: "" } %>
