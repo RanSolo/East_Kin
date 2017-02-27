@@ -1,15 +1,5 @@
 <ul class="list-inline text-left">
   <li>
-    <% if active == 'contact' %>
-      <%= glyph 'phone'%> <%= t(:contact) %>
-    <% else %>
-      <%= link_to '#', type: "button", data: {toggle: "modal", target: "#contactModal"},
-                   class: 'btn btn-link' do %>
-          <%= glyph 'phone'%> <%= t(:contact) %>
-      <% end %>
-    <% end %>
-  </li>
-  <li>
     <% if active == 'listen' %>
       <%= glyph 'headphones'%> <%= t(:listen) %>
     <% else %>
@@ -18,6 +8,16 @@
 
                      class: 'btn btn-link' do %>
           <%= glyph 'headphones'%> <%= t(:listen) %>
+      <% end %>
+    <% end %>
+  </li>
+  <li>
+    <% if active == 'contact' %>
+      <%= glyph 'phone'%> <%= t(:contact) %>
+    <% else %>
+      <%= link_to '#', type: "button", data: {toggle: "modal", dismiss:'modal', target: "#contactModal"},
+                   class: 'btn btn-link' do %>
+          <%= glyph 'phone'%> <%= t(:contact) %>
       <% end %>
     <% end %>
   </li>

@@ -81,26 +81,6 @@
            <h4>#{link_to t(:other), '#', type: 'button', data: {toggle: 'modal', target: '#other'}, class: 'btn-link' }</h4>
          ".html_safe },
          footer: {content: "" } %>
-
-<%= modal_dialog id: "contactModal",
-        header: { show_close: true, dismiss: 'modal',
-                  title: (render partial: 'shared/decisions-nav',
-                  locals: {active: 'contact'}) },
-        body:   { content: "<div class='container'>
-                               <a class='btn btn-primary btn-sm' href='tel:+1+615-403-1333'>
-                                 Call East Kin's People</a>
-                               <a class='btn btn-primary btn-sm'
-                                  href='mailto:jzvolensky@gmail.com?
-                                  subject=Message to East Kin from eastkin.us'>
-                                  Email East Kin's People
-                               </a><br><br>".html_safe},
-        footer: { content: "<a class='btn btn-primary btn-sm'
-                               href='tel:+1+615-604-5706'>
-                               Call East Kin's Developers</a>
-                            <a class='btn btn-primary btn-sm'
-                               href='mailto:ransolo@me.com?subject=Message to East Kin from eastkin.us'>
-                               Email East Kin's Developers
-                            </a><br><br>".html_safe} %>
 <div id="freshman" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
 
@@ -116,19 +96,7 @@
                         {toggle: "modal", target: "#musicModal"},
                          class: 'btn btn-link' %>
         <%= image_tag 'East Kin - Freshman Effort.png', class:'img img-responsive col-md-3 pull-right cover'%>
-        <ul class="freshman-effort list-unstyled">
-          <li><%= link_to t(:hope), '#', type: "button", data: {toggle: "modal", target: "#hope", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:plate), '#', type: "button", data: {toggle: "modal", target: "#plate", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:compensated), '#', type: "button", data: {toggle: "modal", target: "#compensated", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:take_cover), '#', type: "button", data: {toggle: "modal", target: "#take-cover", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:one_man), '#', type: "button", data: {toggle: "modal", target: "#one-man", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:roll), '#', type: "button", data: {toggle: "modal", target: "#roll", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:nobodys_fault), '#', type: "button", data: {toggle: "modal", target: "#nobodys-fault", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:alone), '#', type: "button", data: {toggle: "modal", target: "#alone", dismiss:'modal'}, class: 'btn-link' %></li>
-          <li><%= link_to t(:rivers), '#', type: "button", data: {toggle: "modal", target: "#rivers", dismiss:'modal'}, class: 'btn-link' %></li>
-          <br>
-          <li><%= t(:freshman_notes_html) %></li>
-        </ul>
+        <%= render partial: 'shared/freshman' %>
       </div>
       <div class="modal-footer">
       </div>
@@ -347,3 +315,25 @@
 
   </div>
 </div>
+<%= modal_dialog id: "contactModal",
+        header: { show_close: true, dismiss: 'modal',
+                  title: (render partial: 'shared/decisions-nav',
+                  locals: { active: 'contact'}) },
+        body:   { content: "<div class='container'><h4>Booking/Band Contact<hr><h4>
+                               <a class='btn btn-primary btn-sm' href='tel:+1+615-403-1333'>
+                                 Call East Kin's People</a>
+                               <a class='btn btn-primary btn-sm'
+                                  href='mailto:jzvolensky@gmail.com?
+                                  subject=Message to East Kin from eastkin.us'>
+                                  Email East Kin's People
+                               </a><br><br>
+                               <h4>Developement Contact<hr><h4>
+                               <h6>eastkin.us is Developed by Randy Russell, RanSolo Music/Dev.</h6>
+                               <a class='btn btn-primary btn-sm'
+                                  href='tel:+1+615-604-5706'>
+                                  Call East Kin's Developers</a>
+                               <a class='btn btn-primary btn-sm'
+                                  href='mailto:ransolo@me.com?subject=Message to East Kin from eastkin.us'>
+                                  Email East Kin's Developers
+                               </a><br><br>".html_safe },
+        footer: { content: "" } %>
