@@ -28,28 +28,34 @@
          footer: { content: '' } %>
 
 <%= modal_dialog id: "infoModal",
-         header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'watch'}) },
+         header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'rules'}) },
          body:   { content: "
-           <div class='container-fluid'>
-           <div class='row'>
-           <div class='col-xs-12 col-sm-6 col-md-3 pull-left'><iframe width='250' height='500' src='https://www.youtube.com/embed/qbAgTJqMk5c' frameborder='0' allowfullscreen></iframe></div>
-           <div class='col-xs-12 col-sm-6 col-lg-8 col-xl-8 pull-right'>All pertinent band information is easily accessible under more decisions.<br><br>
-           Every visitor to East Kin's Universe is benevolent and all powerful.<br>
-           The universe exists, and will be in a different state of flux, each time you arrive. <br><br>
+          <div class='container-fluid'>
+            <div class='row'>
+              <div class='col-xs-12 col-sm-6 col-md-3 pull-left'>
+                <iframe width='250' height='500' src='https://www.youtube.com/embed/qbAgTJqMk5c' frameborder='0' allowfullscreen></iframe>
+              </div>
+              <div class='col-xs-12 col-sm-6 col-lg-8 col-xl-8 pull-right'>
+                All pertinent band information is easily accessible under more decisions.<br><br>
+                Every visitor to East Kin's Universe is benevolent and all powerful.<br>
+                The universe exists, and will be in a different state of flux, each time you arrive. <br><br>
 
-           Plays include but are not limited to:<br>
-            1. Enjoy the universe as it is and listen to music.<br>
-            2. Click Expand, giving the universe a fresh start. Then check out the lyrics section.<br>
-            3. Click Explode, destroying the universe. Then watch a video.<br>
-            4. Play Music, destroy the universe, read lyrics to current song,
-            restart the universe, play synth with current song.<br><br>
+                Plays include but are not limited to:<br>
+                  1. Enjoy the universe as it is and listen to music.<br>
+                  2. Click Expand, giving the universe a fresh start. Then check out the lyrics section.<br>
+                  3. Click Explode, destroying the universe. Then watch a video.<br>
+                  4. Play Music, destroy the universe, read lyrics to current song,
+                  restart the universe, play synth with current song.<br><br>
 
-            There are consequences.  Your universe destructions and births are
-            counted on the scoreboard.  Everyone's are counted.  A tournement of
-            life and death, birth and decay, big bang to big bang, ashes to ashes.
-            You are teamed up with, and pitted against, all visitors to East Kin's Universe.
-            You are teamed up with, and pitted against, yourself depending on your mood.<br><br> Weigh in.  Click
-            Expand or Explode.</div><br><br>
+                There are consequences.  Your universe destructions and births are
+                counted on the scoreboard.  Everyone's are counted.  A tournement of
+                life and death, birth and decay, big bang to big bang, ashes to ashes.
+                You are teamed up with, and pitted against, all visitors to East Kin's Universe.
+                You are teamed up with, and pitted against, yourself depending on your mood.<br><br> Weigh in.  Click
+                Expand or Explode.
+              </div><br><br>
+            </div>
+          </div>
           ".html_safe},
          footer: { content: '' } %>
 

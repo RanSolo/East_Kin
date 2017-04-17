@@ -65,7 +65,7 @@ $ ->
 _classCallCheck = (instance, Constructor) ->
   if !(instance instanceof Constructor)
     throw new TypeError('Cannot call a class as a function')
-  return
+    return
   $('#tokyo').hide('slideOut')
   $('#life').hide('slideOut')
   $('#all-things').show('slideIn')
@@ -663,13 +663,11 @@ blowUpUniverse = () ->
       }
     GravityPoint
 
-
   pushParticles()
 
 restartUniverse = ->
   clock = $('.your-clock').FlipClock(clockFace: 'MinuteCounter')
   $('.lifeOrDeath').val('life')
-  console.log($('.lifeOrDeath').val())
   pushParticles()
   fruitLoop()
   $('#tokyo, #tokyo-mobile').hide()
