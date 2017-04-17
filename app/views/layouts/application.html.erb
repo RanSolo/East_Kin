@@ -71,8 +71,8 @@
       player.stopVideo();
     }
   </script>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container-fluid fixed">
       <div class='row'>
         <ul class="nav navbar-nav header-txt">
           <div class="container-fluid">
@@ -97,7 +97,7 @@
                               remote: true, onclick:"$('#form').submit();",
                               class: 'btn btn-secondary',
                               id: 'restart-universe'  do %>
-                    <%= glyph :flash %><span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
+                    <%= glyph :flash %> <span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
                   <% end %>
                 <% end %>
                 <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
@@ -107,12 +107,15 @@
                               remote: true,
                               class: 'btn btn-secondary',
                               id: 'blow-up-universe'  do %>
-                    <%= glyph :fire %><span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
+                    <%= glyph :fire %> <span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
                   <% end %>
                 <% end %>
-
                 <%= render partial: 'shared/decisions-nav-main' %>
+                <%= link_to '#', type: "button", role:"button", data: { toggle: "modal", dismiss:'modal', target: "#infoModal"}, class: 'btn btn-secondary pull-right', id: 'info' do %>
+                  <%= glyph :globe %> <span class='hidden-sm hidden-xs'><%= t(:info)%></span>
+                <% end %>
             </li>
+
           </div>
         </div>
 
