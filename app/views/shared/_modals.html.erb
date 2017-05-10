@@ -58,8 +58,34 @@
           </div>
           ".html_safe},
          footer: { content: '' } %>
+         <div id="videoModal" class="modal fade" role="dialog">
+           <div class="modal-dialog modal-lg">
 
-<%= modal_dialog id: "videoModal",
+             <!-- Modal content-->
+             <div class="modal-content">
+               <div class="modal-header">
+
+                 <button type="button" class="close" data-dismiss="modal" data-toggle='modal', data-target='#lyrics'>&times;</button>
+                 <h4 class="modal-title"><%=render 'shared/decisions-nav', active: 'watch' %></h4>
+               </div>
+               <div class="modal-body">
+                 <% songs.each do |song| %>
+                   <span class="col-md-scroll glyphicon glyphicon-arrow-down hidden-xl hidden-lg hidden-md pull-left"></span>
+                   <span class="col-md-scroll glyphicon glyphicon-arrow-down hidden-xl hidden-lg hidden-md pull-right"></span>
+                   <div class="embed-responsive embed-responsive-16by9">
+                   <%= song.youtube.html_safe %>
+
+                  </div>
+<% end %>
+               </div>
+               <div class="modal-footer">
+               </div>
+             </div>
+
+           </div>
+         </div>
+
+<%= modal_dialog id: "videos",
          header: { show_close: true, dismiss: 'modal', title: (render partial: 'shared/decisions-nav', locals: {active: 'watch'}) },
          body:   { content: '
            <span class="col-md-scroll glyphicon glyphicon-arrow-down hidden-xl hidden-lg hidden-md pull-left"></span>
@@ -162,6 +188,7 @@
          Mail East Kin's Developer/Mando Player
       </a><br><br>".html_safe },
   footer: { content: "" } %>
+
 
 <div id="freshman" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg">
