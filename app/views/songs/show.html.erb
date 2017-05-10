@@ -17,9 +17,9 @@
     <strong><%= model_class.human_attribute_name(:facebook) %>:</strong>
     <dd><%= @song.facebook %></dd>
   <% end %>
-  <% if @song.soundcloud %>
+  <% if @song.soundcloud? %>
   <strong><%= model_class.human_attribute_name(:soundcloud) %>:</strong>
-  <dd><%= @song.soundcloud? %></dd>
+  <dd><%= @song.soundcloud %></dd>
   <% end %>
   <strong><%= model_class.human_attribute_name(:lyric) %>:</strong>
   <dd><%= @song.lyric.html_safe %></dd>

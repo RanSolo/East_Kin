@@ -74,34 +74,6 @@
   <nav class="navbar navbar-fixed-top" role="navigation">
     <div class="container-fluid fixed">
       <div class='row'>
-        <ul class="nav navbar-nav header-txt">
-          <div class="container-fluid">
-            <div class="row">
-              <div class='btn-group btn-group-justified'>
-              <li class='the-buttons' role="group" aria-label="decision">
-                <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
-                   role="button" aria-haspopup="true" aria-expanded="true">
-                   <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
-                   <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
-                </a>
-                <div class='btn'>
-                  <%= link_to '#', type: "button", role:'button', data:
-                                {toggle: "modal", target: "#musicModal"},
-                                 class: 'btn btn-secondary' do %>
-                    <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
-                  <% end %>
-                </div>
-                <%= render partial: 'shared/decisions-nav-main' %>
-                <%= link_to '#', type: "button", role:"button", data: { toggle: "modal", dismiss:'modal', target: "#infoModal"}, class: 'btn btn-secondary pull-right', id: 'info' do %>
-                  <%= glyph :globe %> <span class='hidden-sm hidden-xs'><%= t(:info)%></span>
-                <% end %>
-            </li>
-
-          </div>
-        </div>
-
-        </ul>
-
           <div></div>
           <ul class="nav navbar-nav">
             <li class='crest pull-left hidden-xs'>
@@ -128,7 +100,7 @@
       </div>
     </div>
   </nav>
-<div class='container-fluid scrollable'>
+<div class='container-fluid'>
   <% if notice %>
     <p class="alert alert-info"><%= notice %></p>
   <% end %>
