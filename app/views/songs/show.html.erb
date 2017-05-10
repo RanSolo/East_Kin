@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Song -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.titleize %> <%= model_class.human_attribute_name(:title) %>: <%= @song.title %></h1>
+  <h5><strong><%= model_class.human_attribute_name(:writers) %>:</strong></dt>
+  <%= @song.writers %> <strong><%= model_class.human_attribute_name(:copyright) %>:</strong>
+  <%= @song.copyright %></h5>
+</div>
 
-<p>
-  <strong>Lyric:</strong>
-  <%= @song.lyric %>
-</p>
+<dl class="dl-horizontal">
+  <% if @song.youtube? %>
+    <strong><%= model_class.human_attribute_name(:youtube) %>:
 
-<p>
-  <strong>Title:</strong>
-  <%= @song.title %>
-</p>
+    <dd><div class="embed-responsive embed-responsive-16by9"><%= @song&.youtube.html_safe %></div></dd>
 
-<p>
-  <strong>Writers:</strong>
-  <%= @song.writers %>
-</p>
+  <% end %>
+  <% if @song.facebook? %>
+    <strong><%= model_class.human_attribute_name(:facebook) %>:</strong>
+    <dd><%= @song.facebook %></dd>
+  <% end %>
+  <% if @song.soundcloud %>
+  <strong><%= model_class.human_attribute_name(:soundcloud) %>:</strong>
+  <dd><%= @song.soundcloud? %></dd>
+  <% end %>
+  <strong><%= model_class.human_attribute_name(:lyric) %>:</strong>
+  <dd><%= @song.lyric.html_safe %></dd>
+</dl>
 
-<p>
-  <strong>Copyright:</strong>
-  <%= @song.copyright %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @song.active %>
-</p>
-
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              songs_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_song_path(@song), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              song_path(@song),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

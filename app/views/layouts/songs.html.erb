@@ -91,25 +91,6 @@
                     <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
                   <% end %>
                 </div>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
-                  <%= hidden_field_tag 'lifeOrDeath', 'life' %>
-                  <%= link_to @welcome, type: "button", role:"button",
-                              remote: true, onclick:"$('#form').submit();",
-                              class: 'btn btn-secondary',
-                              id: 'restart-universe'  do %>
-                    <%= glyph :flash %> <span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
-                  <% end %>
-                <% end %>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
-                  <%= hidden_field_tag 'lifeOrDeath', 'death' %>
-                  <%= link_to @welcome, type: "button", role:"button",
-                              onclick:"$('#form1').submit();",
-                              remote: true,
-                              class: 'btn btn-secondary',
-                              id: 'blow-up-universe'  do %>
-                    <%= glyph :fire %> <span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
-                  <% end %>
-                <% end %>
                 <%= render partial: 'shared/decisions-nav-main' %>
                 <%= link_to '#', type: "button", role:"button", data: { toggle: "modal", dismiss:'modal', target: "#infoModal"}, class: 'btn btn-secondary pull-right', id: 'info' do %>
                   <%= glyph :globe %> <span class='hidden-sm hidden-xs'><%= t(:info)%></span>
@@ -120,10 +101,8 @@
         </div>
 
         </ul>
-        <div class="navbar-header">
-        </div>
-          <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
-          <div id="output"></div>
+
+          <div></div>
           <ul class="nav navbar-nav">
             <li class='crest pull-left hidden-xs'>
               <%= link_to '.' %></li>
@@ -144,34 +123,12 @@
                 </li>
               </ul>
             </li>
-          </ul>
-          <div class='row'>
-          <div class='col-md-2 col-sm-3 col-xs-11 alert-warning alert text-center pull-right' id='score-board'>
-            <span>Scoreboard</span>
-            <hr>
-            <label class='score-item'>
-              <%= t(:for) %>:&nbsp;
-              <span class="restart-count">
-                <%= @welcome.restart_count %>
-              </span>
-            </label>
-
-          &nbsp;&nbsp;
-          <div>
-            <label class='score-item'>
-              <%= t(:against)%>:&nbsp;
-              <span class="destroy-count">
-                <%= @welcome.destroy_count %>
-              </span>
-            </label>
-          </div>
-          </div>
-          </div>
+          </ul>>
         </div>
       </div>
     </div>
   </nav>
-
+<div class='container-fluid scrollable'>
   <% if notice %>
     <p class="alert alert-info"><%= notice %></p>
   <% end %>
@@ -182,7 +139,7 @@
   <%= yield %>
 
   <%= render 'shared/modals', songs: @songs %>
-
+</div>
 </body>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

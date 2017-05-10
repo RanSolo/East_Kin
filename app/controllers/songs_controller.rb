@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  layout "songs"
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   # GET /songs
@@ -69,6 +70,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:lyric, :title, :writers, :copyright, :active)
+      params.require(:song).permit(:lyric, :title, :writers, :copyright, :active, :youtube, :facebook, :soundcloud)
     end
 end

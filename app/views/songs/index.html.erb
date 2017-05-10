@@ -1,35 +1,52 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Songs</h1>
-
-<table>
+<%- model_class = Song -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table">
   <thead>
     <tr>
-      <th>Lyric</th>
-      <th>Title</th>
-      <th>Writers</th>
-      <th>Copyright</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:lyric) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:writers) %></th>
+      <th><%= model_class.human_attribute_name(:copyright) %></th>
+      <th><%= model_class.human_attribute_name(:active) %></th>
+      <th class='col-md-1'><%= model_class.human_attribute_name(:youtube) %></th>
+      <th><%= model_class.human_attribute_name(:facebook) %></th>
+      <th><%= model_class.human_attribute_name(:soundcloud) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @songs.each do |song| %>
       <tr>
-        <td><%= song.lyric %></td>
+        <td><%= link_to song.id, song_path(song) %></td>
+        <td><% if song.lyric?  %>
+              yes<%end %></td>
         <td><%= song.title %></td>
         <td><%= song.writers %></td>
         <td><%= song.copyright %></td>
         <td><%= song.active %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= song.youtube.html_safe %></td>
+        <td><%= song.facebook %></td>
+        <td><%= song.soundcloud %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      song_path(song), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_song_path(song), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      song_path(song),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Song', new_song_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_song_path,
+            :class => 'btn btn-primary' %>

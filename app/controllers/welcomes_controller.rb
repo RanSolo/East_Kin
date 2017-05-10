@@ -8,6 +8,7 @@ class WelcomesController < ApplicationController
   # GET /welcomes.json
  def index
    set_welcome
+   @songs = Song.all
  end
   # GET /welcomes/1
   # GET /welcomes/1.json
