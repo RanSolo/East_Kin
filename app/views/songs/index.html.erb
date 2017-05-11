@@ -1,6 +1,10 @@
 <%- model_class = Song -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_song_path,
+                :class => 'btn btn-primary' %>
+  </h1>
 </div>
 <table class="table">
   <thead>
@@ -46,7 +50,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_song_path,
-            :class => 'btn btn-primary' %>
