@@ -1,4 +1,10 @@
-
+<% content_for :head do %>
+  <meta property="fb:app_id" content="myid" />
+  <meta property="og:type"   content="sdff:post" />
+  <meta property="og:url"    content="<%= "http://sdff.herokuapp.com" + post_path(@post) %>" />
+  <meta property="og:title"  content="Sample" />
+  <meta property="og:image"  content="https://fbstatic-a.akamaihd.net/images/devsite/attachment_blank.png" />
+<% end %>
 <%- model_class = Song -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %>
