@@ -5,7 +5,7 @@
   <meta property="og:title"         content="East Kin's Universe" />
   <meta property="fb:app_id"        content="690984834394147" />
   <meta property="og:description"   content="A rock band from Nashville with a website that is informative and fun.  Detroy the universe of bring it new life.  Good guy or bad guy" />
-  <meta property="og:image"         content="https://www.dropbox.com/s/3n6vp71ummpdmfl/Screenshot%202017-05-26%2017.28.34.png?dl=0" />
+  <meta property="og:image"         content="<%= image_url 'default_post_share.png' %>" />
 <% end %>
 
 <div class="page-header">
@@ -20,7 +20,7 @@
   data-width="450"
   data-show-faces="true">
 </div>
-BOOTY
+
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
