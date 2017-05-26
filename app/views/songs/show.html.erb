@@ -1,4 +1,19 @@
 <%- model_class = Song -%>
+<% content_for :head do %>
+  <meta property="og:url"           content="http://www.eastkin.us" />
+  <meta property="og:type"          content="Support saving for college" />
+  <meta property="og:title"         content="East Kin's Universe" />
+  <meta property="fb:app_id"        content="690984834394147" />
+  <meta property="og:description"   content="A rock band from Nashville with a website that is informative and fun.  Detroy the universe of bring it new life.  Good guy or bad guy" />
+  <meta property="og:image"         content="https://www.dropbox.com/s/3n6vp71ummpdmfl/Screenshot%202017-05-26%2017.28.34.png?dl=0" />
+<% end %>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+BOOTY
 <div class="page-header">
   <h3><%=t '.title', :default => model_class.model_name.human.titleize %> <%= model_class.human_attribute_name(:song) %>: <%= @song.title %></h1>
   <h5><strong><%= model_class.human_attribute_name(:writers) %>:</strong></dt>
