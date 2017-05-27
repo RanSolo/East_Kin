@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= set_meta_tags title: "East Kin's Universe" %>
-  <%= set_meta_tags site: "East Kin's Universe" %>
-  <%= set_meta_tags canonical: "http://eastkin.us/songs" %>
-  <%= set_meta_tags charset: "utf-8" %>
-  <%= set_meta_tags fb: { app_id: "690984834394147" } %>
+  <% set_meta_tags title: "East Kin's Universe" %>
+  <% set_meta_tags site: "East Kin's Universe" %>
+  <% set_meta_tags charset: "utf-8" %>
+  <% set_meta_tags fb: { [app_id: "690984834394147"] } %>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= display_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
   <nav class="navbar navbar-fixed-top" role="navigation">
