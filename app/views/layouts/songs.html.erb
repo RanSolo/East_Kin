@@ -5,7 +5,7 @@
   <%= set_meta_tags site: "East Kin's Universe" %>
   <%= set_meta_tags canonical: "http://eastkin.us/songs" %>
   <%= set_meta_tags fb: { app_id: "690984834394147" } %>
-  set_meta_tags image_src: "http://yoursite.com/icons/icon_32.png"
+  <%= set_meta_tags image_src: "http://yoursite.com/icons/icon_32.png" %>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,6 +57,5 @@
     <%= yield %>
 </div>
 </body>
-
 <%= javascript_include_tag 'song_layout', 'data-turbolinks-track' => true %>
 </html>
