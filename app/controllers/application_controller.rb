@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
   def prepare_meta_tags(options={})
     site_name   = "EastKin"
-    title       = [controller_name, action_name].join("")
+    title       = [@song.title, 'East Kin'].join(" - ")
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe of bring it new
         life. Good guy or bad guy"
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
         title: title,
         image: image,
         description: description,
-        type: 'website'
+        type: 'video.movie'
       }
     }
 

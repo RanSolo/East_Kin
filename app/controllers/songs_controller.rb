@@ -15,9 +15,8 @@ class SongsController < ApplicationController
   def show
     prepare_meta_tags(title: @song.title,
                       description: @song.lyric,
-                      keywords: @song_keywords,
                       video: @song.youtube,
-                      image: view_context.image_url('default_post_share.png'),
+                      image: view_context.image_url('want_to_image.png'),
                       twitter: {card: "summary_large_image"})
   end
 
