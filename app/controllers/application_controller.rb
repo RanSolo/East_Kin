@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
         image: image
       },
       og: {
-        url: current_url,
+        url: 'http://www.eastkin.us/songs',
         site_name: site_name,
         title: title,
         image: image,
