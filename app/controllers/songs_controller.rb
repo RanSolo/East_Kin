@@ -17,7 +17,7 @@ class SongsController < ApplicationController
                       description: @song.lyric,
                       keywords: @song_keywords,
                       video: @song.youtube,
-                      image: view_context.image_url('default_post_share.png'),
+                      image: view_context.image_url('images/default_post_share.png'),
                       twitter: {card: "summary_large_image"})
   end
 
