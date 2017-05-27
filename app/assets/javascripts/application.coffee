@@ -21,7 +21,6 @@
 #= require widget
 #= require widget2
 #= require welcomes
-#= require flipclock.min
 #= require bootstrap-datetimepicker
 #= require turbolinks
 #= require init

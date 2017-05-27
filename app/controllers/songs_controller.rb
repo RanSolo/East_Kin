@@ -3,6 +3,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :set_songs
 
+
   # GET /songs
   # GET /songs.json
   def index
@@ -12,6 +13,12 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    prepare_meta_tags(title: @song.title,
+                      description: @song.lyric,
+                      keywords: @song_keywords,
+                      video: @song.youtube,
+                      image: view_context.image_path('default_post_share.png'),
+                      twitter: {card: "summary_large_image"})
   end
 
   # GET /songs/new
@@ -62,6 +69,7 @@ class SongsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
