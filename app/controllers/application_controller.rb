@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_welcome
   before_action :prepare_meta_tags, if: "request.get?"
   def prepare_meta_tags(options={})
-    app_id = "690984834394147"
     site_name   = "EastKin"
     title       = [controller_name, action_name].join("")
     description = "A rock band from Nashville with a
@@ -29,7 +28,6 @@ class ApplicationController < ActionController::Base
         image: image
       },
       og: {
-        app_id: app_id,
         url: current_url,
         site_name: site_name,
         title: title,
