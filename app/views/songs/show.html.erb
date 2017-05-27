@@ -1,9 +1,3 @@
-<%= content_for :head do %>
-
-
-
-  
-<% end %>
 <%- model_class = Song -%>
 <div class="page-header">
   <h3><%=t '.title', :default => model_class.model_name.human.titleize %> <%= model_class.human_attribute_name(:song) %>: <%= @song.title %></h1>
