@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%= content_for?(:head) ? yield(:head) : '' %>
   <title>"EastKinsUniverse"</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,7 @@
   <meta property="og:description" content="A rock band from Nashville with a
       website that is informative and fun.  Detroy the universe of bring it new
       life. Good guy or bad guy" />
-
+  <%= content_for?(:head) ? yield(:head) : '' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
