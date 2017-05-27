@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe of bring it new
         life. Good guy or bad guy"
-    image       = options[:image] || "want_to_image"
+    image       = options[:image] || "images/want_to_image"
     current_url = request.url
 
     # Let's prepare a nice set of defaults
