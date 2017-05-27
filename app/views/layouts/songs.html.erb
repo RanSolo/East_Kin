@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>"East Kin's Universe"</title>
+  <title>"EastKinsUniverse"</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= content_for?(:head) ? yield(:head) : 'booty' %>
+  <meta property="og:url" content="http://www.eastkin.us/songs" />
+  <meta property="og:type" content="website" />
+  <meta property="fb:app_id" content="690984834394147" />
+  <%= content_for?(:head) ? yield(:head) : '' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
