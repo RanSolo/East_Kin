@@ -13,7 +13,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
-    set_meta_tags(facebook: {title: @song.title,
+    set_meta_tags(og: {title: @song.title,
                       description: @song.lyric,
                       video: @song.youtube,
                       image: view_context.image_url('want_to_image.png')},
