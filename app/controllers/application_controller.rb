@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     image       = options[:image] || "want_to_image"
     current_url = request.url
 
-    # Let's prepare a nice set of defaults
+    # Prepare set of defaults
     defaults = {
       site:        site_name,
       title:       title,
