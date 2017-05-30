@@ -18,7 +18,7 @@ class SongsController < ApplicationController
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
-        image: 'synth_widget',
+        image: 'images/synth-widget.png',
         description: 'booty',
         type: 'video.movie'
       },
