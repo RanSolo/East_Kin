@@ -34,12 +34,11 @@ class ApplicationController < ActionController::Base
         title: title,
         image: image,
         description: description,
-        type: 'video'
-      }
+        type: 'video.movie'
+      },
+      fb: { app_id: '690984834394147'}
     }
-    if options.nil?
-      options.reverse_merge!(defaults)
-    end
+    options.reverse_merge!(defaults)
     set_meta_tags options
   end
   def set_welcome
