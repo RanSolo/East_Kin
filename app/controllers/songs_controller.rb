@@ -13,11 +13,12 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
-    set_meta_tags(og: {title: @song.title,
+    prepare_meta_tags({
+                      title: @song.title,
                       description: @song.lyric,
                       video: @song.youtube,
-                      image: view_context.image_url('want_to_image.png')},
-                      twitter: {card: "summary_large_image"})
+                      image: view_context.image_url('images/synth_widget.png'),
+                      twitter: {card: "images/want_to_image.png"}})
   end
 
   # GET /songs/new
