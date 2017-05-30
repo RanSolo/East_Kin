@@ -14,11 +14,7 @@
   <%= @song.copyright %></h5>
 </div>
 <div class="fb-share-button" data-href="http://www.eastkin.us/songs/1" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
-<a href="http://www.youtube.com/watch?v=BsekcY04xvQ" id="bgndVideo" class="player"
-  data-property= "{videoURL:'7SnmCUwOsts',containment:'body', showControls:true, autoPlay:true, loop:false,
-  vol:50, mute:true, startAt:10, opacity:1, addRaster:false, quality:'default'}" >
-  background movie
-  </a>
+<div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/C2GoXPNRmeE',containment:'body',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
