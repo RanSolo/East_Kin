@@ -18,11 +18,12 @@ class SongsController < ApplicationController
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
-        image: view_context.image_url('images/synth_widget.png'),
+        image: view_context.image_url('synth_widget.png'),
         video: @song.youtube,
+        description: @song.lyric,
         type: 'video.movie'
       },
-      twitter: {card: "images/want_to_image.png"}})
+      twitter: {card: view_context.image_url("want_to_image.png")}})
   end
 
   # GET /songs/new
