@@ -19,9 +19,9 @@ class SongsController < ApplicationController
         site_name: "East Kin Songs",
         title: @song.title,
         image: view_context.image_url('want_to_image.png'),
-        video: @song.youtube,
+        video: {url:@song.youtube, height: '349', width: '560',type: 'application/x-shockwave-flash'},
         description: @song.lyric.html_safe,
-        type: 'video.movie'
+        type: 'video'
       },
       fb: { app_id: '690984834394147'},
       twitter: {card: view_context.image_url("want_to_image.png")}})
