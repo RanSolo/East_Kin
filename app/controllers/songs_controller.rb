@@ -14,10 +14,14 @@ class SongsController < ApplicationController
   # GET /songs/1.json
   def show
     prepare_meta_tags({
-                      title: @song.title,
-                      description: @song.lyric,
-                      video: @song.youtube,
-                      image: view_context.image_url('images/synth_widget.png'),
+      og: {
+        url: current_url,
+        site_name: "East Kin Songs",
+        title: @song.title,
+        image: 'images/synth_widget',
+        description: 'booty',
+        type: 'video.movie'
+      },
                       twitter: {card: "images/want_to_image.png"}})
   end
 
