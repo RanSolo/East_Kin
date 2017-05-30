@@ -2,7 +2,6 @@ class SongsController < ApplicationController
   layout "songs"
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :set_songs
-  before_action :prepare_tags, if: "request.get?"
 
 
   # GET /songs
@@ -14,6 +13,11 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    prepare_meta_tags(facebook: {title: @song.title,
+                      description: @song.lyric,
+                      video: @song.youtube,
+                      image: view_context.image_url('want_to_image.png')},
+                      twitter: {card: "summary_large_image"})
   end
 
   # GET /songs/new
@@ -67,13 +71,6 @@ class SongsController < ApplicationController
 
 
   private
-  def prepare_tags
-    prepare_meta_tags(title: @song.title,
-                      description: @song.lyric,
-                      video: @song.youtube,
-                      image: view_context.image_url('want_to_image.png'),
-                      twitter: {card: "summary_large_image"})
-  end
     # Use callbacks to share common setup or constraints between actions.
     def set_song
       @song = Song.find(params[:id])
