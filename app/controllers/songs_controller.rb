@@ -18,8 +18,8 @@ class SongsController < ApplicationController
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
-        image: 'images/synth-widget.png',
-        description: 'booty',
+        image: view_context.image_url('images/synth_widget.png'),
+        video: @song.youtube,
         type: 'video.movie'
       },
       twitter: {card: "images/want_to_image.png"}})

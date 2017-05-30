@@ -37,9 +37,9 @@ class ApplicationController < ActionController::Base
         type: 'video.movie'
       }
     }
-
-    options.reverse_merge!(defaults)
-
+    if options.nil?
+      options.reverse_merge!(defaults)
+    end
     set_meta_tags options
   end
   def set_welcome
