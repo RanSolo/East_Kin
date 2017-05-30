@@ -13,8 +13,7 @@
   <%= @song.writers %> <strong><%= model_class.human_attribute_name(:copyright) %>:</strong>
   <%= @song.copyright %></h5>
 </div>
-<div class="fb-share-button" data-href="http://www.eastkin.us/songs/1" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
-<div id="bgndVideo" class="player" data-property="{videoURL:'https://youtu.be/C2GoXPNRmeE',containment:'.container-fluid',autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
+<div class="fb-share-button" data-href="https://youtu.be/C2GoXPNRmeE" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
