@@ -15,7 +15,7 @@ class SongsController < ApplicationController
   def show
     prepare_meta_tags({
       og: {
-        url: current_url,
+        url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
         image: 'images/synth_widget',
