@@ -1,12 +1,24 @@
 <%- model_class = Song -%>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=690984834394147";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="page-header">
   <h3><%=t '.title', :default => model_class.model_name.human.titleize %> <%= model_class.human_attribute_name(:song) %>: <%= @song.title %></h1>
   <h5><strong><%= model_class.human_attribute_name(:writers) %>:</strong></dt>
   <%= @song.writers %> <strong><%= model_class.human_attribute_name(:copyright) %>:</strong>
   <%= @song.copyright %></h5>
 </div>
-<div class="fb-share-button" data-href="http://www.eastkin.us/songs/1" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
-
+<div class="fb-share-button" data-href="http://www.eastkin.us/songs/1" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
+<a href="http://www.youtube.com/watch?v=BsekcY04xvQ" id="bgndVideo" class="player"
+  data-property= "{videoURL:'7SnmCUwOsts',containment:'body', showControls:true, autoPlay:true, loop:false,
+  vol:50, mute:true, startAt:10, opacity:1, addRaster:false, quality:'default'}" >
+  background movie
+  </a>
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
