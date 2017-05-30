@@ -35,8 +35,7 @@ class ApplicationController < ActionController::Base
         image: image,
         description: description,
         type: 'video.movie'
-      },
-      fb: { app_id: '690984834394147'}
+      }
     }
     if options.nil?
       options.reverse_merge!(defaults)
