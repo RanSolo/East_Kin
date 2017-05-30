@@ -20,7 +20,7 @@ class SongsController < ApplicationController
         title: @song.title,
         image: view_context.image_url('want_to_image.png'),
         video: {url:@song.youtube, height: '349', width: '560',type: 'application/x-shockwave-flash'},
-        description: @song.lyric,
+        description: @song.lyric.html_safe,
         type: 'video'
       },
       fb: { app_id: '690984834394147'},
