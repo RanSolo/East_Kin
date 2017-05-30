@@ -20,7 +20,7 @@ class SongsController < ApplicationController
         title: @song.title,
         image: view_context.image_url('synth_widget.png'),
         video: @song.youtube,
-        description: @song.lyric,
+        description: @song.lyric.html_safe,
         type: 'video.movie'
       },
       twitter: {card: view_context.image_url("want_to_image.png")}})
