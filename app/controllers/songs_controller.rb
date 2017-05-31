@@ -22,7 +22,7 @@ class SongsController < ApplicationController
         video: @song.youtube,
         description: @song.lyric.html_safe,
         type: 'video.movie'
-      }
+      },
       twitter: {card: view_context.image_url("want_to_image.png")}})
   end
 
