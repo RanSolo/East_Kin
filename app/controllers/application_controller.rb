@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       title:       title,
       image:       image,
       description: description,
-      keywords:    [rock, nashville, EastKin],
+      keywords:    ['rock', 'nashville', 'EastKin'],
       twitter: {
         site_name: site_name,
         site: '@eastkin',
