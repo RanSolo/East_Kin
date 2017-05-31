@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       title:       title,
       image:       image,
       description: description,
-      keywords:    %w[rock, nashville, EastKin],
+      keywords:    [rock, nashville, EastKin],
       twitter: {
         site_name: site_name,
         site: '@eastkin',
@@ -35,8 +35,7 @@ class ApplicationController < ActionController::Base
         image: image,
         description: description,
         type: 'video.movie'
-      },
-      fb: { app_id: '690984834394147'}
+      }
     }
     options.reverse_merge!(defaults)
     set_meta_tags options
