@@ -18,8 +18,8 @@
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
-
-    <dd><div class="embed-responsive embed-responsive-16by9"><iframe width="100%" height="100%" src="<%= @song&.youtube.html_safe %>" frameborder="0" allowfullscreen></iframe></div></dd>
+https://www.youtube.com/watch?v=C2GoXPNRmeE
+    <dd><div class="embed-responsive embed-responsive-16by9"><iframe width="100%" height="100%" src="<%= @song&.youtube.gsub('watch?v=','embed/').html_safe %>" frameborder="0" allowfullscreen></iframe></div></dd>
 
   <% end %>
   <% if @song.facebook? %>

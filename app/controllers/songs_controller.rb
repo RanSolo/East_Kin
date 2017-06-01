@@ -13,13 +13,14 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    video = @song.youtube.gsub("watch?v=", "v/")
     prepare_meta_tags({
       og: {
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
         image: view_context.image_url('want_to_image.png'),
-        video: { _: @song.youtube, url: @song.youtube, secure_url: @song.youtube,
+        video: { _: video, url: video, secure_url: video,
                 type: 'application/x-shockwave-flash',
                 width: 560, height: 315 },
         description: @song.lyric.html_safe,
