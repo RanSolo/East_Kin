@@ -23,7 +23,7 @@ class SongsController < ApplicationController
         video: { _: video, url: video, secure_url: video,
                 type: 'application/x-shockwave-flash',
                 width: 560, height: 315 },
-        description: @song.lyric.html_safe,
+        description: @song.lyric,
         type: 'video.other'
       },
       twitter: {card: view_context.image_url("want_to_image.png")}})
