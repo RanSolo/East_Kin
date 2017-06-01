@@ -18,7 +18,7 @@ class SongsController < ApplicationController
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
-        image: view_context.image_url('want_to_image.png'),
+          image: view_context.image_url('want_to_image.png'),
         video: @song.youtube,
         description: @song.lyric.html_safe,
         type: 'video.movie'

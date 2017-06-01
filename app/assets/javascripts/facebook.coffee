@@ -1,10 +1,3 @@
-window.fbAsyncInit = ->
-  FB.init
-    xfbml: true
-    version: 'v2.9'
-  FB.AppEvents.logPageView()
-  return
-
 ((d, s, id) ->
   js = undefined
   fjs = d.getElementsByTagName(s)[0]
