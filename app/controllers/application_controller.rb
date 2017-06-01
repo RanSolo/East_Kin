@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
         title: title,
         image: image,
         description: description,
-        type: 'video'
+        type: 'website'
       }
     }
     options.reverse_merge!(defaults)

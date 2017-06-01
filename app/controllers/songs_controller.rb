@@ -19,11 +19,11 @@ class SongsController < ApplicationController
         site_name: "East Kin Songs",
         title: @song.title,
         image: view_context.image_url('want_to_image.png'),
-        video: { _: @song.youtube, secure_url: @song.youtube,
+        video: { _: @song.youtube, url: @song.youtube, secure_url: @song.youtube,
                 type: 'application/x-shockwave-flash',
-                width: '560px', height: '315px'},
+                width: 560, height: 315 },
         description: @song.lyric.html_safe,
-        type: 'video.movie'
+        type: 'video.other'
       },
       twitter: {card: view_context.image_url("want_to_image.png")}})
   end
