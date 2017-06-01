@@ -18,8 +18,10 @@ class SongsController < ApplicationController
         url: request.url,
         site_name: "East Kin Songs",
         title: @song.title,
-          image: view_context.image_url('want_to_image.png'),
-        video: @song.youtube,
+        image: view_context.image_url('want_to_image.png'),
+        video: { _: @song.youtube, secure_url: @song.youtube,
+                type: 'application/x-shockwave-flash',
+                width: '560px', height: '315px'},
         description: @song.lyric.html_safe,
         type: 'video.movie'
       },

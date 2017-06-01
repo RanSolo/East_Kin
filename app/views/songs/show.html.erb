@@ -5,8 +5,16 @@
   <%= @song.writers %> <strong><%= model_class.human_attribute_name(:copyright) %>:</strong>
   <%= @song.copyright %></h5>
 </div>
-<div class="fb-share-button" data-href="http://www.eastkin.us/songs/1" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.eastkin.us%2Fsongs%2F1&amp;src=sdkpreparse">Share</a></div>
 
+
+<a href="http://kanishkkunal.in"
+  target="popup"
+  onclick="window.open('http://kanishkkunal.in','popup','width=600,height=600'); return false;">
+    Open Link in Popup
+</a>
+
+
+<a href="<%= "'http://www.facebook.com/sharer/sharer.php?u=http://www.eastkin.us/songs/#{@song.id.to_s}'"%>" target="popup" onclick="window.open(<%= "'http://www.facebook.com/sharer/sharer.php?u=http://www.eastkin.us/songs/#{@song.id.to_s}'"%>,'popup','width=600,height=600'); return false;">Share</a>
 <dl class="dl-horizontal">
   <% if @song.youtube? %>
     <strong><%= model_class.human_attribute_name(:youtube) %>:
