@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe or bring it new
         life. Good guy or bad guy"
-    image       = options[:image] || view_context.image_url("east-kin-radio")
+    image       = options[:image] || view_context.image_url("east-kin-radio-cafe")
     current_url = request.url
 
     # Prepare set of defaults
