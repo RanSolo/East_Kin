@@ -8,6 +8,7 @@ class WelcomesController < ApplicationController
   # GET /welcomes.json
  def index
    set_welcome
+   prepare_meta_tags()
    @songs = Song.all
  end
   # GET /welcomes/1
