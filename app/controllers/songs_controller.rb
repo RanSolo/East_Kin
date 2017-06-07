@@ -26,7 +26,7 @@ class SongsController < ApplicationController
         description: @song.lyric,
         type: 'video.other'
       },
-      twitter: {card: view_context.image_url("want_to_image.png")}})
+      twitter: {card: 'summary_large_image', image: view_context.image_url("want_to_image.png"), title: @song.title, description: @song.lyric }})
   end
 
   # GET /songs/new

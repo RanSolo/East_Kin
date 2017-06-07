@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       twitter: {
         site_name: site_name,
         site: '@eastkin',
-        card: 'summary',
+        card: 'summary_large_image',
         description: description,
         image: image
       },
