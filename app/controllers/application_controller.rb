@@ -6,12 +6,13 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
 
   def prepare_meta_tags(options={})
-    site_name   = "EastKin"
-    title       = [controller_name, action_name].join("")
+    site_name   = "East Kin"
+    title       = [controller_name, action_name].join(" ")
     keywords = ['rock', 'nashville', 'EastKin', 'nashville rocks',
-                'east nashville']
+                'east nashville', "Nashville's best band", "local",
+                "east kin", 'festival band', 'jam band', 'noise rock']
     description = "A rock band from Nashville with a
-        website that is informative and fun.  Detroy the universe of bring it new
+        website that is informative and fun.  Detroy the universe or bring it new
         life. Good guy or bad guy"
     image       = options[:image] || view_context.image_url("east-kin-radio")
     current_url = request.url
