@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   def prepare_meta_tags(options={})
     site_name   = "East Kin"
-    title       = [controller_name, action_name].join(" ")
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe or bring it new
         life. Good guy or bad guy"
