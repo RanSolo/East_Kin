@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
 
     # Prepare set of defaults
     defaults = {
-      site:        site_name,
       title:       title,
       image:       image,
       description: description,
