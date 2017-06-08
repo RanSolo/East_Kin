@@ -17,8 +17,8 @@ class SongsController < ApplicationController
     prepare_meta_tags({
       og: {
         url: request.url,
-        site_name: "East Kin Songs",
-        title: @song.title,
+        site_name: "East Kin's Universe",
+        title: "Song: " + @song.title,
         image: view_context.image_url('want_to_image.png'),
         video: { _: video, url: video, secure_url: video,
                 type: 'application/x-shockwave-flash',

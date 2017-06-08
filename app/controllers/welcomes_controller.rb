@@ -2,7 +2,7 @@ class WelcomesController < ApplicationController
   before_action :all_welcomes, only: [:index, :create]
   before_action :set_welcome, only: [:show, :edit, :update, :destroy]
   respond_to :html, :js, :json
-
+  after_action :set_i
 
   # GET /welcomes
   # GET /welcomes.json
