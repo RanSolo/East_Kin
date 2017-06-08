@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
 
   def prepare_meta_tags(options={})
-    site_name   = "East Kin"
+    site_name   = "East Kin's Universe"
+    title       = "Nashville Rock and Roll"
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe or bring it new
         life. Good guy or bad guy"
