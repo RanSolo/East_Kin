@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('#soundcloud').css('background-color', 'none')
   $('#lyrics').prepend("<div class='hidden-sm hidden-xs' id='player' style='position: fixed; z-index: -99; width: 100%; height: 100%'></div>")
     # 2. This code loads the IFrame Player API code asynchronously.
   tag = document.createElement('script')
@@ -12,7 +11,7 @@ $ ->
       height: '100%'
       width: '100%'
       playerVars:
-        autoplay: 1
+        autoplay: 0
         loop: 1
         controls: 0
         showinfo: 0
@@ -27,13 +26,17 @@ $ ->
   # 4. The API will call this function when the video player is ready.
 
   onPlayerReady = (event) ->
-    event.target.playVideo()
     player.mute()
+    event.target.stopVideo()
     return
 
   onPlayerStateChange = (event) ->
 
-  stopVideo = ->
+  playVideo = (event) ->
+    player.playVideo()
+    return
+
+  stopVideo = (event)->
     player.stopVideo()
     return
 
@@ -58,17 +61,34 @@ $ ->
   document.addEventListener 'turbolinks:load', ->
     $('#restart-universe').click -> restartUniverse()
     $('#blow-up-universe').click -> blowUpUniverse()
-  return
-_classCallCheck = (instance, Constructor) ->
-  if !(instance instanceof Constructor)
-    throw new TypeError('Cannot call a class as a function')
-    return
+    $('.juke-box').click -> showJukebox()
+    $('.lyrics').click -> event.target.playVideo()
+    $('.drawing-examples').click -> showExamples()
   $('#tokyo').hide('slideOut')
   $('#life').hide('slideOut')
   $('#all-things').show('slideIn')
   ticker(welcome_messages)
+  return
+
+_classCallCheck = (instance, Constructor) ->
+  if !(instance instanceof Constructor)
+    throw new TypeError('Cannot call a class as a function')
+    return
 
 ### ---- Functions ----###
+
+showJukebox = ->
+  if $('#musicDD').is(':empty')
+    $('#musicDD').prepend(
+      "<iframe width='100%' height='300' scrolling='no' frameborder='no' src='//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false'>
+      </iframe>")
+showExamples = ->
+  if $('.example').is(':empty')
+    $('.example').prepend(
+      '<div class="embed-responsive embed-responsive-16by9">
+      <iframe width="400" height="315" src="//www.youtube.com/embed/yA8gaiW4Bdg"
+      frameborder="0" allowfullscreen></iframe>
+      </div>')
 
 fruitLoop = ->
   context.clearRect 0, 0, canvas.width, canvas.height
@@ -522,7 +542,6 @@ blowUpUniverse = () ->
   if window.state != 'death'
     ticker(destruction_messages)
   window.state = 'death'
-  context.clearRect(0, 0, canvas.width, canvas.height)
   atomic_bomb =  document.getElementById('atomic-bomb')
   atomic_bomb.volume = 0.1
   $('#atomic-bomb').trigger('play')
@@ -668,7 +687,6 @@ restartUniverse = ->
   if window.state != 'life'
     ticker(life_messages)
   window.state = 'life'
-  context.clearRect(0, 0, canvas.width, canvas.height)
   # space_ship =  document.getElementById('space-ship')
   # space_ship.volume = 0.1
   # $('#space-ship').trigger('play')
@@ -784,8 +802,6 @@ restartUniverse = ->
         @gravity = 10000
 
 # 1 10 3000
-
-
 
     GravityPoint::render = ->
       context.beginPath()

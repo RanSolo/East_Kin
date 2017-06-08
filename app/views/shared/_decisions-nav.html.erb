@@ -10,7 +10,7 @@
           <%= glyph 'headphones'%> <%= t(:listen) %>
       <% end %>
     <% end %>
-  </li> 
+  </li>
   <li>
     <% if active == 'contact' %>
       <%= glyph 'phone'%> <%= t(:contact) %>
@@ -60,7 +60,7 @@
     <% else %>
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#lyrics", locals: {active: 'lyrics'}},
-                   class: 'btn btn-link' do %>
+                   class: 'lyrics btn btn-link' do %>
         <%= glyph :pencil %> <%= t(:lyrics) %>
       <% end %>
     <% end %>

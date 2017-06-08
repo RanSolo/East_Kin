@@ -13,7 +13,6 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery.turbolinks
-#= require jquery.knob
 #= require bootstrap-sprockets
 #= require lodash
 #= require turbolinks

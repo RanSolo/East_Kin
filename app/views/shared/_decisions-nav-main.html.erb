@@ -9,7 +9,7 @@
 
     <%= link_to '#', type: "button", data:
                    {toggle: "modal", dismiss:'modal', target: "#videoModal"},
-                    class: 'btn btn-secondary' do %>
+                    class: 'video-gallery btn btn-secondary' do %>
          <li class="btn-group" role="group"><%= glyph :film %> <span class='hidden-sm hidden-xs'><%= t(:watch) %></span></li>
    <% end %>
 
@@ -30,7 +30,7 @@
 
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#lyrics"},
-                   class: 'btn btn-secondary', locals: {active: 'lyrics'} do %>
+                   class: 'lyrics btn btn-secondary', locals: {active: 'lyrics'} do %>
       <li class="btn-group" role="group">  <%= glyph :pencil %> <span class='hidden-sm hidden-xs'><%= t(:lyrics) %></span></li>
       <% end %>
 

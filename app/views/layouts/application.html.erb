@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+  <html>
 <head>
   <title>East Kin's Universe</title>
   <meta charset="utf-8">
@@ -73,7 +73,7 @@
                 <div class='btn'>
                   <%= link_to '#', type: "button", role:'button', data:
                                 {toggle: "modal", target: "#musicModal"},
-                                 class: 'btn btn-secondary' do %>
+                                 class: 'btn btn-secondary juke-box' do %>
                     <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
                   <% end %>
                 </div>
@@ -111,10 +111,8 @@
           <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
           <div id="output"></div>
           <ul class="nav navbar-nav">
-            <li class='crest pull-left hidden-xs'>
-              <%= link_to '.' %></li>
-            <li class='navbar-link col-md-3 col-sm-3 col-xs-3 hidden-xs'><%= link_to t(:band_name) +  t(:universe),
-                ".", class: "navbar-brand" %></li>
+            <li class='crest pull-left hidden-xs'></li>
+            <li class='col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs'><span class="navbar-brand"><%=  t(:band_name) +  t(:universe)%></span></li>
             <li>
               <ul class="header-txt list-unstyled">
                 <li class='col-md-12'>

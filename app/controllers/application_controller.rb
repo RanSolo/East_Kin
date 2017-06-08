@@ -8,9 +8,6 @@ class ApplicationController < ActionController::Base
   def prepare_meta_tags(options={})
     site_name   = "East Kin"
     title       = [controller_name, action_name].join(" ")
-    keywords = ['rock', 'nashville', 'EastKin', 'nashville rocks',
-                'east nashville', "Nashville's best band", "local",
-                "east kin", 'festival band', 'jam band', 'noise rock']
     description = "A rock band from Nashville with a
         website that is informative and fun.  Detroy the universe or bring it new
         life. Good guy or bad guy"
@@ -23,7 +20,6 @@ class ApplicationController < ActionController::Base
       title:       title,
       image:       image,
       description: description,
-      keywords:    keywords,
       twitter: {
         site_name: site_name,
         site: '@eastkin',
