@@ -38,15 +38,14 @@
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#funModal"},
                    class: 'btn btn-secondary hidden-xs hidden-sm' do %>
-                   <li role="group" class='btn-group'><%= glyph :music %><%= t(:synth_controls) %></li>
+                   <li role="group" class='btn-group'> <%= glyph :music %> <%= t(:synth_controls) %></li>
                    <% end %>
 
 
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#drawModal"},
                    class: 'btn btn-secondary hidden-xs hidden-sm' do %>
-        <li role="group" class='btn-group'><%= glyph :picture %> <%= t(:draw) %></li>
+        <li role="group" class='btn-group'> <%= glyph :picture %> <%= t(:draw) %></li>
       <% end %>
-
-      </div>
+  </div>
 </ul>

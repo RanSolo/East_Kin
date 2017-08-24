@@ -63,44 +63,47 @@
           <div class="container-fluid">
             <div class="row">
               <div class='btn-group btn-group-justified'>
-              <li class='the-buttons' role="group" aria-label="decision">
-                <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
-                   role="button" aria-haspopup="true" aria-expanded="true">
-                   <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
-                   <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
-                </a>
-                <div class='btn'>
-                  <%= link_to '#', type: "button", role:'button', data:
-                                {toggle: "modal", target: "#musicModal"},
-                                 class: 'btn btn-secondary juke-box' do %>
-                    <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
+                <li class='the-buttons alert alert-warning' role="group" aria-label="decision">
+                  <a href="" class="dropdown-toggle btn btn-secondary" data-toggle="dropdown"
+                     role="button" aria-haspopup="true" aria-expanded="true">
+                     <span class="hidden-sm hidden-xs">More Decisions</span> <span class="hidden-sm hidden-xs caret"></span>
+                     <span class='hidden-xl hidden-lg hidden-md'><%= glyph :option_vertical %></span>
+                  </a>
+                  <div class='btn'>
+                    <%= link_to '#', type: "button", role:'button', data:
+                                  {toggle: "modal", target: "#musicModal"},
+                                   class: 'btn btn-secondary juke-box' do %>
+                      <%= glyph 'headphones'%> <span class='hidden-sm hidden-xs'><%= t(:listen) %></span>
+                    <% end %>
+                  </div>
+                  <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
+                    <%= hidden_field_tag 'lifeOrDeath', 'life' %>
+                    <%= link_to @welcome, type: "button", role:"button",
+                                remote: true, onclick:"$('#form').submit();",
+                                class: 'btn btn-secondary',
+                                id: 'restart-universe'  do %>
+                      <%= glyph :flash %> <span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
+                    <% end %>
                   <% end %>
-                </div>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form', class:'btn' do %>
-                  <%= hidden_field_tag 'lifeOrDeath', 'life' %>
-                  <%= link_to @welcome, type: "button", role:"button",
-                              remote: true, onclick:"$('#form').submit();",
-                              class: 'btn btn-secondary',
-                              id: 'restart-universe'  do %>
-                    <%= glyph :flash %> <span class='hidden-sm hidden-xs'><%= t(:restart_universe)%></span>
+                  <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
+                    <%= hidden_field_tag 'lifeOrDeath', 'death' %>
+                    <%= link_to @welcome, type: "button", role:"button",
+                                onclick:"$('#form1').submit();",
+                                remote: true,
+                                class: 'btn btn-secondary',
+                                id: 'blow-up-universe'  do %>
+                      <%= glyph :fire %> <span class='hidden-sm hidden-xs'>
+                      <%= t(:blow_up_universe)%></span>
+                    <% end %>
                   <% end %>
-                <% end %>
-                <%= form_tag '/welcomes/1/edit', remote: true, id:'form1', class:'btn' do %>
-                  <%= hidden_field_tag 'lifeOrDeath', 'death' %>
-                  <%= link_to @welcome, type: "button", role:"button",
-                              onclick:"$('#form1').submit();",
-                              remote: true,
-                              class: 'btn btn-secondary',
-                              id: 'blow-up-universe'  do %>
-                    <%= glyph :fire %> <span class='hidden-sm hidden-xs'><%= t(:blow_up_universe)%></span>
+                  <%= render partial: 'shared/decisions-nav-main' %>
+                  <%= link_to '#', type: "button", role:"button",
+                    data: { toggle: "modal", dismiss:'modal',
+                            target: "#infoModal"},
+                    class: 'btn btn-secondary', id: 'info' do %>
+                    <%= glyph :globe %> <span class='hidden-sm hidden-xs'><%= t(:info)%></span>
                   <% end %>
-                <% end %>
-                <%= render partial: 'shared/decisions-nav-main' %>
-                <%= link_to '#', type: "button", role:"button", data: { toggle: "modal", dismiss:'modal', target: "#infoModal"}, class: 'btn btn-secondary pull-right', id: 'info' do %>
-                  <%= glyph :globe %> <span class='hidden-sm hidden-xs'><%= t(:info)%></span>
-                <% end %>
             </li>
-
           </div>
         </div>
         </ul>
@@ -110,11 +113,13 @@
           <div id="output"></div>
           <ul class="nav navbar-nav">
             <li class='crest pull-left hidden-xs'></li>
-            <li class='col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs'><span class="navbar-brand"><%=  t(:band_name) +  t(:universe)%></span></li>
+            <li class='col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs'>
+              <span class="navbar-brand alert-warning alert"><%=  t(:band_name) +  t(:universe)%></span>
+            </li>
             <li>
               <ul class="header-txt list-unstyled">
                 <li class='col-md-12'>
-                  <div id='all-things' class='text-warning text-center'>
+                  <div id='all-things' class='text-warning text-center alert-warning alert'>
                     <%= t(:all_things)%>
                   </div>
                   <div id='tokyo' class='text-danger text-center'>
@@ -128,7 +133,8 @@
             </li>
           </ul>
           <div class='row'>
-          <div class='col-md-2 col-sm-3 col-xs-11 alert-warning alert text-center pull-right' id='score-board'>
+          <div class='col-md-2 col-sm-3 col-xs-11 alert-warning alert
+                      text-center pull-right' id='score-board'>
             <span>Scoreboard</span>
             <hr>
             <label class='score-item'>
