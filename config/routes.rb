@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'welcomes/:id/edit' => 'welcomes#edit', :as => :restart_count
 # you can change put to post as you see fit
   post 'welcomes/:id/edit' => 'welcomes#update'
-
+  resources :charges
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

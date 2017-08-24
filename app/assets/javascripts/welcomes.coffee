@@ -367,7 +367,7 @@ welcome_messages = new Array(
     'Horton hears a who?',
     'You never think twice...',
     '...a time or two it was you',
-    "Whose side are you on anyway?.",
+    "Whose side are you on anyway?",
     '...a time or three it was me',
     'Have you destroyed or restarted East Kins Universe?',
     '...the river will deliver your underscore.',

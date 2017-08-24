@@ -36,6 +36,7 @@ Note.prototype =
     @gainNode.gain.value = 0
     return
 Tones =
+  'A3': 440.00
   'A#3': 466.16
   'B3': 493.88
   'C4': 523.25
@@ -79,6 +80,8 @@ keycodeToChordName =
   77: 'Gbm'
   188: 'Bm'
 keycodeToNotes =
+  113: [ 'G#2']
+  113: [ 'A3']
   192: [ 'A#3' ]
   9: [ 'B3' ]
   81: [ 'C4' ]

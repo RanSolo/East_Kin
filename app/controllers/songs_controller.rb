@@ -14,6 +14,10 @@ class SongsController < ApplicationController
   def show
     video = @song.youtube.gsub("watch?v=", "v/")
     prepare_meta_tags({
+      description: "A song about #{@song.title}.  An unreliable narrator explains
+      how his 'want to' is below average or possible broken. There is a video
+      with lyric and publishing info."
+      title: @song.title
       og: {
         url: request.url,
         site_name: "East Kin's Universe",
