@@ -1,51 +1,51 @@
 <ul class="dropdown-menu" type='group'>
-  <div class='btn-group btn-group-justified'>
+
 
     <%= link_to '#', type: "button", data:
                 {toggle: "modal", dismiss:'modal', target: "#contactModal"},
                  class: 'btn btn-secondary' do %>
-      <li class="btn-group" role="group"><%= glyph :phone %> <span class='hidden-sm hidden-xs'><%= t(:contact) %></span></li>
+      <li class="btn-group" role="group"><%= glyph :phone %> <span><%= t(:contact) %></span></li>
     <% end %>
 
     <%= link_to '#', type: "button", data:
                    {toggle: "modal", dismiss:'modal', target: "#videoModal"},
                     class: 'btn btn-secondary' do %>
-         <li class="btn-group" role="group"><%= glyph :film %> <span class='hidden-sm hidden-xs'><%= t(:watch) %></span></li>
+         <li class="btn-group" role="group"><%= glyph :film %> <span><%= t(:watch) %></span></li>
    <% end %>
 
 
     <%= link_to '#', type: "button", data:
               {toggle: "modal", dismiss:'modal', target: "#liveModal"},
                class: 'btn btn-secondary' do %>
-      <li class="btn-group" role="group"><%= glyph :calendar %> <span class='hidden-sm hidden-xs'><%= t(:live) %></span></li>
+      <li class="btn-group" role="group"><%= glyph :calendar %> <span><%= t(:live) %></span></li>
     <% end %>
 
 
     <%= link_to '#', type: "button", data:
               {toggle: "modal", dismiss:'modal', target: "#bioModal"},
                class: 'btn btn-secondary' do %>
-      <li class="btn-group" role="group"><%= glyph :book %> <span class='hidden-sm hidden-xs'><%= t(:bio) %></span></li>
+      <li class="btn-group" role="group"><%= glyph :book %> <span><%= t(:bio) %></span></li>
     <% end %>
 
 
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#lyrics"},
                    class: 'lyrics btn btn-secondary', locals: {active: 'lyrics'} do %>
-      <li class="btn-group" role="group">  <%= glyph :pencil %> <span class='hidden-sm hidden-xs'><%= t(:lyrics) %></span></li>
+      <li class="btn-group" role="group"><%= glyph :pencil %> <span><%= t(:lyrics) %></span></li>
       <% end %>
 
 
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#funModal"},
-                   class: 'btn btn-secondary hidden-xs hidden-sm' do %>
+                   class: 'btn btn-secondary hidden-xs' do %>
                    <li role="group" class='btn-group'> <%= glyph :music %> <%= t(:synth_controls) %></li>
                    <% end %>
 
 
       <%= link_to '#', type: "button", data:
                   {toggle: "modal", dismiss:'modal', target: "#drawModal"},
-                   class: 'btn btn-secondary hidden-xs hidden-sm' do %>
+                   class: 'btn btn-secondary hidden-xs' do %>
         <li role="group" class='btn-group'> <%= glyph :picture %> <%= t(:draw) %></li>
       <% end %>
-  </div>
+
 </ul>

@@ -89,7 +89,7 @@ body {
 .header-txt {
   position: fixed;
   top: 20px;
-  margin: 10px;
+  max-height: 65px;
   z-index: 0;
   font-family: "Benguiat" !important;
   font-size: 16px;
@@ -97,8 +97,6 @@ body {
 
 #tokyo, #life, #life-mobile, #tokyo-mobile{
   display: none;
-  position: relative;
-  bottom: 15px;
 }
 
 #tokyo-mobile, #tokyo, #life, #life-mobile, #all-things, #all-things-mobile{
@@ -115,14 +113,10 @@ body {
 }
 
 #score-board {
-  position: absolute;
   background-color:rgba(#0b0d22, 0.79)  !important;
-  border-radius: 25px;
+  border-radius: 10px;
   font-size: 16px;
-  right: 0;
-  margin-left: 20px;
-  margin-right: 20px;
-  top: 200px;
+  margin-top: 235px;
 }
 
 #score-board-mobile {
@@ -138,6 +132,7 @@ body {
   background-color: rgba(11, 13, 34, 0.79) !important;
   height: 100%;
   border-radius: 10px;
+  max-height: 65px;
 }
 
 ul.collapse-dropdown {
@@ -183,13 +178,12 @@ ul.dropdown-menu{
 
 }
 
-#all-things{
-  position: relative;
-}
-
 #all-things, #tokyo, #life {
-  top: -23px;
+  position: relative;
+  top: -20px;
   border-radius: 10px;
+  padding: 13px;
+  margin-bottom: none;
 }
 
 .crest {
@@ -269,8 +263,12 @@ nav.navbar.navbar-default{
 }
 .the-buttons {
   position: relative;
-  top: 50px;
+  margin-left:15px !important;
+
+  top: 60px;
   background-color:rgba(#0b0d22, 0.79) !important;
+  border-radius: 10px;
+  padding: 0 !important;
 }
 @media (min-width: 1000px) {
   .header-txt {
@@ -288,3 +286,8 @@ nav.navbar.navbar-default{
     top: 20px;
   }
 }
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }
