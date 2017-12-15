@@ -13,12 +13,13 @@ class SongsController < ApplicationController
   # GET /songs/1.json
   def show
     video = @song.youtube.gsub("watch?v=", "v/")
+    picture = which_picture(@song.title)
     prepare_meta_tags({
       og: {
         url: request.url,
         site_name: "East Kin's Universe",
         title: "Song: " + @song.title,
-        image: view_context.image_url('want_to_image.png'),
+        image: view_context.image_url(picture),
         video: { _: video, url: video, secure_url: video,
                 type: 'application/x-shockwave-flash',
                 width: 560, height: 315 },
@@ -92,4 +93,17 @@ class SongsController < ApplicationController
     def song_params
       params.require(:song).permit(:lyric, :title, :writers, :copyright, :active, :youtube, :facebook, :soundcloud)
     end
+
+
+    def which_picture(title)
+      if title == 'The Want To'
+        'want_to_image.png'
+      elsif title == 'Compensated'
+        'compensated.png'
+      elsif title == 'You Know Me, Right?'
+        'know_me_right.png'
+      end
+    end
+
+
 end
