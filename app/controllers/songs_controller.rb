@@ -1,13 +1,11 @@
 class SongsController < ApplicationController
   layout "songs"
   before_action :set_song, only: [:show, :edit, :update, :destroy]
-  before_action :set_songs
+  before_action :set_songs, except: :crypto
 
   # GET /songs
   # GET /songs.json
-  def index
-
-  end
+  def index; end
 
   # GET /songs/1
   # GET /songs/1.json
@@ -35,8 +33,7 @@ class SongsController < ApplicationController
   end
 
   # GET /songs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /songs
   # POST /songs.json

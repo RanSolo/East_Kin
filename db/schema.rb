@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510035911) do
+ActiveRecord::Schema.define(version: 20180411212045) do
+
+  create_table "jobs", force: :cascade do |t|
+    t.boolean  "status"
+    t.integer  "dependant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "label"
+    t.string   "name"
+  end
 
   create_table "songs", force: :cascade do |t|
     t.text    "lyric"
