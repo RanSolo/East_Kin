@@ -2,7 +2,8 @@ require 'test_helper'
 
 class JobsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @job = jobs(:one)
+    @job = jobs(:a)
+    @jobs = []
   end
 
   test "should get index" do
