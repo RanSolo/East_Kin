@@ -1,19 +1,2 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 a:
   name: a
-
-b:
-  name: b
-
-c:
-  name: c
-
-d:
-  name: d
-
-e:
-  name: e
-
-f:
-  name: f
