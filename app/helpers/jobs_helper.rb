@@ -7,8 +7,7 @@ module JobsHelper
     elsif jobs_with_dependancies.empty?
       jobs.map(&:name).join ', '
     elsif jobs_with_dependancies.present?
-      result = []
-      dep_helper(jobs, jobs_with_dependancies, result)
+      dep_helper(jobs, jobs_with_dependancies, result = [])
       result.map(&:name).uniq.join ', '
     end
   end
