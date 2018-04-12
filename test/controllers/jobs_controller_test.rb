@@ -35,7 +35,10 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update job" do
-    patch job_url(@job), params: { job: { dependant: @job.dependant, status: @job.status } }
+    job2 = Job.create(name: 'c')
+    patch job_url(@job), params: {
+                           job: { dependant: job2.dependant,
+                                  status: @job.status } }
     assert_redirected_to job_url(@job)
   end
 
