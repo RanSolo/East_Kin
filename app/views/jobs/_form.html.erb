@@ -1,7 +1,7 @@
 <%= form_for @job, :html => { :class => "form-horizontal job" } do |f| %>
 
   <% if @job.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
+    <div id="error_expl" class="panel panel-danger text-warning">
       <div class="panel-heading">
         <h3 class="panel-title"><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h3>
       </div>
@@ -25,9 +25,11 @@
   <div class="form-group">
     <%= f.label :dependant, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :dependant, :class => 'form-control' %>
+    <%= f.select :dependant,
+                 @jobs.map { |a| ["#{a.name} - #{a.id}", a.id] },
+                 { prompt: t(:select), include_blank: true  }, { class: 'form-control' } %>
     </div>
-    <%=f.error_span(:dependant) %>
+    <%= f.error_span(:dependant) %>
   </div>
   <div class="form-group">
     <%= f.label :label, :class => 'control-label col-lg-2' %>

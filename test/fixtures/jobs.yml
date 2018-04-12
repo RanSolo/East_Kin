@@ -1,9 +1,2 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  status: false
-  dependant: 1
-
-two:
-  status: false
-  dependant: 1
+a:
+  name: a
