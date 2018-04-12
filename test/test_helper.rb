@@ -15,7 +15,15 @@ module ActiveSupport
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical
     # order.
     fixtures :all
-
+    def find_jobs_with_dependancies(jobs)
+      collection = []
+      jobs.each do |job|
+        if job.dependant.present?
+          collection.push(job)
+        end
+      end
+      return collection
+    end
     # Add more helper methods to be used by all tests here...
   end
 end
