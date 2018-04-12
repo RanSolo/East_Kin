@@ -7,9 +7,13 @@
                 :class => 'btn btn-success' %>
   </h1>
 </div>
+<h1>Result</h2>
+<h3><%= sort_jobs_by_dependancies(@jobs, @jobs_with_dependancies) %></h3>
+<br>
 <table class="table">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:dependant) %></th>
@@ -19,6 +23,7 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
+        <td><%= link_to job.id, job_path(job) %></td>
         <td><%= link_to job.name, job_path(job) %></td>
         <td><%= status(job) %></td>
         <td><%= job.dependant %></td>
@@ -35,6 +40,3 @@
     <% end %>
   </tbody>
 </table>
-<h1>Result</h2>
-<%= sort_jobs_by_dependancies(@jobs) %>
-<br>
