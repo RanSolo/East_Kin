@@ -15,7 +15,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:status) %></th>
       <th><%= model_class.human_attribute_name(:dependant) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -25,7 +24,6 @@
       <tr>
         <td><%= link_to job.id, job_path(job) %></td>
         <td><%= link_to job.name, job_path(job) %></td>
-        <td><%= status(job) %></td>
         <td><%= job.dependant %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
