@@ -27,6 +27,7 @@ class Job < ApplicationRecord
     dep = Job.find(job.dependant)
     return if dep.dependant.nil?
     dep = Job.find(job.dependant)
+    coll << [dep.id, dep.dependant]
     while i < fjwds.count
       i += 1
       dependant_factory(dep, jwds,coll)
