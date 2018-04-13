@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   validate :can_not_dep_on_self, on: :update
-
+  validate :jobs_cant_have_circular_dependencies, on: :update
 
   def can_not_dep_on_self
     unless id != dependant
@@ -9,9 +9,9 @@ class Job < ApplicationRecord
   end
 
   def jobs_cant_have_circular_dependencies
-    coll = []
     jwds = find_jobs_with_dependancies(Job.all)
     jwds.each do |j|
+      coll = []
       coll << [j.id, j.dependant]
       dependant_factory(j, jwds, coll)
       if coll[0][0] == self.dependant
@@ -27,7 +27,6 @@ class Job < ApplicationRecord
     dep = Job.find(job.dependant)
     return if dep.dependant.nil?
     dep = Job.find(job.dependant)
-    coll.shift([dep.id, dep.dependant])
     while i < fjwds.count
       i += 1
       dependant_factory(dep, jwds,coll)

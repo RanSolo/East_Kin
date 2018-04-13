@@ -13,8 +13,8 @@ class JobTest < ActiveSupport::TestCase
   end
 
   test 'no circular dependancies.' do
-    @job_1.update(dependant: Job.where(name: 'b')[0].id)
-    @job_2.update(dependant: Job.where(name: 'c')[0].id)
+    @job_1.update(dependant: @job_2.id)
+    @job_2.update(dependant: @job_3.id)
     refute @job_3.update(dependant: @job_1.id)
   end
 end
