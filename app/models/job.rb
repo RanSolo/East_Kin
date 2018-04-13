@@ -25,7 +25,6 @@ class Job < ApplicationRecord
   def dependant_factory(job, jwds, coll)
     fjwds = find_jobs_with_dependancies(jwds)
     i = 0
-    dep = Job.find(job.dependant)
     return if dep.dependant.nil? && coll.last[1] == self.id
     dep = Job.find(job.dependant)
     coll << [dep.id, dep.dependant]
