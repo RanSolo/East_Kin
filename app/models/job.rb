@@ -10,13 +10,14 @@ class Job < ApplicationRecord
 
   def jobs_cant_have_circular_dependencies
     jwds = find_jobs_with_dependancies(Job.all)
+    coll = []
     jwds.each do |j|
-      coll = []
       coll << [j.id, j.dependant]
       dependant_factory(j, jwds, coll)
       if coll[0][0] == self.dependant
         return errors.add(:dependant, "No circular dependancies
-                                       #{coll} #{self.dependant}")
+                                       #{coll} #{coll[0][0]} self.dependant =
+                                       #{self.dependant} self.id=#{self.id}")
       end
     end
   end
@@ -25,9 +26,8 @@ class Job < ApplicationRecord
     fjwds = find_jobs_with_dependancies(jwds)
     i = 0
     dep = Job.find(job.dependant)
-    return if dep.dependant.nil?
+    return if dep.dependant.nil? && coll.last[1] == self.id
     dep = Job.find(job.dependant)
-    coll = []
     coll << [dep.id, dep.dependant]
     while i < fjwds.count
       i += 1
