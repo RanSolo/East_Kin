@@ -22,7 +22,7 @@ class Job < ApplicationRecord
       end
       @coll << collection
       if @coll[0][0] == @coll.last[0]
-        return errors.add(:dependant, "No Circular Dependancies")
+        return errors.add(:dependant, @coll[0][0] + @coll.last[0])
       end
     end
   end
