@@ -42,5 +42,4 @@ class Job < ApplicationRecord
     end
     return collection
   end
-
 end

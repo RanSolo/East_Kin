@@ -25,4 +25,11 @@ module JobsHelper
       result << non_dependant_job
     end
   end
+
+  def dependant_name(j)
+    unless j.dependant.nil?
+      Job.find(j.dependant).name
+    end
+  end
+
 end
