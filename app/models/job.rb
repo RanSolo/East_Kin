@@ -25,7 +25,7 @@ class Job < ApplicationRecord
     fjwds = find_jobs_with_dependancies(jwds)
     i = 0
     dep = Job.find(job.dependant)
-    return if dep.dependant.nil? ||
+    return if dep.dependant.nil?
     dep = Job.find(job.dependant)
     coll << [dep.id, dep.dependant]
     while i < fjwds.count
