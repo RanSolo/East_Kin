@@ -16,11 +16,12 @@ class Job < ApplicationRecord
       unless j.dependant.nil?
         collection << [j.id, j.dependant]
         dj = Job.find(j.dependant)
+        unless dj.dependant.nil?
+          collection << [dj.id, dj.dependant]
+        end
+        @coll << collection
       end
-      unless dj.dependant.nil?
-        collection << [dj.id, dj.dependant]
-      end
-      @coll << collection
+
       if @coll[0][0] == @coll.last[0]
         return errors.add(:dependant, @coll[0][0] + @coll.last[0])
       end
