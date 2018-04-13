@@ -15,7 +15,8 @@ class Job < ApplicationRecord
       coll << [j.id, j.dependant]
       dependant_factory(j, jwds, coll)
       if coll[0][0] == self.dependant
-        return errors.add(:dependant, "#{coll[0][0]} #{self.dependant}")
+        return errors.add(:dependant, "No circular dependancies
+                                      #{coll[0][0]} #{self.dependant}")
       end
     end
   end
