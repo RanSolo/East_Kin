@@ -13,6 +13,7 @@ class Job < ApplicationRecord
     coll = []
     jwds.each do |j|
       coll << [j.id, j.dependant]
+      return if j.dependant.blank?
       dependant_factory(j, jwds, coll)
       if coll[0][0] == self.dependant
         return errors.add(:dependant, "No circular dependancies
