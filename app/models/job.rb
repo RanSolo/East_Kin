@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
   validate :can_not_dep_on_self, on: :update
-
+  validate :jobs_cant_have_circular_dependencies, on: :update
 
   def can_not_dep_on_self
     unless id != dependant
