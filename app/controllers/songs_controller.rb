@@ -77,30 +77,28 @@ class SongsController < ApplicationController
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_song
-      @song = Song.find(params[:id])
+  # Use callbacks to share common setup or constraints between actions.
+  def set_song
+    @song = Song.find(params[:id])
+  end
+
+  def set_songs
+    @songs = Song.all
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def song_params
+    params.require(:song).permit(:lyric, :title, :writers, :copyright, :active, :youtube, :facebook, :soundcloud)
+  end
+
+
+  def which_picture(title)
+    if title == 'The Want To'
+      'want_to_image.png'
+    elsif title == 'Compensated'
+      'compensated.png'
+    elsif title == 'You Know Me, Right?'
+      'know_me_right.png'
     end
-
-    def set_songs
-      @songs = Song.all
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def song_params
-      params.require(:song).permit(:lyric, :title, :writers, :copyright, :active, :youtube, :facebook, :soundcloud)
-    end
-
-
-    def which_picture(title)
-      if title == 'The Want To'
-        'want_to_image.png'
-      elsif title == 'Compensated'
-        'compensated.png'
-      elsif title == 'You Know Me, Right?'
-        'know_me_right.png'
-      end
-    end
-
-
+  end
 end

@@ -19,15 +19,12 @@ class Job < ApplicationRecord
                                      #{coll} #{coll[0][0]} self.dependant =
                                      #{self.dependant} self.id=#{self.id}")
     end
-
   end
 
   def dependant_factory(coll)
     return if coll.last[1].nil?
     dep = Job.find(coll.last[1])
-
     coll << [dep.id, dep.dependant]
-
     dependant_factory(coll)
   end
 
