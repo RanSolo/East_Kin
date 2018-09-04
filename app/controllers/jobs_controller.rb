@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.order( 'name ASC' )
     @jobs_with_dependancies = find_jobs_with_dependancies(@jobs)
   end
 
@@ -65,6 +65,7 @@ class JobsController < ApplicationController
 
   private
 
+# Create array with that separates jobs with dependancies from those without.
   def find_jobs_with_dependancies(jobs)
     collection = []
     jobs.each do |job|

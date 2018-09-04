@@ -2,17 +2,21 @@ class Job < ApplicationRecord
   validate :can_not_dep_on_self, on: :update
   validate :jobs_cant_have_circular_dependencies, on: :update
 
+  #
+  # Validates a job cannot depend on itself
+  ##
   def can_not_dep_on_self
     unless id != dependant
       errors.add(:dependant, "Jobs can’t depend on themselves")
     end
   end
 
+  #
+  # Validates jobs don't have circular dependancies
+  ##
   def jobs_cant_have_circular_dependencies
-    return if dependant.nil?
-    job = Job.find(id)
+    return unless dependant
     coll = [] << [id, dependant]
-    job = Job.find(id)
     dependant_factory(coll)
     if coll[0][0] == coll.last[0]
       return errors.add(:dependant, "No circular dependancies
@@ -21,20 +25,14 @@ class Job < ApplicationRecord
     end
   end
 
+  #
+  # Follows a chain of dependancies to it's end and creates a reference array
+  ##
   def dependant_factory(coll)
-    return if coll.last[1].nil?
-    dep = Job.find(coll.last[1])
-    coll << [dep.id, dep.dependant]
+    dep_id = coll.last[1]
+    return unless dep_id
+    dep = Job.find(dep_id)
+    coll << [dep_id, dep.dependant]
     dependant_factory(coll)
-  end
-
-  def find_jobs_with_dependancies(jobs)
-    collection = []
-    jobs.each do |job|
-      if job.dependant.present?
-        collection.push(job)
-      end
-    end
-    return collection
   end
 end

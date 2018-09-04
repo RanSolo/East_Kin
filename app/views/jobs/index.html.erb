@@ -21,8 +21,8 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.name, job_path(job) %></td>
-        <td><%= dependant_name(job) %></td>
+        <td><%= link_to job.name, job_path(job), class: 'btn-link' %></td>
+        <td><%= dependant_name(job.dependant) %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       job_path(job), :class => 'btn btn-default btn-xs' %>

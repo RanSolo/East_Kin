@@ -28,7 +28,8 @@
     <div class="col-lg-10">
     <%= f.select :dependant,
                  @jobs.map { |a| ["#{a.name} - #{a.id}", a.id] },
-                 { prompt: t(:select), include_blank: true  }, { class: 'form-control' } %>
+                 { prompt: t(:select), include_blank: true  },
+                 { class: 'form-control' } %>
     </div>
     <%= f.error_span(:dependant) %>
   </div>
