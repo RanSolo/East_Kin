@@ -47,6 +47,8 @@ en:
   contact: "Contact"
   album: "Lyrics by album"
   other: "Other"
+  helpers:
+    actions: 'Actions'
   freshman_notes_html:  "
     <p>
       Mandolin/Vocals - Randy Russell<br>
