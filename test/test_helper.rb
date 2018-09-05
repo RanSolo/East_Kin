@@ -18,7 +18,7 @@ module ActiveSupport
     def find_jobs_with_dependancies(jobs)
       collection = []
       jobs.each do |job|
-        if job.dependant.present?
+        if job.dependent.present?
           collection.push(job)
         end
       end
