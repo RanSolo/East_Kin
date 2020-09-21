@@ -18,7 +18,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create job" do
     assert_difference('Job.count') do
-      post jobs_url, params: { job: { dependent: @job.dependent, status: @job.status } }
+      post jobs_url, params: { job: { dependant: @job.dependant, status: @job.status } }
     end
 
     assert_redirected_to job_url(Job.last)
@@ -37,7 +37,7 @@ class JobsControllerTest < ActionDispatch::IntegrationTest
   test "should update job" do
     job2 = Job.create(name: 'c')
     patch job_url(@job), params: {
-                           job: { dependent: job2.dependent,
+                           job: { dependant: job2.dependant,
                                   status: @job.status } }
     assert_redirected_to job_url(@job)
   end

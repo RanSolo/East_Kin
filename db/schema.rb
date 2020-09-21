@@ -10,22 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180905221048) do
-
-  create_table "dependents", force: :cascade do |t|
-    t.string  "name",   null: false
-    t.integer "job_id"
-    t.index ["job_id"], name: "index_dependents_on_job_id"
-  end
+ActiveRecord::Schema.define(version: 20180411212045) do
 
   create_table "jobs", force: :cascade do |t|
     t.boolean  "status"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "dependant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "label"
     t.string   "name"
-    t.integer  "dependent_id"
-    t.index ["dependent_id"], name: "index_jobs_on_dependent_id"
   end
 
   create_table "songs", force: :cascade do |t|

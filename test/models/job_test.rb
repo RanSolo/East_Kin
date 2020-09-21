@@ -9,12 +9,12 @@ class JobTest < ActiveSupport::TestCase
 
   # custom validation tests
   test 'should not save jobs cant depend on themselves.' do
-    refute @job_1.update(dependent: @job_1.id)
+    refute @job_1.update(dependant: @job_1.id)
   end
 
   test 'no circular dependancies.' do
-    @job_1.update(dependent: @job_2.id)
-    @job_2.update(dependent: @job_3.id)
-    refute @job_3.update(dependent: @job_1.id)
+    @job_1.update(dependant: @job_2.id)
+    @job_2.update(dependant: @job_3.id)
+    refute @job_3.update(dependant: @job_1.id)
   end
 end

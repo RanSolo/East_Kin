@@ -1,10 +1,9 @@
 # Helpers related to job code challenge
 module JobsHelper
-
-  #
-  # Case statement handling printing of jobs with jobs_with_dependancie
-  ##
   def sort_jobs_by_dependancies(jobs, jobs_with_dependancies)
+    #
+    # Case statement handling printing of jobs with jobs_with_dependancie
+    ##
     case
     when jobs.empty? # no comma
       'empty'
@@ -25,24 +24,24 @@ module JobsHelper
   def dep_helper(jobs, jobs_with_dependancies, result)
     # goes through each job with a dependancy from those provided
     jobs_with_dependancies.each do |job|
-      # gets that jobs dependent
-      find_dep = Job.find(job.dependent)
-      if find_dep.dependent.blank?
+      # gets that jobs dependant
+      find_dep = Job.find(job.dependant)
+      if find_dep.dependant.blank?
         result.push find_dep
         result.push job
       end
     end
     # all jobs added to the end of the result array duplicates removed in view
     # with uniqe
-    jobs.each do |non_dependent_job|
-      result << non_dependent_job
+    jobs.each do |non_dependant_job|
+      result << non_dependant_job
     end
   end
 
   #
-  # Get's the name of a jobs dependent.
+  # Get's the name of a jobs dependant.
   ##
-  def dependent_name(dep)
+  def dependant_name(dep)
     return unless dep
     Job.find(dep).name
   end

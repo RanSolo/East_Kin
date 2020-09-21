@@ -14,7 +14,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:dependent) %></th>
+      <th><%= model_class.human_attribute_name(:dependant) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= link_to job.name, job_path(job), class: 'btn-link' %></td>
-        <td><%= dependent_name(job.dependent) %></td>
+        <td><%= dependant_name(job.dependant) %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       job_path(job), :class => 'btn btn-default btn-xs' %>
