@@ -69,7 +69,7 @@ class JobsController < ApplicationController
   def find_jobs_with_dependancies(jobs)
     collection = []
     jobs.each do |job|
-      if job.dependant.present?
+      if job.dependent
         collection.push(job)
       end
     end
@@ -88,6 +88,6 @@ class JobsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list
   # through.
   def job_params
-    params.require(:job).permit(:status, :dependant, :name, :label)
+    params.require(:job).permit(:status, :dependent, :name, :label)
   end
 end
