@@ -78,7 +78,7 @@ group :development, :test do
   gem 'database_cleaner'
   # gem 'rubocop'
   # gem 'rubocop-checkstyle_formatter', require: false
-  gem 'sqlite3'
+  gem 'sqlite3', '1.4.4' 
 end
 
 group :test do
