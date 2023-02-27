@@ -1,0 +1,293 @@
+// Place all the styles related to the welcomes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  overflow: hidden;
+  background-color: #0B0D23 !important;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.chorus{
+  margin-left: 30px;
+}
+.modal-content {
+  background-color: #0B0D23 !important;
+  opacity: 0.9;
+}
+.modal-dialog {
+  margin-left: 25% !important;
+  width: 50%;
+  height: 100%;
+  transition: none;
+}
+.close {
+  color: rgb(249, 37, 9);
+  opacity: 1;
+  margin-right: 10px;
+  z-index: 10053;
+  padding: 5px !important;
+  border-style: 1px solid;
+}
+.lyric {
+  opacity: 1 !important;
+}
+.modal {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  -webkit-overflow-scrolling: auto !important;
+  overflow-y: auto !important;
+}
+@media (max-width: 1550px) {
+  .modal-dialog {
+    margin-top: 5em !important;
+    margin-left: 2.5% !important;
+    width: 94%;
+    height: 100%;
+    transition: none;
+  }
+}
+
+.col-md-scroll {
+  width: 25px;
+}
+
+#drawModal{
+
+  .modal-dialog{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100%;
+    transition: none;
+    }
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+
+}
+
+#example{
+  z-index: 10000;
+  .modal-dialog{
+    opacity: 1;
+  }
+}
+#color-sample, #color-picker {
+  opacity: 1;
+}
+
+
+#drawing-canvas{
+  cursor:none;
+}
+
+.header-txt {
+  position: fixed;
+  top: 20px;
+  max-height: 65px;
+  z-index: 0;
+  font-family: "Benguiat" !important;
+  font-size: 16px;
+}
+
+#tokyo, #life, #life-mobile, #tokyo-mobile{
+  display: none;
+}
+
+#tokyo-mobile, #tokyo, #life, #life-mobile, #all-things, #all-things-mobile{
+  background-color:#0b0d22 !important;
+}
+
+.letter-container1 {
+  z-index: 1000;
+}
+
+.navbar-header {
+  height: inherit;
+  width: 100%;
+}
+
+#score-board {
+  background-color:rgba(#0b0d22, 0.79)  !important;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-top: 235px;
+}
+
+#score-board-mobile {
+  position: relative;
+  top: 55px;
+  background-color:rgba(#0b0d22, 0.79)  !important;
+}
+.navbar-brand {
+  z-index: 10000;
+  font-size: 22px;
+  font-family: "Benguiat" !important;
+  color: #bababa;
+  background-color: rgba(11, 13, 34, 0.79) !important;
+  height: 100%;
+  border-radius: 10px;
+  max-height: 65px;
+}
+
+ul.collapse-dropdown {
+  li {
+    font-size: 18px;
+    font-family: "Benguiat" !important;
+
+    a {
+      font-size: 18px;
+      font-family: "Benguiat" !important;
+    }
+  }
+}
+
+label {
+  margin-bottom: 0;
+}
+
+ul.dropdown-menu{
+  background-color:rgba(#0b0d22, 0.59)  !important;
+  li {
+    a{
+      font-size: 18px;
+      font-family: "Benguiat" !important;
+      background-color:rgba(#0b0d22, 0.49)  !important;
+      width: 100%;
+    }
+  }
+}
+.restart-count, .destroy-count {
+  color: white;
+  text-align: right;
+}
+
+
+.dropdown.open{
+
+  width: 100%;
+}
+
+.btn-secondary {
+  font-size: 20px;
+
+}
+
+#all-things, #tokyo, #life {
+  position: relative;
+  top: -20px;
+  border-radius: 10px;
+  padding: 13px;
+  margin-bottom: none;
+}
+
+.crest {
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-image:  image-url('ek.png');
+  position: relative;
+  z-index: 1000000;
+  height: 75px;
+  width: 75px;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+
+  ul{
+    li{
+      a{
+          color: #bababa !important;
+      }
+    }
+  }
+}
+
+.crest2 {
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  background-image:  image-url('ek.png');
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  z-index: 1000000;
+  height: 75px;
+  width: 75px;
+}
+
+.scrollable{
+  overflow: scroll
+}
+
+nav.navbar.navbar-default{
+  margin-bottom: 0px !important;
+  border: none;
+  border-radius: 0px !important;
+  background-color: #0B0D23;
+}
+
+.f {
+  color: #4F5AF2;
+  font-family: 'Arial';
+  font-size: 0.7rem;
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  text-align: center;
+}
+
+.f a {
+  font-size: 0.8rem;
+  color: #F2F3AE;
+}
+#musicModal {
+  z-index: 1000000;
+  .modal-content {
+    background: transparent;
+  }
+  .modal-dialog {
+    width: 100%;
+    margin-left: 0 !important;
+    background: transparent;
+  }
+  .modal-header {
+    border-bottom: none;
+    padding: 0;
+  }
+}
+.the-buttons {
+  position: relative;
+  margin-left:15px !important;
+
+  top: 60px;
+  background-color:rgba(#0b0d22, 0.79) !important;
+  border-radius: 10px;
+  padding: 0 !important;
+}
+@media (min-width: 1000px) {
+  .header-txt {
+    font-size: 20px !important;
+
+  }
+}
+
+@media (max-width: 1000px) {
+  .header-txt {
+    font-size: 16px !important;
+
+  }
+  .descisions {
+    top: 20px;
+  }
+}
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }

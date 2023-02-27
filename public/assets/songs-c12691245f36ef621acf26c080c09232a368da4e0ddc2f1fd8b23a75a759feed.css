@@ -1,0 +1,13 @@
+/* line 4, app/assets/stylesheets/songs.scss */
+body {
+  overflow: auto;
+  background-color: #0B0D23 !important;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* line 12, app/assets/stylesheets/songs.scss */
+.page-header {
+  margin-top: 80px;
+}
