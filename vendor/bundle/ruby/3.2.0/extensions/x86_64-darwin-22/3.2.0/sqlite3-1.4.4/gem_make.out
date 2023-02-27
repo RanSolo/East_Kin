@@ -18,10 +18,10 @@ checking for sqlite3_uint64 in sqlite3.h... yes
 creating Makefile
 
 current directory: /Users/randallrussell/code/East_Kin/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.4.4/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20230227-24172-pz794h sitelibdir\=./.gem.20230227-24172-pz794h clean
+make DESTDIR\= sitearchdir\=./.gem.20230227-39174-53xs1q sitelibdir\=./.gem.20230227-39174-53xs1q clean
 
 current directory: /Users/randallrussell/code/East_Kin/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.4.4/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20230227-24172-pz794h sitelibdir\=./.gem.20230227-24172-pz794h
+make DESTDIR\= sitearchdir\=./.gem.20230227-39174-53xs1q sitelibdir\=./.gem.20230227-39174-53xs1q
 compiling aggregator.c
 compiling backup.c
 compiling database.c
@@ -81,8 +81,8 @@ statement.c:400:18: warning: implicit conversion loses integer precision: 'long'
 linking shared-object sqlite3/sqlite3_native.bundle
 
 current directory: /Users/randallrussell/code/East_Kin/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.4.4/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20230227-24172-pz794h sitelibdir\=./.gem.20230227-24172-pz794h install
-/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20230227-24172-pz794h/sqlite3
+make DESTDIR\= sitearchdir\=./.gem.20230227-39174-53xs1q sitelibdir\=./.gem.20230227-39174-53xs1q install
+/usr/local/bin/ginstall -c -m 0755 sqlite3_native.bundle ./.gem.20230227-39174-53xs1q/sqlite3
 
 current directory: /Users/randallrussell/code/East_Kin/vendor/bundle/ruby/3.2.0/gems/sqlite3-1.4.4/ext/sqlite3
-make DESTDIR\= sitearchdir\=./.gem.20230227-24172-pz794h sitelibdir\=./.gem.20230227-24172-pz794h clean
+make DESTDIR\= sitearchdir\=./.gem.20230227-39174-53xs1q sitelibdir\=./.gem.20230227-39174-53xs1q clean
