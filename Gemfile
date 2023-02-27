@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-
+ruby '3.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'animate-scss'
 gem 'rails'
@@ -76,8 +76,8 @@ end
 group :development, :test do
   gem 'brakeman', require: false
   gem 'database_cleaner'
-  gem 'rubocop'
-  gem 'rubocop-checkstyle_formatter', require: false
+  # gem 'rubocop'
+  # gem 'rubocop-checkstyle_formatter', require: false
   gem 'sqlite3'
 end
 
