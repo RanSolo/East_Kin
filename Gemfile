@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '3.0.3'
+ruby '3.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'animate-scss'
 gem 'rails'
