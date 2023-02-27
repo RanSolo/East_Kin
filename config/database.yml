@@ -22,4 +22,4 @@ test:
 
 production:
     <<: *default
-    database: db/ek_production.sqlite3
+    database: db/ek_production.pg
