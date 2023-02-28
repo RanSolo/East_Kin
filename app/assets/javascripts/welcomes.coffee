@@ -81,7 +81,8 @@ showJukebox = ->
   if $('#musicDD').is(':empty')
     $('#musicDD').prepend(
       "<iframe width='100%' height='300' scrolling='no' frameborder='no' src='//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false'>
-      </iframe>")
+      </iframe>
+      <iframe width='100%' height='300' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1443914692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'></iframe>")
 showExamples = ->
   if $('.example').is(':empty')
     $('.example').prepend(
@@ -289,8 +290,6 @@ destruction_messages = new Array(
   "...I could see your lips move..."
   "Without your space helmet, Dave? You're gonna find that very difficult...",
   "Dave, this conversation can serve no purpose anymore, goodbye."
-  'Click more descisions and listen to some tunes',
-  'Click more descisions and watch a video',
   'Have you played with the synthesizer yet?',
   'Horton hears a who?',
   'You never think twice...',
@@ -357,13 +356,10 @@ destruction_messages = new Array(
 
 )
 welcome_messages = new Array(
-    'Click more descisions and listen to some tunes',
     'Listen to some tunes while you restart and destroy the universe.',
     'Listen to some tunes while you draw pictures or jam along with the synth.',
-    'Click more descisions and watch a video',
     'Have you played with the synthesizer yet?',
     'Have you drawn anything?',
-    'Click more descisions, fire up some tunes and follow the lyrics.',
     'Horton hears a who?',
     'You never think twice...',
     '...a time or two it was you',
@@ -401,8 +397,6 @@ welcome_messages = new Array(
     '...the river will deliver your underscore.'
     )
 life_messages = new Array(
-    'Click more descisions and listen to some tunes',
-    'Click more descisions and watch a video',
     'Have you played with the synthesizer yet?',
     'Horton hears a who?',
     'You never think twice...',
