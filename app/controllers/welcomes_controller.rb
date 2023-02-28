@@ -6,9 +6,9 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
   def index
-    set_welcome
     prepare_meta_tags
     @songs = Song.all
+    set_welcome
   end
   # GET /welcomes/1
   # GET /welcomes/1.json
@@ -22,13 +22,14 @@ class WelcomesController < ApplicationController
 
   # GET /welcomes/1/edit
   def edit
+  puts @welcome.destroy_count
   end
 
   # POST /welcomes
   # POST /welcomes.json
   def create
     @welcome = Welcome.new(welcome_params)
-
+    
     respond_to do |format|
       if @welcome.save
         format.html { redirect_to @welcome, notice: 'Welcome was successfully created.' }
@@ -43,6 +44,7 @@ class WelcomesController < ApplicationController
   # PATCH/PUT /welcomes/1
   # PATCH/PUT /welcomes/1.json
   def update
+    
     if params['lifeOrDeath'] == 'death'
       @welcome.destroy_count = @welcome.destroy_count + 1
       @welcome.save
