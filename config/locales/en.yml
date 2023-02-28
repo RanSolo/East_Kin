@@ -21,7 +21,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "Hello World."
   all_things:  "All thing's East Kin. All the time."
   band_name: "East Kin's"
   universe: " Universe"
@@ -82,7 +82,7 @@ en:
   <p>
     East Kin is a Rock and Roll outfit that writes, rehearses, records, and performs out of Nashville TN.
     As a Band E.K. is very new to the Nashville club scene, but it's members are firmly entrenched in said scene.
-    Performing in the region and across the country for the last 20 years in Old Union, Ballhog!, The Enablers,
+    Performing in the region and across the country for the last 20 years in Old Union, Ballhog!, Foggy Bottom, The Enablers,
     Guy Smiley Blues Exchange and other bands, situations and configurations.
   </p>
   <p>
