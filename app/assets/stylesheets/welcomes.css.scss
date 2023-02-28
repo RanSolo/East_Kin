@@ -113,6 +113,7 @@ body {
 }
 
 #score-board {
+  width: 400px;
   background-color:rgba(#0b0d22, 0.79)  !important;
   border-radius: 10px;
   font-size: 20px;
@@ -126,14 +127,16 @@ body {
   background-color:rgba(#0b0d22, 0.79)  !important;
 }
 .navbar-brand {
+
   z-index: 10000;
   font-size: 22px;
   font-family: "Benguiat" !important;
   color: #bababa;
   background-color: rgba(11, 13, 34, 0.79) !important;
   height: 100%;
+
   border-radius: 10px;
-  max-height: 65px;
+
 }
 
 ul.collapse-dropdown {
@@ -165,12 +168,10 @@ ul.dropdown-menu{
 }
 .restart-count, .destroy-count {
   color: white;
-  text-align: right;
 }
 
 
 .dropdown.open{
-
   width: 100%;
 }
 
@@ -181,10 +182,11 @@ ul.dropdown-menu{
 
 #all-things, #tokyo, #life {
   position: relative;
-  top: -20px;
+  top: -15px;
+  margin-top: 5px;
   border-radius: 10px;
   padding: 13px;
-  margin-bottom: none;
+
 }
 
 .crest {

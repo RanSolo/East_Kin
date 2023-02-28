@@ -117,7 +117,7 @@
           <%= audio_tag("Atomic_Bomb.mp3", id: 'atomic-bomb') %>
           <ul class="nav navbar-nav">
             <li class='crest hidden-xs'></li>
-            <li class='col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs'>
+            <li class='col-lg-6 col-md-6 col-sm-6 col-xs-6 hidden-xs '>
               <span class="navbar-brand alert-warning alert"><%=  t(:band_name) +  t(:universe)%></span>
             </li>
             <li>
@@ -136,7 +136,7 @@
               </ul>
             </li>
           </ul>
-          <div class='col-md-3 col-sm-6 col-xs-9 alert-warning alert text-center pull-right' id='score-board'>
+          <div class='alert-warning alert text-center ' id='score-board'>
             <strong><span>Scoreboard</span></strong>
             <hr />
             <div class='col-md-12 col-sm-12 col-xs-12'>
@@ -149,7 +149,6 @@
                 </div>
                 <hr />
               </div>
-              <div class='col-md-12 col-sm-12 col-xs-12'>
               <div class='row'>
                 <div class='col-md-6 col-sm-6 col-xs-6 restart-count' >
                   <span class='col-md-12  text-center'> 
@@ -157,15 +156,12 @@
                   </span>
                 </div>
                 <div class='col-md-6 col-sm-6 col-xs-6 destroy-count' >
-                <span class='col-md-12 text-center'> 
-                  <%= @welcome.destroy_count %>
-                </span>
+                  <span class='col-md-12 text-center'> 
+                    <%= @welcome.destroy_count %>
+                  </span>
                 </div>
               </div>
-                </div>
-               </div>
-
-            </div>            
+            </div>
           </div>
         </div>
       </div>
