@@ -11,16 +11,19 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2018_04_11_212045) do
-  create_table "jobs", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "jobs", id: :serial, force: :cascade do |t|
     t.boolean "status"
-    t.integer "dependent"
+    t.integer "dependant"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "label"
     t.string "name"
   end
 
-  create_table "songs", force: :cascade do |t|
+  create_table "songs", id: :serial, force: :cascade do |t|
     t.text "lyric"
     t.string "title"
     t.string "writers"
@@ -31,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2018_04_11_212045) do
     t.string "soundcloud"
   end
 
-  create_table "welcomes", force: :cascade do |t|
+  create_table "welcomes", id: :serial, force: :cascade do |t|
     t.string "bandName"
     t.string "headline"
     t.string "message"
