@@ -80,9 +80,10 @@ _classCallCheck = (instance, Constructor) ->
 showJukebox = ->
   if $('#musicDD').is(':empty')
     $('#musicDD').prepend(
-      "<iframe width='100%' height='300' scrolling='no' frameborder='no' src='//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false'>
+      "<iframe width='100%' height='300' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1443914692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'></iframe>
+      <iframe width='100%' height='300' scrolling='no' frameborder='no' src='//w.soundcloud.com/player/?url=https%3A//w.soundcloud.com/playlists/245155799&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false'>
       </iframe>
-      <iframe width='100%' height='300' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1443914692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'></iframe>")
+      ")
 showExamples = ->
   if $('.example').is(':empty')
     $('.example').prepend(
